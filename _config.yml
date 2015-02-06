@@ -1,0 +1,8 @@
+
+title: Marco Pracucci
+
+paginate: 10
+paginate_path: "page/:num"
+
+baseurl: ""
+highlighter: pygments

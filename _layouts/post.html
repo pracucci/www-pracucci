@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<section class="posts">
+    <article>
+        <h3><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h3>
+        <time datetime="{{ page.date }}">
+            <span class="day">{{ page.date | date: "%d" }}</span>
+            <span class="month">{{ page.date | date: "%b" }}</span>
+            <span class="year">{{ page.date | date: "%Y" }}</span>
+        </time>
+
+        {{ page.content }}
+    </article>
+</section>
