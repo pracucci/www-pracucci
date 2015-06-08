@@ -1,0 +1,230 @@
+---
+---
+
+// Config
+$baseline: 36px;
+$primary_font_size: 30px;
+$secondary_font_size: 24px;
+$tertiary_font_size: 24px;
+
+$article_font_size: 16px;
+$article_line_height: 28px;
+$article_text_color: #262526;
+
+
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* Basics */
+body {
+  box-sizing: border-box;
+  color: $article_text_color;
+  background: #F2F2F2;
+  font-size: 16px;
+  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #262526;
+  text-decoration: underline;
+}
+
+strong {
+    font-weight: 600;
+}
+
+
+/* Header */
+header {
+    background: #262526;
+    color: #F2F2F2;
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 40px;
+}
+
+header h2 {
+    display: inline-block;
+    background: #F60A20;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 26px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Posts */
+section.posts {
+    max-width: 800px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+
+/* Post */
+article {
+    position: relative;
+    padding-left: 100px;
+    margin-bottom: 60px;
+
+    time {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: $article_line_height;
+
+        .day {
+            display: block;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 40px;
+            color: #F60A20;
+            margin-bottom: $baseline/4;
+        }
+    }
+
+    h1 {
+        font-size: $primary_font_size;
+        font-weight: normal;
+        line-height: 40px;
+        margin-bottom: $baseline/4;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    h2 {
+        font-size: $secondary_font_size;
+        margin-bottom: $baseline/2;
+    }
+
+    h3 {
+        font-size: $tertiary_font_size;
+        margin-bottom: $baseline/2;
+    }
+
+    p {
+        font-size: $article_font_size;
+        line-height: $article_line_height;
+        margin-bottom: $baseline/2;
+    }
+
+    ol, ul {
+        margin-bottom: $baseline/2;
+        padding-left: 30px;
+
+        li {
+            line-height: $article_line_height;
+        }
+    }
+
+    ol {
+        list-style-type: decimal;
+    }
+
+    code {
+        font-family: monospace;
+        font-size: 14px;
+        color: #d14;
+        margin-bottom: $baseline/2;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto $baseline/2 auto;
+    }
+}
+
+
+/* Code highlight */
+.highlight {
+    background: #f2f2f2;
+
+    &, code {
+        font-family: monospace;
+        font-size: 14px;
+        margin: 20px 0;
+        color: $article_text_color;
+    }
+}
+
+
+
+
+/* Small screens */
+@media screen and (max-width: 600px) {
+
+    article {
+        padding-left: 0;
+
+        time {
+            display: block;
+            position: static;
+            width: auto;
+            text-align: left;
+            margin-bottom: $baseline/2;
+            text-transform: none;
+            font-style: italic;
+
+            .day {
+                display: inline;
+                font-size: $article_font_size;
+                color: $article_text_color;
+                font-weight: normal;
+                line-height: $article_line_height;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+}
