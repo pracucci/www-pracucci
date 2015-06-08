@@ -213,7 +213,7 @@ article {
         background: #eaeaea;
         padding: $baseline/6 $baseline/2;
         border-radius: 4px;
-        margin-bottom: $baseline;
+        margin: -$baseline/6 0 ($baseline - $baseline/6) 0;
         white-space: pre-wrap;
 
         &, code {
