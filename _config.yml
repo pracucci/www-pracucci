@@ -6,3 +6,5 @@ paginate_path: "page/:num"
 
 baseurl: ""
 highlighter: pygments
+
+permalink: none
