@@ -2,7 +2,7 @@
 ---
 
 // Config
-$baseline: 36px;
+$baseline: 32px;
 $primary_font_size: 30px;
 $secondary_font_size: 24px;
 $tertiary_font_size: 20px;
@@ -18,7 +18,7 @@ $title_text_color: #262526;
 
 $paragraph_font_family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 $paragraph_font_size: 16px;
-$paragraph_line_height: 28px;
+$paragraph_line_height: $baseline;
 $paragraph_text_color: #585858;
 
 
@@ -85,7 +85,7 @@ header {
     background: $title_text_color;
     color: $page_background_color;
     text-align: center;
-    padding: 50px 20px;
+    padding: $baseline/2 20px;
     margin-bottom: 40px;
 }
 
@@ -134,7 +134,7 @@ article {
             font-weight: bold;
             line-height: $baseline;
             color: #F60A20;
-            margin-bottom: $baseline/4;
+            margin-bottom: $baseline/2;
         }
     }
 
@@ -143,7 +143,7 @@ article {
         font-weight: $font_weight_medium;
         line-height: $baseline;
         color: $title_text_color;
-        margin-bottom: $baseline/4;
+        margin-bottom: $baseline/2;
 
         a {
             text-decoration: none;
@@ -154,24 +154,32 @@ article {
         font-size: $secondary_font_size;
         font-weight: $font_weight_medium;
         color: $title_text_color;
-        margin-bottom: $baseline/2;
+        margin: $baseline/2 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 
     h3 {
         font-size: $tertiary_font_size;
         font-weight: $font_weight_medium;
         color: $title_text_color;
-        margin-bottom: $baseline/2;
+        margin: $baseline/2 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 
     p {
         font-size: $paragraph_font_size;
         line-height: $paragraph_line_height;
-        margin-bottom: $baseline/2;
+        margin-bottom: $baseline;
     }
 
     ol, ul {
-        margin-bottom: $baseline/2;
+        margin-bottom: $baseline;
         padding-left: 30px;
 
         li {
@@ -183,6 +191,16 @@ article {
         list-style-type: decimal;
     }
 
+    img {
+        display: block;
+        margin: 0 auto $baseline/2 auto;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Code inline
     code {
         font-family: monospace;
         font-size: 14px;
@@ -190,14 +208,23 @@ article {
         margin-bottom: $baseline/2;
     }
 
-    img {
-        display: block;
-        margin: 0 auto $baseline/2 auto;
+    // Code block
+    pre {
+        background: #eaeaea;
+        padding: $baseline/6 $baseline/2;
+        border-radius: 4px;
+        margin-bottom: $baseline;
+        white-space: pre-wrap;
+
+        &, code {
+            color: #111111;
+        }
     }
 }
 
 
 /* Code highlight */
+/*
 .highlight {
     background: $page_background_color;
 
@@ -208,7 +235,7 @@ article {
         color: $paragraph_text_color;
     }
 }
-
+*/
 
 
 

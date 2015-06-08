@@ -4,7 +4,7 @@ title:  Atom Electron - Signing a Mac Application
 date:   2015-06-07 16:00:00 GMT
 ---
 
-If you're building a Mac app with Atom Electron, you will have to sign it before releasing it to your users. Code signature is actually a straightforward process, but it's very hard to debug in case you run into any error, due to the lack of detailed error messages. In this post I will share my experience.
+If you're building a Mac app with Atom Electron, you will have to sign it before releasing. Code signature is actually a straightforward process, but it's very hard to debug in case you run into any error, due to the lack of detailed error messages. In this post I will share my experience.
 
 
 ## TL;DR
@@ -21,7 +21,7 @@ At the time of writing it's not allowed to publish an Atom Electron application 
 
 ### 1. Get and install a Developer ID Certificate
 
-Once you got your Developer ID Certificate, you should install it into your Mac's Keychain: a double click on the certificate file should be enough. The image below shows your what you should see once the certification has been successfully installed into your Keychain. The text between parenthesis is the *identity* and will be used in the next step.
+Once you got your [Developer ID certificate](https://developer.apple.com/account/mac/certificate/certificateList.action), you should install it into your Mac's Keychain: a double click on the certificate file should be enough. The image below shows your what you should see once the certification has been successfully installed into your Keychain. The text between parenthesis is the *identity* and will be used in the next step.
 
 ![](/images/2015-06-07-certificate.jpg)
 
@@ -32,26 +32,30 @@ Now it's time to sign the app. Create your application bundle (`.app` directory 
 
 {% highlight bash %}
 codesign --deep --force --verbose --sign "<identity>" Application.app
+{% endhighlight %}
 
+You should get an output similar to the following. **Make sure the detected architecture is not `generic`**, otherwise Squiller auto-update will give you an error while verifying the update package.
+
+{% highlight bash %}
 Application.app: signed bundle with Mach-O thin (x86_64) [com.application]
 {% endhighlight %}
 
 
 ### 3. Verify signature
 
-There are a couple of commands that you should run to verify the signature: `codesign` and `spctl`. The first checks if the signature is valid but doesn't check if the certificate has been successfully released from Apply, while the latter checks if the certificate used for signing is approved.
+There are a couple of commands that you should run to verify the signature: `codesign` and `spctl`. The first checks if the signature is valid but doesn't run any certificate assessment, while the latter checks if the certificate used for signing is approved.
 
 {% highlight bash %}
 codesign --verify -vvvv Application.app
 
-Spreaker Studio.app/: valid on disk
-Spreaker Studio.app/: satisfies its Designated Requirement
+    Application.app: valid on disk
+    Application.app: satisfies its Designated Requirement
 {% endhighlight %}
 
 {% highlight bash %}
 spctl -a -vvvv Application.app
 
-Application.app: accepted
-source=Developer ID
-origin=Developer ID Application: Spreaker Inc (xxx)
+    Application.app: accepted
+    source=Developer ID
+    origin=Developer ID Application: Spreaker Inc (xxx)
 {% endhighlight %}
