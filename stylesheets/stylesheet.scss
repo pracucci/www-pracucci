@@ -5,11 +5,21 @@
 $baseline: 36px;
 $primary_font_size: 30px;
 $secondary_font_size: 24px;
-$tertiary_font_size: 24px;
+$tertiary_font_size: 20px;
 
-$article_font_size: 16px;
-$article_line_height: 28px;
-$article_text_color: #262526;
+$font_weight_light: 300;
+$font_weight_default: 400;
+$font_weight_medium: 500;
+$font_weight_bold: 600;
+
+$page_background_color: #fbfbfb;
+
+$title_text_color: #262526;
+
+$paragraph_font_family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$paragraph_font_size: 16px;
+$paragraph_line_height: 28px;
+$paragraph_text_color: #585858;
 
 
 /* Reset */
@@ -52,10 +62,10 @@ table {
 /* Basics */
 body {
   box-sizing: border-box;
-  color: $article_text_color;
-  background: #F2F2F2;
+  color: $paragraph_text_color;
+  background: $page_background_color;
   font-size: 16px;
-  font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+  font-family: $paragraph_font_family;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -72,8 +82,8 @@ strong {
 
 /* Header */
 header {
-    background: #262526;
-    color: #F2F2F2;
+    background: $title_text_color;
+    color: $page_background_color;
     text-align: center;
     padding: 50px 20px;
     margin-bottom: 40px;
@@ -116,13 +126,13 @@ article {
         width: 80px;
         text-align: center;
         text-transform: uppercase;
-        line-height: $article_line_height;
+        line-height: $paragraph_line_height;
 
         .day {
             display: block;
             font-size: 30px;
             font-weight: bold;
-            line-height: 40px;
+            line-height: $baseline;
             color: #F60A20;
             margin-bottom: $baseline/4;
         }
@@ -130,8 +140,9 @@ article {
 
     h1 {
         font-size: $primary_font_size;
-        font-weight: normal;
-        line-height: 40px;
+        font-weight: $font_weight_medium;
+        line-height: $baseline;
+        color: $title_text_color;
         margin-bottom: $baseline/4;
 
         a {
@@ -141,17 +152,21 @@ article {
 
     h2 {
         font-size: $secondary_font_size;
+        font-weight: $font_weight_medium;
+        color: $title_text_color;
         margin-bottom: $baseline/2;
     }
 
     h3 {
         font-size: $tertiary_font_size;
+        font-weight: $font_weight_medium;
+        color: $title_text_color;
         margin-bottom: $baseline/2;
     }
 
     p {
-        font-size: $article_font_size;
-        line-height: $article_line_height;
+        font-size: $paragraph_font_size;
+        line-height: $paragraph_line_height;
         margin-bottom: $baseline/2;
     }
 
@@ -160,7 +175,7 @@ article {
         padding-left: 30px;
 
         li {
-            line-height: $article_line_height;
+            line-height: $paragraph_line_height;
         }
     }
 
@@ -184,13 +199,13 @@ article {
 
 /* Code highlight */
 .highlight {
-    background: #f2f2f2;
+    background: $page_background_color;
 
     &, code {
         font-family: monospace;
         font-size: 14px;
         margin: 20px 0;
-        color: $article_text_color;
+        color: $paragraph_text_color;
     }
 }
 
@@ -214,10 +229,10 @@ article {
 
             .day {
                 display: inline;
-                font-size: $article_font_size;
-                color: $article_text_color;
+                font-size: $paragraph_font_size;
+                color: $paragraph_text_color;
                 font-weight: normal;
-                line-height: $article_line_height;
+                line-height: $paragraph_line_height;
             }
         }
 
