@@ -88,7 +88,6 @@ strong {
 header {
     text-align: center;
     padding: $baseline/2 20px;
-    margin-bottom: 40px;
 
     &, a {
         color: $title_text_color;
@@ -127,6 +126,25 @@ section.posts, section.page {
     max-width: $page_width;
     padding: 0 20px;
     margin: 0 auto;
+}
+
+
+// Navigation
+nav {
+    text-align: center;
+    margin-bottom: $baseline*2;
+    border-bottom: 1px solid #efefef;
+
+    li {
+        display: inline-block;
+        font-size: $font_size_tertiary;
+        line-height: $baseline * 1.5;
+        margin: 0 $baseline/2;
+
+        a {
+            text-decoration: none;
+        }
+    }
 }
 
 
