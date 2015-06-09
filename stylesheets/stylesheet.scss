@@ -83,14 +83,13 @@ strong {
 
 /* Header */
 header {
-    background: $title_text_color;
-    color: $page_background_color;
     text-align: center;
     padding: $baseline/2 20px;
     margin-bottom: 40px;
 
     &, a {
-        color: $page_background_color;
+        color: $title_text_color;
+        font-weight: $font_weight_light;
         text-decoration: none;
     }
 }
