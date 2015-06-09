@@ -8,3 +8,6 @@ baseurl: ""
 highlighter: pygments
 
 permalink: none
+
+gems:
+    - jekyll-sitemap
