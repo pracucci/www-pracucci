@@ -3,9 +3,10 @@
 
 // Config
 $baseline: 32px;
-$primary_font_size: 30px;
-$secondary_font_size: 24px;
-$tertiary_font_size: 20px;
+$font_size_primary: 30px;
+$font_size_secondary: 24px;
+$font_size_tertiary: 20px;
+$font_size_small: 14px;
 
 $font_weight_light: 300;
 $font_weight_default: 400;
@@ -87,6 +88,11 @@ header {
     text-align: center;
     padding: $baseline/2 20px;
     margin-bottom: 40px;
+
+    &, a {
+        color: $page_background_color;
+        text-decoration: none;
+    }
 }
 
 header h1 {
@@ -105,8 +111,17 @@ header h2 {
 }
 
 
-/* Posts */
-section.posts {
+// Footer
+footer {
+    margin: $baseline 0;
+    padding-top: $baseline;
+    text-align: center;
+    font-size: $font_size_small;
+}
+
+
+// Layout
+section.posts, section.page {
     max-width: 800px;
     padding: 0 20px;
     margin: 0 auto;
@@ -139,7 +154,7 @@ article {
     }
 
     h1 {
-        font-size: $primary_font_size;
+        font-size: $font_size_primary;
         font-weight: $font_weight_medium;
         line-height: $baseline;
         color: $title_text_color;
@@ -151,7 +166,7 @@ article {
     }
 
     h2 {
-        font-size: $secondary_font_size;
+        font-size: $font_size_secondary;
         font-weight: $font_weight_medium;
         color: $title_text_color;
         margin: $baseline/2 0;
@@ -162,7 +177,7 @@ article {
     }
 
     h3 {
-        font-size: $tertiary_font_size;
+        font-size: $font_size_tertiary;
         font-weight: $font_weight_medium;
         color: $title_text_color;
         margin: $baseline/2 0;
@@ -223,19 +238,6 @@ article {
 }
 
 
-/* Code highlight */
-/*
-.highlight {
-    background: $page_background_color;
-
-    &, code {
-        font-family: monospace;
-        font-size: 14px;
-        margin: 20px 0;
-        color: $paragraph_text_color;
-    }
-}
-*/
 
 
 
