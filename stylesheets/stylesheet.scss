@@ -3,6 +3,9 @@
 
 // Config
 $baseline: 32px;
+
+$page_width: 800px;
+
 $font_size_primary: 30px;
 $font_size_secondary: 24px;
 $font_size_tertiary: 20px;
@@ -81,7 +84,7 @@ strong {
 }
 
 
-/* Header */
+// Header
 header {
     text-align: center;
     padding: $baseline/2 20px;
@@ -121,7 +124,7 @@ footer {
 
 // Layout
 section.posts, section.page {
-    max-width: 800px;
+    max-width: $page_width;
     padding: 0 20px;
     margin: 0 auto;
 }
@@ -237,12 +240,46 @@ article {
 }
 
 
+// Talks
+section.talks {
+    overflow: hidden;
+}
+
+section.talk {
+    float: left;
+    width: ($page_width/2) - 50;
+    margin-bottom: $baseline*2;
+    padding: 0 25px;
+    text-align: center;
+
+    h2 {
+        margin-bottom: $baseline/2;
+        height: $baseline*1.5;
+        line-height: $baseline*0.75;
+        font-size: $font_size_tertiary;
+    }
+}
 
 
 
 /* Small screens */
+@media screen and (max-width: 800px) {
+
+    // Talks
+    section.talk {
+        float: none;
+        width: auto;
+
+        h2 {
+            height: auto;
+        }
+    }
+
+}
+
 @media screen and (max-width: 600px) {
 
+    // Posts
     article {
         padding-left: 0;
 
