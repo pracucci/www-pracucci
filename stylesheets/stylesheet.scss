@@ -5,6 +5,7 @@
 $baseline: 32px;
 
 $page_width: 800px;
+$page_margin: 20px;
 
 $font_size_primary: 30px;
 $font_size_secondary: 24px;
@@ -83,11 +84,21 @@ strong {
     font-weight: 600;
 }
 
+h1 {
+    font-size: $font_size_primary;
+    font-weight: $font_weight_medium;
+    color: $title_text_color;
+    margin-bottom: $baseline;
+}
 
 // Header
 header {
-    text-align: center;
-    padding: $baseline/2 20px;
+    max-width: $page_width;
+    margin: 0 auto $baseline auto;
+    padding: 0 $page_margin;
+    border-bottom: 1px solid #efefef;
+    overflow: hidden;
+    line-height: $baseline*1.5;
 
     &, a {
         color: $title_text_color;
@@ -96,10 +107,22 @@ header {
     }
 
     h1 {
-        font-size: 40px;
+        float: left;
+        margin: 0;
+    }
+
+    nav {
+        float: right;
+        text-align: right;
+        font-family: sans-serif;
+
+        li {
+            display: inline-block;
+            font-size: $font_size_tertiary;
+            margin: 0 $baseline/2;
+        }
     }
 }
-
 
 
 // Footer
@@ -114,26 +137,14 @@ footer {
 // Layout
 section.posts, section.page {
     max-width: $page_width;
-    padding: 0 20px;
+    padding: 0 $page_margin;
     margin: 0 auto;
 }
 
-
-// Navigation
-nav {
-    text-align: center;
-    margin-bottom: $baseline*2;
-    border-bottom: 1px solid #efefef;
-
-    li {
-        display: inline-block;
-        font-size: $font_size_tertiary;
-        line-height: $baseline * 1.5;
-        margin: 0 $baseline/2;
-
-        a {
-            text-decoration: none;
-        }
+section.page {
+    h1 {
+        text-align: center;
+        margin-bottom: $baseline;
     }
 }
 
@@ -157,17 +168,14 @@ article {
             display: block;
             font-size: 30px;
             font-weight: bold;
-            line-height: $baseline;
+            line-height: $baseline*1.25;
             color: #d14;
             margin-bottom: $baseline/2;
         }
     }
 
     h1 {
-        font-size: $font_size_primary;
-        font-weight: $font_weight_medium;
-        line-height: $baseline;
-        color: $title_text_color;
+        line-height: $baseline*1.25;
         margin-bottom: $baseline/2;
 
         a {
@@ -287,6 +295,15 @@ section.talk {
 }
 
 @media screen and (max-width: 600px) {
+
+    // Header
+    header {
+        h1, nav {
+            float: none;
+            text-align: center;
+        }
+    }
+
 
     // Posts
     article {
