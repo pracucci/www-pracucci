@@ -11,3 +11,6 @@ permalink: none
 
 gems:
     - jekyll-sitemap
+
+sass:
+    sass_dir: stylesheets
