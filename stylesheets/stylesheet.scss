@@ -88,6 +88,10 @@ h1 {
     margin-bottom: $baseline;
 }
 
+em {
+    font-style: italic;
+}
+
 // Header
 header {
     max-width: $page_width;
@@ -200,6 +204,14 @@ article {
         &:first-child {
             margin-top: 0;
         }
+    }
+
+    h4 {
+        font-weight: $font_weight_medium;
+        font-style: italic;
+        color: $title_text_color;
+        margin-bottom: $baseline/2;
+        padding-left: $page_margin;
     }
 
     p {
