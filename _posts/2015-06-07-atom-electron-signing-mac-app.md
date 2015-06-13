@@ -1,7 +1,9 @@
 ---
-layout: post
-title:  Atom Electron - Signing a Mac Application
-date:   2015-06-07 16:00:00 GMT
+layout:         post
+title:          Atom Electron - Signing a Mac Application
+keywords:       atom electron, atom shell, mac, osx, application, signature, code sign
+description:    Sign your application bundle with codesign --deep --force --verbose --sign "<identity>" Application.app
+date:           2015-06-07 16:00:00 GMT
 ---
 
 If you're building a Mac app with Atom Electron, you will have to sign it before releasing. Code signature is actually a straightforward process, but it's very hard to debug in case you run into any error, due to the lack of detailed error messages. In this post I will share my experience.

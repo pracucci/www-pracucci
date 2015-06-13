@@ -1,7 +1,9 @@
 ---
-layout: post
-title:  5 features you didn't know about Chrome DevTools
-date:   2015-06-10 20:00:00 GMT
+layout:         post
+title:          5 features you didn't know about Chrome DevTools
+keywords:       chome, devtools, tips
+description:    Daily newsletter with Chrome DevTools tips, in the form of an animated .gif.
+date:           2015-06-10 20:00:00 GMT
 ---
 
 Umar Hansa is doing an amazing job these days: he created a [daily newsletter](https://umaar.com/dev-tips/) with DevTools tips, in the form of an animated gif. Here is the my very personal top 5.

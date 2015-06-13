@@ -1,7 +1,9 @@
 ---
-layout: post
-title:  Statsd Client for Node.js
-date:   2015-06-09 17:00:00 GMT
+layout:         post
+title:          Statsd Client for Node.js
+keywords:       node, node.js, io.js, statsd, client, npm, module
+description:    npm install node-statsd-client - a statsd client for node.js that does its job
+date:           2015-06-09 17:00:00 GMT
 ---
 
 Few years ago I released a very simple yet working [Statsd client for Node.js](https://github.com/spreaker/nodejs-statsd-client) and I recently realized that it's actually pretty used (*2,989 downloads in the last month*). We, at [Spreaker](https://www.spreaker.com), use it since few years in production and never got an issue.
