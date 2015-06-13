@@ -2,7 +2,7 @@
 layout:         post
 title:          Electron (Atom Shell) - Enable copy and paste
 keywords:       electron, atom shell, copy, paste, clipboard, osx, mac
-description:    To enable copy and paste (clipboard) your shoukd configure you app's menu, using Menu.setApplicationMenu()
+description:    To enable copy and paste (clipboard) your should configure you app's menu, using Menu.setApplicationMenu()
 date:           2015-06-13 17:00:00 GMT
 ---
 
