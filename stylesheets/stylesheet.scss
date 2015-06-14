@@ -136,7 +136,7 @@ footer {
 
 
 // Layout
-section.posts, section.page {
+div.content {
     max-width: $page_width;
     padding: 0 $page_margin;
     margin: 0 auto;
@@ -150,7 +150,7 @@ section.page {
 }
 
 
-// Blog
+// Articles
 article {
     position: relative;
     padding-left: 100px;
@@ -263,6 +263,15 @@ article {
             color: #111111;
         }
     }
+}
+
+
+// Contribute
+section.contribute {
+    background: #fff5b2;
+    padding: $baseline/2;
+    line-height: $paragraph_line_height;
+    border-radius: 4px;
 }
 
 
