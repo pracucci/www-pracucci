@@ -1,10 +1,10 @@
-
-title: Marco Pracucci
+title:          Marco Pracucci
+baseurl:        ""
+url:            http://www.pracucci.com
 
 paginate: 10
 paginate_path: "page/:num"
 
-baseurl: ""
 highlighter: pygments
 
 permalink: none
