@@ -24,44 +24,7 @@ $paragraph_line_height: $baseline;
 $paragraph_text_color: #585858;
 
 
-/* Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-
-/* Basics */
+/* Typography */
 body {
   box-sizing: border-box;
   color: $paragraph_text_color;
@@ -146,6 +109,57 @@ section.page {
     h1 {
         text-align: center;
         margin-bottom: $baseline;
+    }
+}
+
+
+// About me
+section.about {
+    overflow: hidden;
+    margin-bottom: $baseline*2;
+
+    img {
+        float: right;
+        border-radius: 2px;
+        margin: 0 0 $page_margin $page_margin;;
+    }
+
+    h2 {
+        font-size: $font_size_secondary;
+        color: $title_text_color;
+        margin-bottom: $baseline/2;
+    }
+
+    p {
+        margin-bottom: $baseline/2;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.about_socials {
+    line-height: 50px;
+}
+
+.about_social {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin-right: $page_margin;
+    text-indent: -1000px;
+    overflow: hidden;
+    vertical-align: middle;
+
+    &.github {
+        background: transparent url(../images/social_github.png) no-repeat center center;
+        background-size: 50px 50px;
+    }
+
+    &.twitter {
+        background: transparent url(../images/social_twitter.png) no-repeat center center;
+        background-size: 50px 50px;
     }
 }
 
@@ -413,5 +427,20 @@ section.talk {
             }
         }
     }
+}
 
+
+@media screen and (max-width: 600px) {
+    // About me
+    section.about {
+        h2 {
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            float: none;
+            margin: 0 auto $baseline/2 auto;
+        }
+    }
 }
