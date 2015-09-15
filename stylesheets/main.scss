@@ -345,6 +345,22 @@ article {
             color: #111111;
         }
     }
+
+    // Tables
+    table {
+        margin-bottom: $baseline/2;
+
+        td {
+            padding: 0 10px $baseline/4 0;
+
+        }
+
+        tr:last-child {
+            td {
+                padding-bottom: 0;
+            }
+        }
+    }
 }
 
 
