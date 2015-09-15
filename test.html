@@ -30,6 +30,7 @@ layout: default
                 event.preventDefault();
 
                 if (navigator.userAgent.match(/MSIE 8/)) {
+                    input.focus();
                     input.select();
                     content.createTextRange().execCommand("Copy");
                 } else {
