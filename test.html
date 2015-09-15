@@ -24,12 +24,19 @@ layout: default
         <p><button id="copy-button">Copy</button></p>
 
         <script>
-            document.getElementById("copy-button").addEventListener("click", function(event) {
+            function onClick(event) {
                 event.preventDefault();
 
                 document.getElementById("input").select();
                 document.execCommand("copy");
-            });
+            }
+
+            var button = document.getElementById("copy-button");
+            if (button.addEventListener) {
+                button.addEventListener("click", onClick);
+            } else {
+                button.attachEvent("click", onClick);
+            }
         </script>
     </script>
 
