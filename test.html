@@ -16,5 +16,23 @@ layout: default
         <script>(function(d, s, url) { var js = d.createElement(s); js.type = 'text/javascript'; js.async = true; js.src = ('https:' == d.location.protocol ? 'https' : 'http') + '://' + url; var inj = d.getElementsByTagName(s)[0]; inj.parentNode.insertBefore(js, inj); })(document, 'script', 'd1sojsgu0jwtb7.cloudfront.net/js/widgets.min.gz.js');</script>
     </section>
 
+
+    <h1>Test - document.execCommand("copy")</h1>
+
+    <section>
+        <textarea id="input" rows="3" cols="80">This is a paragraph of text. Click to "Copy" button to copy all this content.</textarea>
+        <p><button id="copy-button">Copy</button></p>
+
+        <script>
+            document.getElementById("copy-button").addEventListener("click", function(event) {
+                event.preventDefault();
+
+                document.getElementById("input").select();
+                document.execCommand("copy");
+            });
+        </script>
+    </script>
+
+
 </section>
 
