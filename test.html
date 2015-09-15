@@ -24,11 +24,18 @@ layout: default
         <p><button id="copy-button">Copy</button></p>
 
         <script>
+            var input = document.getElementById("input");
+
             function onClick(event) {
                 event.preventDefault();
 
-                document.getElementById("input").select();
-                document.execCommand("copy");
+                if (navigator.userAgent.match(/MSIE 8/)) {
+                    input.select();
+                    content.createTextRange().execCommand("Copy");
+                } else {
+                    input.select();
+                    document.execCommand("copy");
+                }
             }
 
             var button = document.getElementById("copy-button");
