@@ -1,5 +1,5 @@
 // Config
-$baseline: 32px;
+$baseline: 36px;
 
 $page_width: 800px;
 $page_margin: 20px;
@@ -262,7 +262,8 @@ article {
         font-size: $font_size_secondary;
         font-weight: $font_weight_medium;
         color: $title_text_color;
-        margin: $baseline/2 0;
+        margin-bottom: $baseline/2;
+        padding-top: $baseline/2;
 
         &:first-child {
             margin-top: 0;
@@ -273,7 +274,8 @@ article {
         font-size: $font_size_tertiary;
         font-weight: $font_weight_medium;
         color: $title_text_color;
-        margin: $baseline/2 0;
+        margin-bottom: $baseline/2;
+        padding-top: $baseline/2;
 
         &:first-child {
             margin-top: 0;
@@ -291,11 +293,11 @@ article {
     p {
         font-size: $paragraph_font_size;
         line-height: $paragraph_line_height;
-        margin-bottom: $baseline;
+        margin-bottom: $baseline/2;
     }
 
     ol, ul {
-        margin-bottom: $baseline;
+        margin-bottom: $baseline/2;
         padding-left: 30px;
 
         li {
@@ -335,7 +337,7 @@ article {
         background: #eaeaea;
         padding: $baseline/6 $baseline/2;
         border-radius: 4px;
-        margin: -$baseline/6 0 ($baseline - $baseline/6) 0;
+        margin: 0 0 ($baseline - $baseline/6) 0;
         white-space: pre-wrap;
         word-wrap: break-word;
 
