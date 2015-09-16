@@ -4,8 +4,8 @@ $baseline: 36px;
 $page_width: 800px;
 $page_margin: 20px;
 
-$font_size_primary: 30px;
-$font_size_secondary: 24px;
+$font_size_primary: 26px;
+$font_size_secondary: 22px;
 $font_size_tertiary: 20px;
 $font_size_small: 14px;
 
@@ -95,6 +95,31 @@ footer {
     padding-top: $baseline;
     text-align: center;
     font-size: $font_size_small;
+
+    iframe, a {
+        vertical-align: middle;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    a {
+        // UI similar to "Privacy Policy" button
+        display: inline-block;
+        height: 18px;
+        line-height: 18px;
+        text-decoration: none;
+        border: 1px solid #c3c3c3;
+        border-radius: 2px;
+        font-size: 11px;
+        font-weight: bold;
+        color: rgb(89, 99, 109);
+        box-shadow: rgba(0, 0, 0, 0.0784314) 0px 1px 0px 0px;
+        padding: 0 5px;
+        margin-bottom: 2px;
+    }
 }
 
 
@@ -364,15 +389,6 @@ article {
 }
 
 
-// Contribute
-section.contribute {
-    background: #fff5b2;
-    padding: $baseline/2;
-    line-height: $paragraph_line_height;
-    border-radius: 4px;
-}
-
-
 // Talks
 section.talks {
     overflow: hidden;
@@ -449,10 +465,8 @@ section.talk {
             }
         }
     }
-}
 
 
-@media screen and (max-width: 600px) {
     // About me
     section.about {
         h2 {
