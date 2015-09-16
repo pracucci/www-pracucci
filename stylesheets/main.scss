@@ -22,6 +22,7 @@ $paragraph_font_family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', san
 $paragraph_font_size: 16px;
 $paragraph_line_height: $baseline;
 $paragraph_text_color: #585858;
+$paragraph_text_light_color: #999999;
 
 
 /* Typography */
@@ -263,6 +264,7 @@ article {
         text-align: center;
         text-transform: uppercase;
         line-height: $paragraph_line_height;
+        color: $paragraph_text_light_color;
 
         .day {
             display: block;
@@ -270,13 +272,13 @@ article {
             font-weight: bold;
             line-height: $baseline*1.25;
             color: #d14;
-            margin-bottom: $baseline/2;
+            margin-bottom: 0;
         }
     }
 
     h1 {
         line-height: $baseline*1.25;
-        margin-bottom: $baseline/2;
+        margin-bottom: 0;
 
         a {
             text-decoration: none;
@@ -313,6 +315,18 @@ article {
         color: $title_text_color;
         margin-bottom: $baseline/2;
         padding-left: $page_margin;
+    }
+
+    .author {
+        display: inline-block;
+        line-height: $paragraph_line_height;
+        margin-bottom: $baseline/2;
+        font-style: italic;
+
+        &, a {
+            color: $paragraph_text_light_color;
+            text-decoration: none;
+        }
     }
 
     p {
@@ -448,7 +462,7 @@ section.talk {
         padding-left: 0;
 
         time {
-            display: block;
+            display: inline-block;
             position: static;
             width: auto;
             text-align: left;
@@ -459,9 +473,22 @@ section.talk {
             .day {
                 display: inline;
                 font-size: $paragraph_font_size;
-                color: $paragraph_text_color;
+                color: $paragraph_text_light_color;
                 font-weight: normal;
                 line-height: $paragraph_line_height;
+            }
+        }
+
+        h1 {
+            margin-bottom: $baseline/4;
+        }
+
+        .author {
+            font-style: italic;
+            margin-bottom: $baseline/2;
+
+            &:before {
+                content: ' / ';
             }
         }
     }
