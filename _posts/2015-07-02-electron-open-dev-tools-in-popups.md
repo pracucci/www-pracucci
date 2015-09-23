@@ -1,6 +1,6 @@
 ---
 layout:         post
-title:          Electron (Atom Shell) - Open DevTools in a popup
+title:          Electron - Open DevTools in a popup
 keywords:       electron, atom shell, devtools, popup
 date:           2015-07-02 16:00:00 GMT
 ---

@@ -1,12 +1,12 @@
 ---
 layout:         post
-title:          Electron (Atom Shell) - Enable copy and paste
+title:          Electron - Enable copy and paste
 keywords:       electron, atom shell, copy, paste, clipboard, osx, mac
 description:    To enable copy and paste (clipboard) you should configure you app's menu, using Menu.setApplicationMenu() - See an example
 date:           2015-06-13 17:00:00 GMT
 ---
 
-If you're new to Electron (Atom Shell) you will notice that copy and paste (*CMD+C / CMD+V on Mac*) will not work, both in your app and DevTools. This is due to the lack of the application's menu with keybindings to the native clipboard.
+If you're new to Electron (formerly known as Atom Shell) you will notice that copy and paste (*CMD+C / CMD+V on Mac*) will not work, both in your app and DevTools. This is due to the lack of the application's menu with keybindings to the native clipboard.
 
 To enable the clipboard features and copy/paste shortcuts you should configure your app's menu, using `Menu.setApplicationMenu()` from Electron's [menu module](https://github.com/atom/electron/blob/master/docs/api/menu.md).
 
