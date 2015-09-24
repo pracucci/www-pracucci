@@ -2,6 +2,18 @@
 layout: default
 ---
 
+{% capture list_related_articles %}{% for page_tag in page.tags %}
+        {% for post in site.posts %}
+            {% for post_tag in post.tags %}
+                {% if post_tag == page_tag and post.title != page.title %}
+                    <li>
+                        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+{% endfor %}{% endcapture %}
+
 <section class="posts">
     <article>
         <h1><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h1>
@@ -12,6 +24,16 @@ layout: default
         </time>
         <span class="author">by <a href="{{ site.baseurl }}">Marco Pracucci</a></span>
 
+
         {{ content }}
+
+        {% if list_related_articles != "" %}
+            <h3>Related articles</h3>
+            <ul>
+                {{ list_related_articles | strip }}
+            </ul>
+        {% endif %}
     </article>
 </section>
+
+

@@ -3,6 +3,7 @@ layout:         post
 title:          Chrome Android 44+ introduces a new "related apps" banner
 keywords:       chrome, android, related applications, appmanifest
 description:    Native App install banners in Chrome for Android. Quickly learn how it works.
+tags:           Chrome
 date:           2015-06-18 17:00:00 GMT
 ---
 

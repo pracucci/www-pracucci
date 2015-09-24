@@ -2,6 +2,7 @@
 layout:         post
 title:          "New Chrome security policy: powerful features will be removed on insecure origins"
 keywords:       chrome, security, http, https, powerful features, secure origin, insecure origin
+tags:           Chrome
 date:           2015-09-15 18:00:00 GMT
 ---
 

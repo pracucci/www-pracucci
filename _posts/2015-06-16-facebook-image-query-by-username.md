@@ -3,6 +3,7 @@ layout:         post
 title:          Facebook Open Graph - Query image by username no longer available
 keywords:       facebook, open graph
 description:    Get a Facebook user's image by username is no longer available. Switch to query by id to fix it.
+tags:           Facebook
 date:           2015-06-13 17:00:00 GMT
 ---
 

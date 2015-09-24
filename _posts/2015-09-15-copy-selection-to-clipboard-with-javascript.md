@@ -2,6 +2,7 @@
 layout:         post
 title:          "Copy the text selection to Clipboard, using Javascript"
 keywords:       javascript, js, copy, clipboard
+tags:           Chrome, Firefox
 date:           2015-09-15 18:00:00 GMT
 ---
 

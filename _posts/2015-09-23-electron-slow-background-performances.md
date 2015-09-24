@@ -2,9 +2,9 @@
 layout:         post
 title:          Electron - Slow performances in background
 keywords:       electron, background, minimized, performances, speed, slow
+tags:           Electron
 date:           2015-09-23 18:00:00 GMT
 ---
-
 
 Chromium recently became more aggressive on power saving when the **browser window is in background or minimized**. This is usually not a problem, but in some specific applications built with Electron this could lead to **performance issues**.
 

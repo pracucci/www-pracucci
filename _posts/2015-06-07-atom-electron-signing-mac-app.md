@@ -3,6 +3,7 @@ layout:         post
 title:          Electron - Signing a Mac Application
 keywords:       electron, atom shell, mac, osx, application, signature, code sign
 description:    Sign your application bundle with codesign --deep --force --verbose --sign identity Application.app
+tags:           Electron
 date:           2015-06-07 16:00:00 GMT
 ---
 
