@@ -19,7 +19,7 @@ layout: default
 
 
 <!-- Latest articles -->
-<h1 id="articles">Latest Articles <a href="{{ site.baseurl }}/feed.xml"><img src="{{ site.baseurl }}/images/rss.png" width="24" height="24" /></a></h1>
+<h1 id="articles">Latest Articles <a href="{{ site.baseurl }}/feed.xml" class="articles_rss">RSS Feed</a></h1>
 <ul class="articles">
     {% for post in paginator.posts %}
         <li class="article">
@@ -29,10 +29,6 @@ layout: default
                 <span class="month">{{ post.date | date: "%b" }}</span>
                 <span class="year">{{ post.date | date: "%Y" }}</span>
             </time>
-
-            {{ post.excerpt }}
-
-            <p><a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></p>
         </li>
     {% endfor %}
 </ul>

@@ -4,10 +4,12 @@ $baseline: 36px;
 $page_width: 800px;
 $page_margin: 20px;
 
-$font_size_primary: 26px;
-$font_size_secondary: 22px;
-$font_size_tertiary: 20px;
 $font_size_small: 14px;
+$font_size_default: 16px;
+$font_size_medium: 18px;
+$font_size_large: 20px;
+$font_size_xlarge: 22px;
+$font_size_xxlarge: 26px;
 
 $font_weight_light: 300;
 $font_weight_default: 400;
@@ -19,7 +21,6 @@ $page_background_color: #fbfbfb;
 $title_text_color: #262526;
 
 $paragraph_font_family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-$paragraph_font_size: 16px;
 $paragraph_line_height: $baseline;
 $paragraph_text_color: #585858;
 $paragraph_text_light_color: #999999;
@@ -46,7 +47,7 @@ strong {
 }
 
 h1 {
-    font-size: $font_size_primary;
+    font-size: $font_size_xxlarge;
     font-weight: $font_weight_medium;
     color: $title_text_color;
     margin-bottom: $baseline;
@@ -83,7 +84,7 @@ header {
 
         li {
             display: inline-block;
-            font-size: $font_size_tertiary;
+            font-size: $font_size_large;
             margin: 0 $baseline/2;
         }
     }
@@ -151,7 +152,7 @@ section.about {
     }
 
     h2 {
-        font-size: $font_size_secondary;
+        font-size: $font_size_xlarge;
         color: $title_text_color;
         margin-bottom: $baseline/2;
     }
@@ -194,38 +195,16 @@ section.about {
 ul.articles {
     overflow: hidden;
     margin-bottom: $baseline*3;
-
-    // Two columns layout with flex box
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-flex-direction: row;
-    flex-direction: row;
-
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-
-    align-items: flex-start;
-    -webkit-align-items: flex-start;
-
-    -webkit-align-content: flex-end;
-    align-content: flex-end;
+    list-style-type: square;
+    padding-left: 20px;
 }
 
 li.article {
-    width: 45%;
-    margin-bottom: $baseline;
+    margin-bottom: $baseline/2;
 
     h2 {
-        font-size: $font_size_tertiary;
+        font-size: $font_size_medium;
         font-weight: $font_weight_medium;
-        margin-bottom: $baseline/2;
 
         a {
             color: $title_text_color;
@@ -238,15 +217,12 @@ li.article {
         font-size: $font_size_small;
         margin-bottom: $baseline/4;
     }
+}
 
-    p {
-        font-size: $font_size_small;
-        margin-bottom: $baseline/2;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
+.articles_rss {
+    font-size: $font_size_small;
+    vertical-align: baseline;
+    margin-left: 10px;
 }
 
 
@@ -286,7 +262,7 @@ article {
     }
 
     h2 {
-        font-size: $font_size_secondary;
+        font-size: $font_size_xlarge;
         font-weight: $font_weight_medium;
         color: $title_text_color;
         margin-bottom: $baseline/2;
@@ -298,7 +274,7 @@ article {
     }
 
     h3 {
-        font-size: $font_size_tertiary;
+        font-size: $font_size_large;
         font-weight: $font_weight_medium;
         color: $title_text_color;
         margin-bottom: $baseline/2;
@@ -330,7 +306,7 @@ article {
     }
 
     p {
-        font-size: $paragraph_font_size;
+        font-size: $font_size_default;
         line-height: $paragraph_line_height;
         margin-bottom: $baseline/2;
     }
@@ -419,7 +395,7 @@ section.talk {
         margin-bottom: $baseline/2;
         height: $baseline*1.5;
         line-height: $baseline*0.75;
-        font-size: $font_size_tertiary;
+        font-size: $font_size_large;
     }
 }
 
@@ -472,7 +448,7 @@ section.talk {
 
             .day {
                 display: inline;
-                font-size: $paragraph_font_size;
+                font-size: $font_size_default;
                 color: $paragraph_text_light_color;
                 font-weight: normal;
                 line-height: $paragraph_line_height;
