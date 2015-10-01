@@ -365,8 +365,20 @@ article {
     table {
         margin-bottom: $baseline/2;
 
-        td {
-            padding: 0 10px $baseline/4 0;
+        thead {
+            th {
+                text-align: left;
+                border-bottom: 1px solid #efefef;
+                font-weight: $font_weight_medium;
+            }
+        }
+
+        td, th {
+            padding: $baseline/8 50px $baseline/8 0;
+
+            &:last-child {
+                padding-right: 0;
+            }
 
         }
 
@@ -399,6 +411,17 @@ section.talk {
     }
 }
 
+
+// Layout
+.layout_two_columns {
+    overflow: hidden;
+
+    .column {
+        float: left;
+        width: 50%;
+        box-sizing: border-box;
+    }
+}
 
 
 /* Small screens */
@@ -469,6 +492,19 @@ section.talk {
         }
     }
 
+    // Layout
+    .layout_two_columns {
+        overflow: hidden;
+
+        .column {
+            float: none;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+        }
+    }
 
     // About me
     section.about {
