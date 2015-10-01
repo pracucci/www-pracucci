@@ -1,6 +1,6 @@
 ---
 layout:         post
-title:          What are we developing for?
+title:          Who are we developing for?
 keywords:       browsers, market, share, 2015
 tags:           Chrome
 date:           2015-10-01 18:00:00 GMT
@@ -12,7 +12,7 @@ The following stats don't reflect the state of the web, but the state of our mar
 
 **Internet Explorer + Edge count 6,82%** on website and an extremely poor 3% on widget. Even Android Browser has a greater market share, but **we currently spend much more time testing IE8+ than any other browser vendor** (honestly most of our mobile tests focus on Chrome and Safari, Android Browser gets very few attention by us).
 
-**Lesson learned:** are we developing for legacy browsers or customers? The time to focus on secondary mobile browsers has come, while we can definitely spend less time on IE, and maybe drop IE8 and IE9 support soon.
+**Lesson learned:** are we developing to support legacy browsers or customers? The question probably sounds silly and its answer obvious to you, but it actually opened my eyes. The time to focus on secondary mobile browsers has come, while we can definitely spend less time on IE, and maybe drop IE8 and IE9 support soon.
 
 
 
