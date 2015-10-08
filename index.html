@@ -1,34 +1,39 @@
 ---
-layout: default
+layout: basic
 ---
 
+<div class="content">
 
-<!-- About me -->
-<section class="about">
-    <h2>I love building products.</h2>
-    <img src="{{ site.baseurl }}/images/about-me.jpg" width="200" height="200" />
+    <!-- Intro -->
+    <section class="home_intro">
+        <img src="{{ site.baseurl }}/images/home_me.jpg" alt="Marco Pracucci" />
 
-    <p>I'm an husband, father and geek. I love technology applied to build great products. I spend most of time between family and coding at <a href="https://www.spreaker.com">Spreaker</a>, where I'm currently CTO. I've a wide technical background that ranges from distributed systems to mobile development.</p>
-    <p><em>Living in Rimini, Italy.</em></p>
+        <h1>Marco Pracucci</h1>
+        <p>I'm an husband, father and software engineer.</p>
+        <p>I love building products. I spend most of my time between family and coding at <a href="https://www.spreaker.com">Spreaker</a>, where I'm currently CTO. I've a wide technical background that ranges from scalable distributed systems to mobile development.</p>
+    </section>
 
-    <p class="about_socials">
+
+    <!-- Socials -->
+    <section class="home_socials">
         <a href="https://github.com/pracucci" class="about_social github" title="Me on GitHub">GitHub</a>
         <a href="https://twitter.com/pracucci" class="about_social twitter" title="Me on Twitter">Twitter</a>
-    </p>
-</section>
+    </section>
 
 
-<!-- Latest articles -->
-<h1 id="articles">Latest Articles <a href="{{ site.baseurl }}/feed.xml" class="articles_rss">RSS Feed</a></h1>
-<ul class="articles">
-    {% for post in paginator.posts %}
-        <li class="article">
-            <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-            <time datetime="{{ post.date }}">
-                <span class="day">{{ post.date | date: "%d" }}</span>
-                <span class="month">{{ post.date | date: "%b" }}</span>
-                <span class="year">{{ post.date | date: "%Y" }}</span>
-            </time>
-        </li>
-    {% endfor %}
-</ul>
+    <!-- Latest articles -->
+    <h1 id="articles">Latest Articles <a href="{{ site.baseurl }}/feed.xml" class="home_articles_rss">RSS Feed</a></h1>
+    <ul class="home_articles">
+        {% for post in paginator.posts %}
+            <li class="home_article">
+                <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+                <time datetime="{{ post.date }}">
+                    <span class="day">{{ post.date | date: "%d" }}</span>
+                    <span class="month">{{ post.date | date: "%b" }}</span>
+                    <span class="year">{{ post.date | date: "%Y" }}</span>
+                </time>
+            </li>
+        {% endfor %}
+    </ul>
+
+</div>
