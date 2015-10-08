@@ -24,6 +24,7 @@ $paragraph_font_family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', san
 $paragraph_line_height: $baseline;
 $paragraph_text_color: #585858;
 $paragraph_text_light_color: #999999;
+$accent_color: #d14;
 
 
 /* Typography */
@@ -235,7 +236,7 @@ article {
             font-size: 30px;
             font-weight: bold;
             line-height: $baseline*1.25;
-            color: #d14;
+            color: $accent_color;
             margin-bottom: 0;
         }
     }
@@ -285,11 +286,24 @@ article {
         display: inline-block;
         line-height: $paragraph_line_height;
         margin-bottom: $baseline/2;
+        margin-right: 20px;
         font-style: italic;
 
         &, a {
             color: $paragraph_text_light_color;
             text-decoration: none;
+        }
+    }
+
+    .comments {
+        display: inline-block;
+        font-size: $font_size_small;
+
+        a {
+            color: $accent_color;
+            text-decoration: none;
+            text-transform: uppercase;
+            white-space: nowrap;
         }
     }
 
@@ -331,7 +345,7 @@ article {
     code {
         font-family: monospace;
         font-size: 14px;
-        color: #d14;
+        color: $accent_color;
         margin-bottom: $baseline/2;
     }
 
@@ -461,6 +475,7 @@ section.talk {
             width: auto;
             text-align: left;
             margin-bottom: $baseline/2;
+            margin-right: 20px;
             text-transform: none;
             font-style: italic;
 
@@ -477,13 +492,9 @@ section.talk {
             margin-bottom: $baseline/4;
         }
 
-        .author {
-            font-style: italic;
+        .author,
+        .comments {
             margin-bottom: $baseline/2;
-
-            &:before {
-                content: ' / ';
-            }
         }
     }
 

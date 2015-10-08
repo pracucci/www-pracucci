@@ -14,26 +14,43 @@ layout: page
         {% endfor %}
 {% endfor %}{% endcapture %}
 
-<section class="posts">
-    <article>
-        <h1><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h1>
-        <time datetime="{{ page.date }}">
-            <span class="day">{{ page.date | date: "%d" }}</span>
-            <span class="month">{{ page.date | date: "%b" }}</span>
-            <span class="year">{{ page.date | date: "%Y" }}</span>
-        </time>
-        <span class="author">by <a href="{{ site.baseurl }}">Marco Pracucci</a></span>
 
+<article>
+    <h1><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h1>
+    <time datetime="{{ page.date }}">
+        <span class="day">{{ page.date | date: "%d" }}</span>
+        <span class="month">{{ page.date | date: "%b" }}</span>
+        <span class="year">{{ page.date | date: "%Y" }}</span>
+    </time>
+    <span class="author">by <a href="{{ site.baseurl }}">Marco Pracucci</a></span>
+    <span class="comments"><a href="{{ site.baseurl }}{{ page.url }}#disqus_thread">Comments</a></span>
 
-        {{ content }}
+    {{ content }}
 
-        {% if list_related_articles != "" %}
-            <h3>Related articles</h3>
-            <ul>
-                {{ list_related_articles | strip }}
-            </ul>
-        {% endif %}
-    </article>
-</section>
+    {% if list_related_articles != "" %}
+        <h3>Related articles</h3>
+        <ul>
+            {{ list_related_articles | strip }}
+        </ul>
+    {% endif %}
 
+    <!-- Disqus -->
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'pracucci';
 
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+</article>
