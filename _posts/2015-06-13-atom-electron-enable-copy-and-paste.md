@@ -23,18 +23,23 @@ var template = [{
     ]}, {
     label: "Edit",
     submenu: [
-        { label: "Undo", accelerator: "Command+Z", selector: "undo:" },
-        { label: "Redo", accelerator: "Shift+Command+Z", selector: "redo:" },
+        { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+        { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
         { type: "separator" },
-        { label: "Cut", accelerator: "Command+X", selector: "cut:" },
-        { label: "Copy", accelerator: "Command+C", selector: "copy:" },
-        { label: "Paste", accelerator: "Command+V", selector: "paste:" },
-        { label: "Select All", accelerator: "Command+A", selector: "selectAll:" }
+        { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+        { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+        { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+        { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
     ]}
 ];
 
 Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 {% endhighlight %}
+
+
+## Cross-platform support
+
+**UPDATE**: as currectly suggested by Raghu in the comments below, you can use the special accelerator modifier `CmdOrCtrl` to get a cross-platform behavior. `CmdOrCtrl` will use `Command` on OSX and `Ctrl` on Windows and Linux.
 
 
 ## Working example
@@ -76,13 +81,13 @@ app.on("ready", function () {
         ]}, {
         label: "Edit",
         submenu: [
-            { label: "Undo", accelerator: "Command+Z", selector: "undo:" },
-            { label: "Redo", accelerator: "Shift+Command+Z", selector: "redo:" },
+            { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+            { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
             { type: "separator" },
-            { label: "Cut", accelerator: "Command+X", selector: "cut:" },
-            { label: "Copy", accelerator: "Command+C", selector: "copy:" },
-            { label: "Paste", accelerator: "Command+V", selector: "paste:" },
-            { label: "Select All", accelerator: "Command+A", selector: "selectAll:" }
+            { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+            { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+            { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+            { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
         ]}
     ];
 
