@@ -1,6 +1,6 @@
 ---
 layout:         post
-title:          "Distributed Matters '15: Takeaways"
+title:          "Distributed Matters Conf: Takeaways"
 keywords:       scalability, distributed matters, docker, containers, microservices
 date:           2015-11-22 14:00:00 GMT
 ---
