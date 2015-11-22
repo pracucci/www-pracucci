@@ -94,3 +94,4 @@ Another nice talk was about measuring server and client-side performances, in a 
 **Docker** is fascinating and solve many problems. The community is very active, there're some open points but the technology is evolving fast, and new tools born every day. **Takeaway: it's something really worth to seriously start playing with**.
 
 **Microservices** principles make much sense, but it looks an *unknown unknown* world to me. Some companies got it right, others don't, many developers are experimenting. **Takeaway: don't put it to production, if you don't need it**.
+
