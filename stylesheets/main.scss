@@ -221,6 +221,15 @@ article {
     padding-left: 100px;
     margin-bottom: $baseline*3;
 
+    a {
+        color: $accent_color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     time {
         position: absolute;
         top: 0;
@@ -267,7 +276,7 @@ article {
         font-weight: $font_weight_medium;
         color: $title_text_color;
         margin-bottom: $baseline/2;
-        padding-top: $baseline/2;
+        padding-top: $baseline/4;
 
         &:first-child {
             margin-top: 0;
@@ -389,6 +398,17 @@ article {
                 padding-bottom: 0;
             }
         }
+    }
+
+    // Quotes
+    blockquote > p {
+        text-align: center;
+        font-size: $font_size_medium;
+        font-style: italic;
+        font-weight: $font_weight_medium;
+        color: $title_text_color;
+        margin-left: 20%;
+        margin-right: 20%;
     }
 }
 
