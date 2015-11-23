@@ -21,7 +21,7 @@ Containers fit pretty well to deploy **stateless services**. Since it has no per
 
 However, your application at some point needs to store some persistent data, like databases, and here feedback diverges. Some people, like [DEIS](http://deis.io/) developers, suggests to run databases in the old fashion way, so far. Others, like Kelsey from Google, say it's perfectly fine to run in a container. Some others, like [ClusterHQ](https://clusterhq.com/), built a data volume manager ([Flokker](https://github.com/ClusterHQ/flocker)) to run Dockerized databases in production and so on.
 
-Looking at how many different, sometime opposite, appraoches are emerging, it makes me feel there's still much experimentation around it, thinner benefits migrating stateful services to containers and definitely not a long-time proved production experience.
+Looking at how many different, sometime opposite, approaches are emerging, it makes me feel there's still much experimentation around it, thinner benefits migrating stateful services to containers and definitely not a long-time proved production experience.
 
 > Running a reliable stateful service is pain. Someone saying differently, is selling something.
 
@@ -62,7 +62,7 @@ The cost of this nice solution, is that **the setup is not that easy and require
 Finally, a note about a common question: **why not using AWS RDS**, that provides most of such features out of the box? Zalando has three good reasons:
 
 - **Vendor lock**: migrating away from RDS is possible, but pretty hard to do (expecially if you aim at no downtime)
-- **No superuser access**: no superuser access to database, but a limiter `rds_superuser` role
+- **No superuser access**: no superuser access to database, but a limited `rds_superuser` role
 - **No untrusted languages support**
 
 
