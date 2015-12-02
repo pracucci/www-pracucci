@@ -21,6 +21,8 @@ If you're building a Mac app with Electron (formerly known as Atom Shell), you w
 
 At the time of writing it's not allowed to publish an Electron application to the Mac App Store, so you have to sign it with a [Developer ID certificate](https://developer.apple.com/account/mac/certificate/certificateList.action) and ask your users to download and install it manually. This is actually a strong limitation and I hope things will change in the next future.
 
+**UPDATE on Dec 2nd, 2015:** since Electron 0.34.0, apps can be submitted to Mac App Store. You can get all information in the [Mac App Store Submission Guide](https://github.com/atom/electron/blob/master/docs/tutorial/mac-app-store-submission-guide.md).
+
 
 ### 1. Get and install a Developer ID Certificate
 
