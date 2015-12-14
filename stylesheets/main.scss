@@ -401,14 +401,40 @@ article {
     }
 
     // Quotes
-    blockquote > p {
+    blockquote {
         text-align: center;
-        font-size: $font_size_medium;
-        font-style: italic;
-        font-weight: $font_weight_medium;
-        color: $title_text_color;
-        margin-left: 20%;
-        margin-right: 20%;
+        margin: $baseline 0;
+
+        > p {
+            display: inline-block;
+            position: relative;
+            max-width: 60%;
+            margin: 0;
+
+            &:before,
+            &:after {
+                position: absolute;
+                display: block;
+                font-family: "Times New Roman";
+                font-size: 70px;
+                color: $accent_color;
+            }
+
+            &:before {
+                content: '“';
+                vertical-align: text-bottom;
+                top: 0;
+                left: -40px;
+            }
+
+            &:after {
+                content: '“';
+                vertical-align: text-top;
+                transform: rotate(180deg);
+                bottom: 0;
+                right: -40px;
+            }
+        }
     }
 }
 
