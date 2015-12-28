@@ -1,6 +1,6 @@
 ---
 layout:         post
-title:          "Last week in the industry #1"
+title:          "Last week in the industry, Dec 21st"
 keywords:
 date:           2015-12-21 10:00:00 GMT
 ---
