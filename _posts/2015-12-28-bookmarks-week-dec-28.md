@@ -1,7 +1,7 @@
 ---
 layout:         post
-title:          "Last week in the industry, Dec 28th"
-keywords:
+title:          "Bookmarks - Week of Dec 28th"
+tags:           Bookmarks
 date:           2015-12-28 15:00:00 GMT
 ---
 
