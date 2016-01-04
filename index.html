@@ -26,14 +26,16 @@ layout: basic
     <h1 id="articles">Latest Articles <a href="{{ site.baseurl }}/feed.xml" class="home_articles_rss">RSS Feed</a></h1>
     <ul class="home_articles">
         {% for post in paginator.posts %}
-            <li class="home_article">
-                <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-                <time datetime="{{ post.date }}">
-                    <span class="day">{{ post.date | date: "%d" }}</span>
-                    <span class="month">{{ post.date | date: "%b" }}</span>
-                    <span class="year">{{ post.date | date: "%Y" }}</span>
-                </time>
-            </li>
+            {% unless post.title contains 'Bookmarks -' %}
+                <li class="home_article">
+                    <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+                    <time datetime="{{ post.date }}">
+                        <span class="day">{{ post.date | date: "%d" }}</span>
+                        <span class="month">{{ post.date | date: "%b" }}</span>
+                        <span class="year">{{ post.date | date: "%Y" }}</span>
+                    </time>
+                </li>
+            {% endunless %}
         {% endfor %}
     </ul>
 
