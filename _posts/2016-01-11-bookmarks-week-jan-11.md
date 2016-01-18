@@ -2,7 +2,7 @@
 layout:         post
 title:          "Bookmarks - Week of Jan 11th"
 tags:           Bookmarks
-date:           2016-01-04 10:00:00 GMT
+date:           2016-01-11 10:00:00 GMT
 ---
 
 - [Using npm offline](https://addyosmani.com/blog/using-npm-offline/) - Offline installation of npm packages.
