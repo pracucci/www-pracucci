@@ -28,7 +28,7 @@ At the time of writing it's not allowed to publish an Electron application to th
 
 Once you got your [Developer ID certificate](https://developer.apple.com/account/mac/certificate/certificateList.action), you should install it into your Mac's Keychain: a double click on the certificate file should be enough. The image below shows your what you should see once the certification has been successfully installed into your Keychain. The text between parenthesis is the *identity* and will be used in the next step.
 
-![](/images/2015-06-07-certificate.jpg)
+{% image 2015-06-07-certificate.jpg %}
 
 
 ### 2. Code signature

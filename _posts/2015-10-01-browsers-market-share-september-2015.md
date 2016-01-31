@@ -42,7 +42,7 @@ We currently track browsers metrics both on Spreaker website, and Spreaker widge
 </div>
 <div class="column">
 
-![]({{ site.baseurl }}/images/2015-10-01-browser-share-spreaker-website.png)
+{% image 2015-10-01-browser-share-spreaker-website.png %}
 
 </div>
 </div>
@@ -70,7 +70,7 @@ We currently track browsers metrics both on Spreaker website, and Spreaker widge
 </div>
 <div class="column">
 
-![]({{ site.baseurl }}/images/2015-10-01-browser-share-spreaker-widget.png)
+{% image 2015-10-01-browser-share-spreaker-widget.png %}
 
 </div>
 </div>

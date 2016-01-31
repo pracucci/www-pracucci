@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.pracucci.com/sitemap.xml
+Sitemap: https://pracucci.com/sitemap.xml

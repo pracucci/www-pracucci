@@ -9,7 +9,7 @@ date:           2015-06-18 17:00:00 GMT
 
 Native App install banners landed in [Chrome 44 Beta for Android](https://play.google.com/store/apps/details?id=com.chrome.beta) and will be soon available in the stable version. Native App banners are a new powerful feature that let users to install and switch to your native app, **without leaving the browser**.
 
-![](/images/2015-06-18-chrome-related-applications.jpg)
+{% image 2015-06-18-chrome-related-applications.jpg %}
 
 
 ### Criteria for activation

@@ -7,7 +7,7 @@ date:           2015-06-30 05:00:00 GMT
 
 Today I spent some time to compile `ffmpeg` libs on Windows. [Most documentation out there](https://trac.ffmpeg.org/wiki/CompilationGuide) is not updated to 2015, yet compiling `ffmpeg` on Windows is pretty easy. If you're looking for a copy and paste solution, keep reading.
 
-[![]({{ site.baseurl }}/images/2015-06-30-ffmpeg.png)](https://www.ffmpeg.org)
+[{% image 2015-06-30-ffmpeg.png %}](https://www.ffmpeg.org)
 
 
 ## Pre-requisites

@@ -1,26 +1,26 @@
 # Marco Pracucci
 
 
-### Dependencies
-
-
-The `github-pages` gem contains Jekyll itself and all the plugins officially supported on Github Pages.
+##### Dependencies
 
 ```
-gem install github-pages
+gem install jekyll-compass
+gem install jekyll-sitemap
+gem install jekyll-assets
+gem install uglifier
+npm install
 ```
 
-Until `github-pages` gem don't update `jekyll-sitemap` to at least 0.6.2, in order to avoid a nasty warning every time you reload the page, you can update the plugin to the latest version running:
+##### Run
 
 ```
-gem install github-pages
+grunt dev_serve
+grunt dev_build
+open http://localhost:4000
 ```
 
-
-### Local preview
+### Publish
 
 ```
-jekyll serve --watch --baseurl ''
+grunt publish
 ```
-
-then open http://localhost:4000

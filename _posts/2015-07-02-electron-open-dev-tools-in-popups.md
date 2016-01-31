@@ -19,4 +19,4 @@ windows[1].openDevTools();
 {% endhighlight %}
 
 
-<img src="{{ site.base_url }}/images/2015-07-02-electron-popup-devtools.gif" width="681" height="583" />
+{% image 2015-07-02-electron-popup-devtools.gif width="681" height="583" %}

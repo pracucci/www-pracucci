@@ -18,5 +18,5 @@ date:           2015-12-21 10:00:00 GMT
 
 Perhaps the most important startup equation? Constant improvement trumps all. Spotted at [@homebrew](https://twitter.com/homebrew) HQ.
 
-![](/images/2015-12-21-pic.jpg)
+{% image 2015-12-21-pic.jpg %}
 Source: [Jed Christiansen](https://twitter.com/jedc)

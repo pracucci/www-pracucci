@@ -1,0 +1,7 @@
+---
+require:
+- jekyll-compass
+
+project_path: /workspace/www-pracucci/
+http_path: /
+images_dir: _assets/images

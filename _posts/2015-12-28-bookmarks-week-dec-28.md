@@ -14,7 +14,7 @@ date:           2015-12-28 15:00:00 GMT
 - [Hackercouch](https://hackercouch.com/) - Couchsurfing for Hackers, by Hackers.
 - [Bitcoin is Unsustainable](http://motherboard.vice.com/read/bitcoin-is-unsustainable) - An ipotesys on electricity power required by a large scale Bitcoin adoption.
 - An opinionable tweet by [@randfish](https://twitter.com/randfish) asserting "*Mobile isn't killing desktop. It's killing all our free time.*"
-![](/images/2015-12-28-mobile-killing-desktop.png)
+{% image 2015-12-28-mobile-killing-desktop.png %}
 
 
 ### Video of the week

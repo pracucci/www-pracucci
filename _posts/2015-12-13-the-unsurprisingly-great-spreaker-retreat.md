@@ -27,8 +27,8 @@ I noticed total honesty and transparency from him: it made me feel comfortable w
 **Thanks Spreaker** for such a great retreat... looking forward to attend the next one!
 
 
-![](/images/2015-12-13-retreat-1.jpg)
-![](/images/2015-12-13-retreat-2.jpg)
-![](/images/2015-12-13-retreat-3.jpg)
-![](/images/2015-12-13-retreat-4.jpg)
-![](/images/2015-12-13-retreat-5.jpg)
+{% image 2015-12-13-retreat-1.jpg %}
+{% image 2015-12-13-retreat-2.jpg %}
+{% image 2015-12-13-retreat-3.jpg %}
+{% image 2015-12-13-retreat-4.jpg %}
+{% image 2015-12-13-retreat-5.jpg %}

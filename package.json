@@ -1,0 +1,26 @@
+{
+  "name": "www-pracucci",
+  "version": "1.0.0",
+  "description": "pracucci.com website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pracucci/pracucci.github.io.git"
+  },
+  "author": "Marco Pracucci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pracucci/pracucci.github.io/issues"
+  },
+  "homepage": "https://github.com/pracucci/pracucci.github.io#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-aws-s3": "^0.14.4",
+    "grunt-contrib-compress": "^0.14.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-shell": "^1.1.2"
+  }
+}

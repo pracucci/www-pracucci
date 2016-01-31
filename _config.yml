@@ -1,16 +1,39 @@
 title:          Marco Pracucci
 baseurl:        ""
-url:            http://www.pracucci.com
+url:            https://pracucci.com
+permalink:      none
+paginate:       25
+paginate_path:  "page/:num"
+highlighter:    pygments
 
-paginate: 25
-paginate_path: "page/:num"
-
-highlighter: pygments
-
-permalink: none
+exclude:
+    - "Gruntfile.js"
+    - "Gruntfile.credentials.js"
+    - "node_modules"
+    - "README.md"
+    - package.json
 
 gems:
+    - jekyll-compass
     - jekyll-sitemap
 
-sass:
-    sass_dir: stylesheets
+assets:
+    # Destination of generated assets
+    dirname: assets
+    baseurl: /assets/
+
+    # Sources of assets
+    sources:
+        - _assets/css
+        - _assets/images
+
+    # Compressors
+    # js_compressor:  uglifier
+    css_compressor: sass
+    cache: false
+
+    # Versioning
+    cachebust: hard
+
+    # Gzip compression
+    gzip: [ text/css, application/javascript ]
