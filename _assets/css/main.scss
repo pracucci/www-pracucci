@@ -20,11 +20,11 @@ $page_background_color: #fbfbfb;
 
 $title_text_color: #262526;
 
-$paragraph_font_family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-$paragraph_line_height: $baseline;
-$paragraph_text_color: #585858;
+$paragraph_font_family: "Calibre", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$paragraph_line_height: 30px;
+$paragraph_text_color: #323232;
 $paragraph_text_light_color: #999999;
-$accent_color: #d14;
+$accent_color: #d90000;
 
 
 /* Typography */
@@ -32,7 +32,8 @@ body {
   box-sizing: border-box;
   color: $paragraph_text_color;
   background: $page_background_color;
-  font-size: 16px;
+  font-size: $font_size_default;
+  font-weight: $font_weight_default;
   font-family: $paragraph_font_family;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
