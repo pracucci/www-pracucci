@@ -19,7 +19,7 @@ grunt dev_build
 open http://localhost:4000
 ```
 
-### Publish
+##### Publish
 
 ```
 grunt publish
