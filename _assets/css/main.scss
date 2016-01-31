@@ -197,8 +197,12 @@ li.home_article {
         font-weight: $font_weight_medium;
 
         a {
-            color: $title_text_color;
+            color: $accent_color;
             text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 
