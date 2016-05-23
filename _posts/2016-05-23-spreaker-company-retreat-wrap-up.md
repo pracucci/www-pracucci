@@ -77,3 +77,8 @@ This was the second official company retreat ([the first one was last December i
 - **Tight schedule**: the retreat lasted from Thursday evening till Sunday morning, so it covered the full weekend. We worked on Thu, left for the retreat, travelled back on Sun afternoon and on Mon morning we were back to work. Having no free day in between was pretty tough.
 
 Tired, but happy, I'm back home, full of positive energy and ideas, looking forward for the next retreat!
+
+
+## The full story, tweet by tweet
+
+<div class="storify"><iframe src="//storify.com/spreaker/spreaker-retreat-spring-2016/embed?header=false&border=false" width="100%" height="750" frameborder="no" allowtransparency="true"></iframe><script src="//storify.com/spreaker/spreaker-retreat-spring-2016.js?header=false&border=false"></script><noscript>[<a href="//storify.com/spreaker/spreaker-retreat-spring-2016" target="_blank">View the story "Spreaker Retreat " on Storify</a>]</noscript></div>
