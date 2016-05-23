@@ -78,14 +78,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compress');
 
     grunt.registerTask(
-        "dev_serve",
+        "serve",
         [
             "shell:serve_site",
         ]
     );
 
     grunt.registerTask(
-        "dev_build",
+        "dev",
         [
             "shell:build_site_for_dev",
             "watch:build_site_for_dev"
