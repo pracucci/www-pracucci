@@ -38,7 +38,7 @@ If you're curious about the talks, here is the full list:
 - **Any questions? Random thoughts on our weekly meeting** _by Tonia (Community and Marketing)_
 - **Newbies: two interns at Spreaker** _by Sergio & Chiara (PR and Marketing)_
 - **What's the Story? Storytelling in Marketing** _by Anna (Community and Marketing)_
-- **How to stay sane while working from home** _by Alessandro (Engineer)_
+- **How to stay sane while working from home** _by Sandro (Engineer)_
 - **The mysterious side of Administration** _by Giada (Administration)_
 - **Why am i building that?** _by Emanuele (Engineer)_
 - **Development is not (just) pushing features** _by me_
@@ -67,6 +67,8 @@ The retreat schedule was pretty tight and packed of stuff to do. It was supposed
 
 {% image 2016-05-23-bbq.jpg %}
 
+{% image 2016-05-23-cooking.jpg %}
+
 
 ## The Next Retreat
 
@@ -79,6 +81,6 @@ This was the second official company retreat ([the first one was last December i
 Tired, but happy, I'm back home, full of positive energy and ideas, looking forward for the next retreat!
 
 
-## The full story, tweet by tweet
+## The Full Story, Tweet by Tweet
 
 <div class="storify"><iframe src="//storify.com/spreaker/spreaker-retreat-spring-2016/embed?header=false&border=false" width="100%" height="750" frameborder="no" allowtransparency="true"></iframe><script src="//storify.com/spreaker/spreaker-retreat-spring-2016.js?header=false&border=false"></script><noscript>[<a href="//storify.com/spreaker/spreaker-retreat-spring-2016" target="_blank">View the story "Spreaker Retreat " on Storify</a>]</noscript></div>
