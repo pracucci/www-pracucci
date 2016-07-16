@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- No favicon -->
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+</head>
+<body>
+    <a href="./spreaker-widget-multi.html">Reload page</a>
+
+
+    <h2>Via Loader</h2>
+    <a class="spreaker-player" href="https://www.spreaker-beta.com/user/marco" data-resource="show_id=64" data-width="100%" data-height="300px">Listen to Marco's podcasts on Spreaker</a>
+    <script async src="https://widget.spreaker-beta.com/widgets.js"></script>
+
+
+    <h2>Direct iframe</h2>
+    <iframe src="https://widget.spreaker-beta.com/player?show_id=64" width="100%" height="300px" frameborder="0" sandbox="allow-scripts"></iframe>
+
+
+    <h2>Loader inside a sandboxed iframe</h2>
+    <iframe src="https://pracucci.com/spreaker-widget-loader.html" width="100%" height="300px" frameborder="0" sandbox="allow-scripts"></iframe>
+
+</body>
+</html>
