@@ -14,8 +14,8 @@ npm install
 ##### Run
 
 ```
-grunt build
 grunt dev
+grunt serve
 open http://localhost:4000
 ```
 
