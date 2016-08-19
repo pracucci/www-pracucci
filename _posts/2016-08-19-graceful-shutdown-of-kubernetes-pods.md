@@ -35,9 +35,9 @@ Let's say your `Dockerfile` ends with a `CMD` in the shell form:
 CMD myapp
 {% endhighlight %}
 
-The shell form runs the command with `/bin/sh -c myapp`, so that process that will get the `SIGTERM` is actually `/bin/sh` and it's child `myapp`. Depending on the actual shell you're running, it could or could not pass the signal to its children.
+The shell form runs the command with `/bin/sh -c myapp`, so the process that will get the `SIGTERM` is actually `/bin/sh` and not its child `myapp`. Depending on the actual shell you're running, it could or could not pass the signal to its children.
 
-The shell shipped by default with **Alpine Linux** does **not pass signals to children**, while Bash does it. So, you've a couple of options to ensure the signal will be correctly passed to the app.
+For example, the shell shipped by default with **Alpine Linux** does **not pass signals to children**, while Bash does it. If your shell doesn't pass signals to children, you've a couple of options to ensure the signal will be correctly delivered to the app.
 
 
 ### Option #1: run the CMD in the exec form
