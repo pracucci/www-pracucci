@@ -6,6 +6,7 @@ sitemap: false
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Widget Demo</title>
 
     <!-- No favicon -->
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
@@ -13,11 +14,73 @@ sitemap: false
 <body>
     <a href="./spreaker-widget-single.html">Reload page</a>
 
-    <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;">
-        <a class="spreaker-player" href="https://www.spreaker.com/user/bertallot" data-resource="user_id=6006198" data-playlist="user" data-width="100%" data-height="100%">Listen to Marco's podcasts on Spreaker</a>
+    <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 50px;">
+        <a id="my-widget" class="spreaker-player" href="https://www.spreaker-beta.com/user/bertallot" data-resource="user_id=1" data-playlist="user" data-width="100%" data-height="100%">Listen to Marco's podcasts on Spreaker</a>
     </div>
 
-    <script async src="https://widget.spreaker.com/widgets.js"></script>
+    <div style="position: fixed; bottom: 0px; height: 40px;">
+        Commands: <br />
+
+        <button id="cmd-play">PLAY</button>
+        <button id="cmd-pause">PAUSE</button>
+        <button id="cmd-seek">SEEK to 30s</button>
+        <button id="cmd-load">LOAD</button>
+        <button id="cmd-play-prev">PLAY PREV</button>
+        <button id="cmd-play-next">PLAY NEXT</button>
+        <button id="cmd-get-position">GET POSITION</button>
+        <button id="cmd-get-duration">GET DURATION</button>
+        <button id="cmd-get-state">GET STATE</button>
+    </div>
+
+    <script async src="https://widget.spreaker-beta.com/widgets.js"></script>
+
+    <script>
+    window.onload = function() {
+        var widget = SP.getWidget("my-widget");
+
+        document.getElementById("cmd-play").addEventListener("click", function() {
+            widget.play();
+        });
+
+        document.getElementById("cmd-pause").addEventListener("click", function() {
+            widget.pause();
+        });
+
+        document.getElementById("cmd-seek").addEventListener("click", function() {
+            widget.seek(30000);
+        });
+
+        document.getElementById("cmd-load").addEventListener("click", function() {
+            widget.load(142091);
+        });
+
+        document.getElementById("cmd-play-prev").addEventListener("click", function() {
+            widget.playPrev();
+        });
+
+        document.getElementById("cmd-play-next").addEventListener("click", function() {
+            widget.playNext();
+        });
+
+        document.getElementById("cmd-get-position").addEventListener("click", function() {
+            widget.getPosition(function(position, progress, duration) {
+                console.debug("Position: %o Progress: %o Duration: %o", position, progress, duration);
+            });
+        });
+
+        document.getElementById("cmd-get-duration").addEventListener("click", function() {
+            widget.getDuration(function(duration) {
+                console.debug("Duration: %o", duration);
+            });
+        });
+
+        document.getElementById("cmd-get-state").addEventListener("click", function() {
+            widget.getState(function(episode, state, isPlaying) {
+                console.debug("Episode: %o State: %o isPlaying: %o", episode, state, isPlaying);
+            });
+        });
+    };
+</script>
 
 </body>
 </html>
