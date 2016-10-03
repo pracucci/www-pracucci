@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 
         "watch": {
             "build_site_for_dev": {
-                files: ["index.html", "*.yml", "_assets/**/*", "_data/**/*", "_layouts/**/*", "_posts/**/*", ],
+                files: ["*.yml", "*.html", "_assets/**/*", "_data/**/*", "_layouts/**/*", "_posts/**/*", ],
                 tasks: ["shell:build_site_for_dev"],
                 options: {
                     interrupt: true,

@@ -1,0 +1,25 @@
+---
+sitemap: false
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Widget Demo</title>
+
+    <!-- No favicon -->
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+</head>
+<body>
+    <a id="episode-9519971" class="spreaker-player" href="https://www.spreaker.com" data-resource="episode_id=9519971" data-width="100%" data-height="200px"> Listen to my podcast</a>
+
+    <script async src="https://widget.spreaker.com/widgets.js"></script>
+    <script>
+        window.addEventListener("load", function() {
+            SP.getWidget("episode-9519971").seek(((17 * 60) + 36) * 1000);
+        });
+    </script>
+
+</body>
+</html>
