@@ -1,0 +1,29 @@
+---
+sitemap: false
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- No favicon -->
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+</head>
+<body>
+
+    <section>
+        <h1>Audio without Content-Length</h1>
+        <p>Start playing. The audio will jump to the beginning at time 02:05 (you can keep track with a timer).</p>
+        <audio src="https://api.spreaker.com/listen/episode/9562720/shoutcast?force_http=true&preroll=false" controls></audio>
+    </section>
+
+
+    <section>
+        <h1>Audio with Content-Length</h1>
+        <p>This is the same exact audio file above, but the web server includes Content-Length in the response. It plays fine.</p>
+        <audio src="https://api.spreaker.com/listen/episode/9562720/http?force_http=true&preroll=false" controls></audio>
+    </section>
+
+</body>
+</html>
