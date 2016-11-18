@@ -27,14 +27,16 @@ layout: basic
     <ul class="home_articles">
         {% for post in paginator.posts %}
             {% unless post.title contains 'Bookmarks -' and forloop.index != 1 %}
-                <li class="home_article">
-                    <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-                    <time datetime="{{ post.date }}">
-                        <span class="day">{{ post.date | date: "%d" }}</span>
-                        <span class="month">{{ post.date | date: "%b" }}</span>
-                        <span class="year">{{ post.date | date: "%Y" }}</span>
-                    </time>
-                </li>
+                {% unless post.hidden %}
+                    <li class="home_article">
+                        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+                        <time datetime="{{ post.date }}">
+                            <span class="day">{{ post.date | date: "%d" }}</span>
+                            <span class="month">{{ post.date | date: "%b" }}</span>
+                            <span class="year">{{ post.date | date: "%Y" }}</span>
+                        </time>
+                    </li>
+                {% endunless %}
             {% endunless %}
         {% endfor %}
     </ul>

@@ -64,6 +64,7 @@ module.exports = function(grunt) {
                     { action: "upload", cwd: "_site", src: "**/*.txt",          dest: "/", expand: true, params: { CacheControl: "max-age=0" } },
                     { action: "upload", cwd: "_site", src: "assets/**/*.png",   dest: "/", expand: true, params: { CacheControl: "max-age=31536000" } },
                     { action: "upload", cwd: "_site", src: "assets/**/*.jpg",   dest: "/", expand: true, params: { CacheControl: "max-age=31536000" } },
+                    { action: "upload", cwd: "_site", src: "assets/**/*.ai",    dest: "/", expand: true, params: { CacheControl: "max-age=31536000" } },
                     { action: "upload", cwd: "_site", src: "assets/**/*.css.gz",dest: "/", expand: true, params: { CacheControl: "max-age=31536000" } },
                     { action: "upload", cwd: "_site", src: "assets/**/*.ico",   dest: "/", expand: true, params: { CacheControl: "max-age=31536000" } }
                 ]

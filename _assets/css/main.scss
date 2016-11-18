@@ -195,15 +195,6 @@ li.home_article {
     h2 {
         font-size: $font_size_medium;
         font-weight: $font_weight_medium;
-
-        a {
-            color: $accent_color;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
     }
 
     time {
@@ -227,12 +218,8 @@ article {
     margin-bottom: $baseline*3;
 
     a {
-        color: $accent_color;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
+        color: $paragraph_text_color;
+        font-weight: $font_weight_medium;
     }
 
     time {
@@ -364,6 +351,13 @@ article {
     }
 
     // Code block
+    p {
+        code:first-child:last-child {
+            color: #111111;
+        }
+    }
+
+    // Highlighted code block
     pre {
         background: #eaeaea;
         padding: $baseline/6 $baseline/2;
