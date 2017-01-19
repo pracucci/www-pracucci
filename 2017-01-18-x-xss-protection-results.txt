@@ -1,0 +1,959 @@
+google.com 	 < X-XSS-Protection: 1; mode=block
+youtube.com 	 < X-XSS-Protection: 1; mode=block; report=https://www.google.com/appserve/security-bugs/log/youtube
+facebook.com 	 < X-XSS-Protection: 0
+baidu.com 	 
+yahoo.com 	 
+wikipedia.org 	 
+google.co.in 	 < X-XSS-Protection: 1; mode=block
+amazon.com 	 
+qq.com 	 
+google.co.jp 	 < X-XSS-Protection: 1; mode=block
+live.com 	 < X-XSS-Protection: 1; mode=block
+taobao.com 	 
+vk.com 	 
+tmall.com 	 
+sohu.com 	 
+twitter.com 	 < x-xss-protection: 1; mode=block
+instagram.com 	 
+linkedin.com 	 < X-XSS-Protection: 1; mode=block
+reddit.com 	 < x-xss-protection: 1; mode=block
+sina.com.cn 	 
+yahoo.co.jp 	 < X-XSS-Protection: 1; mode=block
+360.cn 	 
+google.de 	 < X-XSS-Protection: 1; mode=block
+google.co.uk 	 < X-XSS-Protection: 1; mode=block
+google.fr 	 < X-XSS-Protection: 1; mode=block
+hao123.com 	 
+ebay.com 	 < X-XSS-Protection: 1; mode=block
+google.ru 	 < X-XSS-Protection: 1; mode=block
+bing.com 	 
+msn.com 	 < X-XSS-Protection: 1
+weibo.com 	 
+netflix.com 	 < X-Xss-Protection: 1; mode=block; report=https://ichnaea.netflix.com/log/freeform/xssreport
+google.com.br 	 < X-XSS-Protection: 1; mode=block
+jd.com 	 
+tumblr.com 	 < X-XSS-Protection: 1; mode=block
+microsoft.com 	 
+wordpress.com 	 
+yandex.ru 	 < X-XSS-Protection: 1; mode=block
+onclkds.com 	 
+google.it 	 < X-XSS-Protection: 1; mode=block
+amazon.co.jp 	 
+imdb.com 	 
+t.co 	 < x-xss-protection: 1; mode=block
+apple.com 	 < X-Xss-Protection: 1; mode=block
+google.es 	 < X-XSS-Protection: 1; mode=block
+stackoverflow.com 	 
+google.com.hk 	 < X-XSS-Protection: 1; mode=block
+aliexpress.com 	 
+ok.ru 	 
+blogspot.com 	 < X-XSS-Protection: 1; mode=block
+pinterest.com 	 < X-XSS-Protection: 1; mode=block
+pornhub.com 	 
+google.ca 	 < X-XSS-Protection: 1; mode=block
+google.com.mx 	 < X-XSS-Protection: 1; mode=block
+office.com 	 
+google.com.tw 	 < X-XSS-Protection: 1; mode=block
+paypal.com 	 < X-XSS-Protection: 1; mode=block
+imgur.com 	 
+github.com 	 < X-XSS-Protection: 1; mode=block
+adobe.com 	 
+mail.ru 	 < X-XSS-Protection: 1; mode=block; report=https://cspreport.mail.ru/xxssprotection
+popads.net 	 
+naver.com 	 
+detail.tmall.com 	 
+soso.com 	 
+whatsapp.com 	 
+diply.com 	 
+dropbox.com 	 < X-Xss-Protection: 1; mode=block
+amazon.co.uk 	 
+tianya.cn 	 
+ask.com 	 
+google.com.tr 	 < X-XSS-Protection: 1; mode=block
+bbc.co.uk 	 
+bbc.com 	 
+thepiratebay.org 	 
+soundcloud.com 	 
+booking.com 	 < X-XSS-Protection: 1; mode=block
+google.com.au 	 < X-XSS-Protection: 1; mode=block
+livejasmin.com 	 
+nytimes.com 	 
+google.co.kr 	 < X-XSS-Protection: 1; mode=block
+google.co.id 	 < X-XSS-Protection: 1; mode=block
+wikia.com 	 
+twitch.tv 	 
+stackexchange.com 	 
+cnet.com 	 
+bongacams.com 	 
+wikihow.com 	 
+txxx.com 	 
+espn.com 	 
+alipay.com 	 < X-XSS-Protection: 1; mode=block
+xhamster.com 	 
+amazon.de 	 
+pixnet.net 	 
+coccoc.com 	 
+fc2.com 	 
+csdn.net 	 
+microsoftonline.com 	 
+spotify.com 	 
+theguardian.com 	 < X-XSS-Protection: 1; mode=block
+adf.ly 	 
+walmart.com 	 
+google.pl 	 < X-XSS-Protection: 1; mode=block
+service.tmall.com 	 < X-XSS-Protection: 1; mode=block
+chase.com 	 
+indeed.com 	 
+askcom.me 	 
+google.com.sg 	 < X-XSS-Protection: 1; mode=block
+amazon.in 	 
+alibaba.com 	 
+w3schools.com 	 
+google.com.sa 	 < X-XSS-Protection: 1; mode=block
+google.com.eg 	 < X-XSS-Protection: 1; mode=block
+washingtonpost.com 	 
+nih.gov 	 
+google.co.th 	 < X-XSS-Protection: 1; mode=block
+google.com.pk 	 < X-XSS-Protection: 1; mode=block
+google.com.ar 	 < X-XSS-Protection: 1; mode=block
+gmw.cn 	 
+craigslist.org 	 
+clicksgear.com 	 
+bestbuy.com 	 
+so.com 	 
+dailymotion.com 	 
+savefrom.net 	 
+blogger.com 	 < X-XSS-Protection: 1; mode=block
+china.com 	 
+bet365.com 	 
+godaddy.com 	 
+xvideos.com 	 
+cnn.com 	 < X-XSS-Protection: 1; mode=block
+youth.cn 	 
+salesforce.com 	 
+ebay.de 	 < X-XSS-Protection: 1; mode=block
+rakuten.co.jp 	 < X-XSS-Protection: 1; mode=block
+steampowered.com 	 
+google.nl 	 < X-XSS-Protection: 1; mode=block
+blastingnews.com 	 
+nicovideo.jp 	 
+vimeo.com 	 < X-XSS-Protection: 1; mode=block
+daum.net 	 
+uptodown.com 	 
+cnzz.com 	 
+ebay.co.uk 	 < X-XSS-Protection: 1; mode=block
+thewhizmarketing.com 	 < X-XSS-Protection: 1; mode=block
+porn555.com 	 
+ettoday.net 	 
+zhihu.com 	 
+mediafire.com 	 
+flipkart.com 	 < X-XSS-Protection: 1; mode=block
+google.co.ve 	 < X-XSS-Protection: 1; mode=block
+tribunnews.com 	 
+google.co.za 	 < X-XSS-Protection: 1; mode=block
+amazonaws.com 	 
+popcash.net 	 
+detik.com 	 < X-XSS-Protection: 1;mode=block
+quora.com 	 < X-XSS-Protection: 1; mode=block
+deviantart.com 	 
+google.gr 	 < X-XSS-Protection: 1; mode=block
+dailymail.co.uk 	 
+kinogo.club 	 
+avito.ru 	 < X-XSS-Protection: 1; mode=block
+google.com.vn 	 < X-XSS-Protection: 1; mode=block
+123movies.is 	 < X-XSS-Protection: 1; mode=block
+vice.com 	 
+globo.com 	 
+uol.com.br 	 
+google.be 	 < X-XSS-Protection: 1; mode=block
+google.com.co 	 < X-XSS-Protection: 1; mode=block
+google.com.ph 	 < X-XSS-Protection: 1; mode=block
+chinadaily.com.cn 	 
+theladbible.com 	 
+redtube.com 	 
+adexchangeprediction.com 	 
+google.se 	 < X-XSS-Protection: 1; mode=block
+google.com.ua 	 < X-XSS-Protection: 1; mode=block
+hclips.com 	 
+roblox.com 	 
+weather.com 	 
+blogspot.co.id 	 < X-XSS-Protection: 1; mode=block
+9gag.com 	 
+slideshare.net 	 < X-XSS-Protection: 1; mode=block
+google.ro 	 < X-XSS-Protection: 1; mode=block
+amazon.fr 	 
+iwanttodeliver.com 	 
+reimageplus.com 	 
+doublepimp.com 	 
+upornia.com 	 
+daikynguyenvn.com 	 
+force.com 	 
+amazon.it 	 
+softonic.com 	 
+etsy.com 	 < X-XSS-Protection: 1; mode=block; report=/beacon/csp.php
+doubleclick.net 	 < X-XSS-Protection: 1; mode=block
+livedoor.jp 	 
+fbcdn.net 	 < X-XSS-Protection: 0
+google.az 	 < X-XSS-Protection: 1; mode=block
+outbrain.com 	 
+varzesh3.com 	 
+indiatimes.com 	 
+buzzfeed.com 	 
+spotscenered.info 	 
+putlockers.ch 	 
+google.at 	 < X-XSS-Protection: 1; mode=block
+github.io 	 
+mercadolivre.com.br 	 
+cctv.com 	 
+sogou.com 	 
+terraclicks.com 	 
+tistory.com 	 
+ameblo.jp 	 
+youporn.com 	 
+openload.co 	 
+google.com.ng 	 < X-XSS-Protection: 1; mode=block
+gfycat.com 	 
+google.ch 	 < X-XSS-Protection: 1; mode=block
+bankofamerica.com 	 
+pinimg.com 	 < X-XSS-Protection: 1; mode=block
+google.com.pe 	 < X-XSS-Protection: 1; mode=block
+myway.com 	 
+youm7.com 	 
+google.cz 	 < X-XSS-Protection: 1; mode=block
+livejournal.com 	 
+kinopoisk.ru 	 
+steamcommunity.com 	 
+xinhuanet.com 	 
+rutracker.org 	 
+weebly.com 	 
+huffingtonpost.com 	 
+skype.com 	 
+sabah.com.tr 	 
+huaban.com 	 
+wellsfargo.com 	 < X-xss-protection: 1; mode=block
+blogspot.in 	 < X-XSS-Protection: 1; mode=block
+forbes.com 	 
+google.ae 	 < X-XSS-Protection: 1; mode=block
+google.cl 	 < X-XSS-Protection: 1; mode=block
+google.dz 	 < X-XSS-Protection: 1; mode=block
+codeonclick.com 	 
+thewhizproducts.com 	 < X-XSS-Protection: 1; mode=block
+google.cn 	 < X-XSS-Protection: 1; mode=block
+mozilla.org 	 < x-xss-protection: 1; mode=block
+naver.jp 	 
+rambler.ru 	 
+tokopedia.com 	 < X-XSS-Protection: 1; mode=block
+ikea.com 	 
+allegro.pl 	 < X-XSS-Protection: 1; report=https://allegroapi.io/seclog/xss
+rule.tmall.com 	 
+google.co.ao 	 < X-XSS-Protection: 1; mode=block
+aol.com 	 < X-XSS-Protection: 1; mode=block
+trello.com 	 < X-XSS-Protection: 1; mode=block
+foxnews.com 	 
+google.pt 	 < X-XSS-Protection: 1; mode=block
+lifebuzz.com 	 < X-Xss-Protection: 1; mode=block
+slack.com 	 < X-XSS-Protection: 0
+amazon.es 	 
+irctc.co.in 	 
+wordpress.org 	 
+onedio.com 	 
+goo.ne.jp 	 
+rarbg.to 	 
+rt.com 	 
+onclickpredictiv.com 	 
+youtube-mp3.org 	 
+pulseonclick.com 	 
+yelp.com 	 < X-XSS-Protection: 1; report=https://www.yelp.com/xss_protection_report
+google.no 	 < X-XSS-Protection: 1; mode=block
+giphy.com 	 
+tripadvisor.com 	 
+nametests.com 	 
+breitbart.com 	 
+liputan6.com 	 
+files.wordpress.com 	 
+yts.ag 	 
+sourceforge.net 	 
+bilibili.com 	 
+gearbest.com 	 
+xnxx.com 	 
+google.hu 	 < X-XSS-Protection: 1; mode=block
+snapdeal.com 	 
+web.de 	 
+abs-cbn.com 	 
+archive.org 	 
+leboncoin.fr 	 
+wordreference.com 	 
+chaoshi.tmall.com 	 
+zillow.com 	 
+youku.com 	 
+wikimedia.org 	 
+shutterstock.com 	 
+taboola.com 	 
+zippyshare.com 	 
+google.co.il 	 < X-XSS-Protection: 1; mode=block
+offerreality.com 	 
+mailchimp.com 	 
+goodreads.com 	 < X-XSS-Protection: 1; mode=block
+extratorrent.cc 	 
+kakaku.com 	 
+exoclick.com 	 
+4dsply.com 	 
+rolloid.net 	 
+bukalapak.com 	 < X-XSS-Protection: 1; mode=block
+ltn.com.tw 	 
+google.ie 	 < X-XSS-Protection: 1; mode=block
+gmx.net 	 
+china.com.cn 	 
+poptm.com 	 
+kompas.com 	 
+blogspot.com.br 	 < X-XSS-Protection: 1; mode=block
+ebay-kleinanzeigen.de 	 
+sberbank.ru 	 
+mysagagame.com 	 
+dmm.co.jp 	 
+freepik.com 	 
+adnetworkperformance.com 	 
+feedly.com 	 
+paytm.com 	 < X-XSS-PROTECTION: 1; mode=block
+kaskus.co.id 	 < X-XSS-Protection: 1; mode=block
+hatenablog.com 	 < X-XSS-Protection: 1
+getmyads.com 	 
+media.tumblr.com 	 
+google.dk 	 < X-XSS-Protection: 1; mode=block
+businessinsider.com 	 
+scribd.com 	 
+subscene.com 	 
+espncricinfo.com 	 
+39.net 	 
+gamepedia.com 	 
+accuweather.com 	 
+thesaurus.com 	 
+taringa.net 	 
+huanqiu.com 	 
+pandora.com 	 
+hp.com 	 
+ouo.io 	 < X-XSS-Protection: 1; mode=block
+cnblogs.com 	 
+mixplugin.com 	 
+onet.pl 	 
+prestoris.com 	 < X-XSS-Protection: 1; mode=block
+kissanime.ru 	 
+samsung.com 	 
+themeforest.net 	 < X-XSS-Protection: 1; mode=block
+ruten.com.tw 	 
+webtretho.com 	 
+orange.fr 	 
+target.com 	 
+evernote.com 	 
+messenger.com 	 < X-XSS-Protection: 0
+amazon.ca 	 
+ensonhaber.com 	 
+spankbang.com 	 
+google.fi 	 < X-XSS-Protection: 1; mode=block
+douyu.com 	 
+flickr.com 	 < X-XSS-Protection: 1; mode=block
+seasonvar.ru 	 < X-XSS-Protection: 1; mode=block;
+hotstar.com 	 
+dingit.tv 	 
+newtabtv.com 	 
+icloud.com 	 
+yesky.com 	 
+speedtest.net 	 < X-XSS-Protection: 1; mode=block
+wittyfeed.com 	 
+asos.com 	 
+google.sk 	 < X-XSS-Protection: 1; mode=block
+go.com 	 < X-XSS-Protection: 1; mode=block
+oracle.com 	 
+usps.com 	 
+wetransfer.com 	 < X-XSS-Protection: 1; mode=block
+hdfcbank.com 	 
+2ch.net 	 
+gismeteo.ru 	 
+ups.com 	 
+gsmarena.com 	 
+ndtv.com 	 
+wix.com 	 
+blog.jp 	 
+hatena.ne.jp 	 
+xfinity.com 	 
+qiita.com 	 < X-XSS-Protection: 1; mode=block
+repubblica.it 	 
+fiverr.com 	 < X-XSS-Protection: 1; mode=block
+mama.cn 	 
+icicibank.com 	 
+4shared.com 	 
+ebay.it 	 < X-XSS-Protection: 1; mode=block
+zendesk.com 	 < X-Xss-Protection: 1; mode=block
+dumedia.ru 	 
+beeg.com 	 
+free.fr 	 
+weblio.jp 	 
+sharepoint.com 	 
+americanexpress.com 	 
+wp.pl 	 
+telegram.org 	 
+gamefaqs.com 	 
+dictionary.com 	 
+spiegel.de 	 
+sh.st 	 
+medium.com 	 < X-XSS-Protection: 1; mode=block
+elbalad.news 	 
+4chan.org 	 
+blogspot.jp 	 < X-XSS-Protection: 1; mode=block
+tube8.com 	 
+avg.com 	 
+torrentz2.eu 	 < X-Xss-Protection: 1; mode=block
+haber7.com 	 
+capitalone.com 	 
+amazon.cn 	 
+sciencedirect.com 	 < X-XSS-Protection: 1; mode=block
+udemy.com 	 < X-XSS-Protection: 1; mode=block
+mercadolibre.com.ar 	 
+jabong.com 	 
+telegraph.co.uk 	 
+go2cloud.org 	 
+my-hit.org 	 
+homedepot.com 	 
+tradeadexchange.com 	 
+baike.com 	 
+ign.com 	 
+azlyrics.com 	 
+ebay.com.au 	 < X-XSS-Protection: 1; mode=block
+seznam.cz 	 
+nfl.com 	 
+perfecttoolmedia.com 	 
+intuit.com 	 
+videodownloadconverter.com 	 
+onlinevideoconverter.com 	 
+groupon.com 	 
+blogfa.com 	 
+flirt4free.com 	 
+babytree.com 	 
+teepr.com 	 < X-XSS-Protection: 1; mode=block
+plusnetwork.com 	 < X-XSS-Protection: 0
+mit.edu 	 
+shopify.com 	 < X-Xss-Protection: 1; mode=block; report=/xss-report/26988df1-14b9-4534-b5c7-98efa0fb6b20?source%5Baction%5D=index&source%5Bapp%5D=Brochure&source%5Bcontroller%5D=home&source%5Bdomain%5D=it.shopify.com&source%5Bsection%5D=brochure&source%5Buuid%5D=26988df1-14b9-4534-b5c7-98efa0fb6b20
+behance.net 	 < X-XSS-Protection: 1; mode=block
+163.com 	 
+directrev.com 	 
+hilltopads.net 	 
+aparat.com 	 < X-XSS-Protection: 1; mode=block
+discordapp.com 	 < X-XSS-Protection: 1; mode=block
+researchgate.net 	 < X-XSS-Protection: 1; mode=block
+hola.com 	 
+t-online.de 	 
+dell.com 	 
+elpais.com 	 
+google.kz 	 < X-XSS-Protection: 1; mode=block
+providr.com 	 
+leagueoflegends.com 	 
+airbnb.com 	 < X-XSS-Protection: 1; mode=block
+nownews.com 	 
+googlevideo.com 	 < X-XSS-Protection: 1; mode=block
+shink.in 	 
+naij.com 	 
+google.com.kw 	 < X-XSS-Protection: 1; mode=block
+upwork.com 	 
+ntd.tv 	 
+ask.fm 	 < X-XSS-Protection: 1; mode=block
+enet.com.cn 	 
+kooora.com 	 
+vk.me 	 
+billdesk.com 	 
+vporn.com 	 
+playstation.com 	 
+lazada.co.id 	 
+friv.com 	 
+namu.wiki 	 
+mercadolibre.com.mx 	 
+filehippo.com 	 
+rediff.com 	 
+thekitchn.com 	 
+hurriyet.com.tr 	 
+webmd.com 	 
+fedex.com 	 
+utorrent.com 	 
+kapanlagi.com 	 
+siteadvisor.com 	 < X-Xss-Protection: 1
+mega.nz 	 
+line.me 	 
+thefreedictionary.com 	 
+pikabu.ru 	 
+neobux.com 	 
+marca.com 	 
+duckduckgo.com 	 
+ablogica.com 	 
+bloomberg.com 	 
+jpmorganchase.com 	 
+gyazo.com 	 < X-XSS-Protection: 1; mode=block
+momoshop.com.tw 	 
+tutorialspoint.com 	 
+canva.com 	 < X-Xss-Protection: 1; mode=block
+err.tmall.com 	 
+douban.com 	 < X-Xss-Protection: 1; mode=block
+citi.com 	 
+chip.de 	 
+taleo.net 	 
+clickadu.com 	 
+souq.com 	 
+hespress.com 	 
+google.bg 	 < X-XSS-Protection: 1; mode=block
+rottentomatoes.com 	 
+conservativetribune.com 	 
+pwwysydh.com 	 
+list-manage.com 	 
+hulu.com 	 < X-XSS-Protection: 1; mode=block
+blogspot.mx 	 < X-XSS-Protection: 1; mode=block
+wsj.com 	 
+mediaoffermania.com 	 
+myanimelist.net 	 
+biobiochile.cl 	 
+libero.it 	 
+goal.com 	 
+usatoday.com 	 
+blkget.com 	 
+olx.com.br 	 
+sahibinden.com 	 
+hotmovs.com 	 
+banggood.com 	 
+milliyet.com.tr 	 
+zoho.com 	 
+xda-developers.com 	 
+patch.com 	 
+bild.de 	 
+urbandictionary.com 	 < X-Xss-Protection: 1; mode=block
+uploaded.net 	 
+aliyun.com 	 
+japanpost.jp 	 
+google.co.nz 	 < X-XSS-Protection: 1; mode=block
+pantip.com 	 
+ck101.com 	 
+atlassian.net 	 
+addthis.com 	 < X-Xss-Protection: 1; mode=block
+independent.co.uk 	 
+pixabay.com 	 < X-XSS-Protection: 1; mode=block
+clotraiam.website 	 < X-XSS-Protection: 1; mode=block
+att.com 	 < X-Xss-Protection: 1; mode=block
+streamcloud.eu 	 < X-XSS-Protection: 1; mode=block
+infusionsoft.com 	 
+reuters.com 	 
+ultimate-guitar.com 	 
+umblr.com 	 < X-XSS-Protection: 1; mode=block
+shaparak.ir 	 
+reference.com 	 
+nanoadexchange.com 	 
+ria.ru 	 
+airtel.in 	 
+iqiyi.com 	 
+google.lk 	 < X-XSS-Protection: 1; mode=block
+torrentkim5.net 	 
+srvr.work 	 
+thesportbible.com 	 
+porn.com 	 
+adbooth.com 	 
+wattpad.com 	 
+ifeng.com 	 
+asus.com 	 
+lenta.ru 	 < X-XSS-Protection: 1; mode=block
+box.com 	 < X-XSS-Protection: 1; mode=block
+reverso.net 	 
+ebay.in 	 < X-XSS-Protection: 1; mode=block
+nba.com 	 
+setn.com 	 
+newegg.com 	 
+google.rs 	 < X-XSS-Protection: 1; mode=block
+merdeka.com 	 
+tabelog.com 	 
+blog.wordpress.com 	 
+adidas.tmall.com 	 
+watsons.tmall.com 	 
+allrecipes.com 	 
+ouedkniss.com 	 
+instructables.com 	 
+gizmodo.com 	 < X-XSS-Protection: 1; mode=block
+yallakora.com 	 
+nike.com 	 
+givemesport.com 	 
+amisites.com 	 
+secureserver.net 	 
+youdao.com 	 
+y8.com 	 < X-XSS-Protection: 1; mode=block
+cdiscount.com 	 
+viid.me 	 
+disqus.com 	 < X-XSS-Protection: 1; mode=block
+livedoor.com 	 
+uidai.gov.in 	 
+hubspot.com 	 
+mi.com 	 
+cricbuzz.com 	 
+kickstarter.com 	 < X-XSS-Protection: 1; mode=block
+elmundo.es 	 
+xe.com 	 
+lemonde.fr 	 
+getpocket.com 	 
+howtogeek.com 	 
+okezone.com 	 < X-XSS-Protection: 1; mode=block
+commentcamarche.net 	 
+drom.ru 	 
+livescore.com 	 
+asana.com 	 
+ero-advertising.com 	 
+genius.com 	 
+sakura.ne.jp 	 
+verizonwireless.com 	 
+gotporn.com 	 
+sabq.org 	 
+linkshrink.net 	 
+mirror.co.uk 	 
+4pda.ru 	 
+camdolls.com 	 
+caijing.com.cn 	 
+bookmyshow.com 	 
+drtuber.com 	 
+wargaming.net 	 
+about.com 	 
+chatwork.com 	 
+gazetaexpress.com 	 
+corriere.it 	 
+instructure.com 	 
+emol.com 	 
+expedia.com 	 
+thevideo.me 	 
+ibm.com 	 
+comcast.net 	 
+alxsite.com 	 < X-XSS-Protection: 1; mode=block
+bhaskar.com 	 
+google.com.do 	 < X-XSS-Protection: 1; mode=block
+wunderground.com 	 
+nudevista.com 	 
+albawabhnews.com 	 
+fvpimageviewer.com 	 
+google.by 	 < X-XSS-Protection: 1; mode=block
+convert2mp3.net 	 
+lk21.tv 	 
+wish.com 	 
+drive2.ru 	 
+lenovo.com 	 
+fanfiction.net 	 < X-xss-protection: 1; mode=block
+prezi.com 	 < x-xss-protection: 1; mode=block
+drudgereport.com 	 
+bola.net 	 < X-XSS-Protection: 1;mode=block
+blog.me 	 
+yenisafak.com 	 
+onclickads.net 	 
+wiley.com 	 
+hdrezka.me 	 
+engadget.com 	 < X-XSS-Protection: 1; mode=block
+wiktionary.org 	 
+mercadolibre.com.ve 	 
+naukri.com 	 
+coursera.org 	 < X-XSS-Protection: 1; mode=block
+hm.com 	 
+rapidgator.net 	 
+weevah2.top 	 
+allocine.fr 	 
+lapatilla.com 	 
+scribol.com 	 
+hdzog.com 	 
+goo.gl 	 < X-XSS-Protection: 1; mode=block
+nordstrom.com 	 
+google.com.ly 	 < X-XSS-Protection: 1; mode=block
+dmm.com 	 
+cambridge.org 	 
+microsoftstore.com 	 < X-XSS-Protection: 1; mode=block
+bitly.com 	 
+hootsuite.com 	 < X-Xss-Protection: 1; mode=block
+impress.co.jp 	 
+khanacademy.org 	 
+ccm.net 	 
+ebay.fr 	 < X-XSS-Protection: 1; mode=block
+bidverdrs.com 	 
+popmyads.com 	 
+jimdo.com 	 
+mobile.de 	 < x-xss-protection: 1; mode=block
+cpmofferconvert.com 	 
+kijiji.ca 	 
+gamer.com.tw 	 < X-XSS-Protection: 1; mode=block
+urdupoint.com 	 
+subito.it 	 
+lifehacker.com 	 < X-XSS-Protection: 1; mode=block
+norton.com 	 < X-XSS-Protection: 1; mode=block
+seesaa.net 	 
+humblebundle.com 	 
+techcrunch.com 	 
+shopclues.com 	 
+yandex.ua 	 < X-XSS-Protection: 1; mode=block
+google.hr 	 < X-XSS-Protection: 1; mode=block
+buzzfil.net 	 
+youjizz.com 	 
+slickdeals.net 	 
+prothom-alo.com 	 
+chinaz.com 	 
+springer.com 	 
+bitauto.com 	 
+westernjournalism.com 	 
+timeanddate.com 	 
+olx.ua 	 
+ab4hr.com 	 
+uber.com 	 < X-XSS-Protection: 1; mode=block
+olx.pl 	 
+zing.vn 	 
+extra.to 	 
+rbc.ru 	 
+worldoftanks.ru 	 
+1tv.ru 	 < X-XSS-Protection: 1; mode=block
+mashable.com 	 
+lefigaro.fr 	 
+hotels.com 	 
+manoramaonline.com 	 
+meetup.com 	 
+eyny.com 	 
+gogoanime.io 	 
+buzzhand.com 	 
+redd.it 	 < x-xss-protection: 1; mode=block
+indianexpress.com 	 
+leadzupc.com 	 
+animeflv.net 	 
+ci123.com 	 
+cpasbien.cm 	 
+okcupid.com 	 < X-XSS-Protection: 1; mode=block
+superuser.com 	 
+elevenia.co.id 	 
+videoyoum7.com 	 
+intel.com 	 
+google.tn 	 < X-XSS-Protection: 1; mode=block
+makeuseof.com 	 
+jw.org 	 
+thewaycloud.com 	 
+appledaily.com.tw 	 
+discogs.com 	 < X-XSS-Protection: 1; mode=block
+kinokrad.co 	 
+blackboard.com 	 
+1337x.to 	 
+vnexpress.net 	 
+myntra.com 	 
+repelis.tv 	 
+investing.com 	 
+almasryalyoum.com 	 
+adplxmd.com 	 
+php.net 	 
+tnaflix.com 	 
+sputniknews.com 	 
+support.wordpress.com 	 
+liveadexchanger.com 	 
+tamilrockers.ac 	 < X-XSS-Protection: 1; mode=block
+npr.org 	 
+as.com 	 
+pof.com 	 
+xbox.com 	 
+watchmygirlfriend.tv 	 
+zytpirwai.net 	 
+bhphotovideo.com 	 
+uzone.id 	 
+clipconverter.cc 	 
+duolingo.com 	 
+cam4.com 	 
+nikkeibp.co.jp 	 
+adscpm.net 	 
+g2a.com 	 
+sosodesktop.com 	 
+bitbucket.org 	 
+cookpad.com 	 < X-XSS-Protection: 1; mode=block
+www.gov.uk 	 
+dafont.com 	 
+mangafox.me 	 
+adp.com 	 
+glassdoor.com 	 
+meb.gov.tr 	 
+prnt.sc 	 
+clixsense.com 	 
+telegram.me 	 
+surveymonkey.com 	 < X-XSS-Protection: 1; mode=block
+elfagr.org 	 
+myfreecams.com 	 
+torrentproject.se 	 
+kohls.com 	 
+theverge.com 	 < X-XSS-Protection: 1; mode=block
+time.com 	 
+liveleak.com 	 
+pairade.com 	 
+discuss.com.hk 	 
+viva.co.id 	 
+beytoote.com 	 
+gmarket.co.kr 	 
+adme.ru 	 
+twoo.com 	 
+grammarly.com 	 
+aastocks.com 	 
+narod.ru 	 
+ca.gov 	 
+eksisozluk.com 	 
+jeuxvideo.com 	 
+rumble.com 	 
+yaplakal.com 	 
+bintang.com 	 
+photobucket.com 	 
+thepennyhoarder.com 	 
+bodybuilding.com 	 
+tebyan.net 	 < X-XSS-Protection: 1
+office365.com 	 
+junbi-tracker.com 	 
+android.com 	 < X-XSS-Protection: 1; mode=block
+informer.com 	 
+bandcamp.com 	 
+squarespace.com 	 
+zara.com 	 
+interia.pl 	 
+turbobit.net 	 
+ibtimes.co.uk 	 
+divar.ir 	 
+sex.com 	 
+ea.com 	 
+deviantart.net 	 
+academia.edu 	 < X-XSS-Protection: 1; mode=block
+52pk.com 	 
+wowhead.com 	 
+toutiao.com 	 
+crunchyroll.com 	 
+humbleness.xyz 	 
+tfetimes.com 	 
+askubuntu.com 	 
+olx.in 	 
+ptt.cc 	 
+erq.io 	 
+innfrad.com 	 
+dostor.org 	 
+brilio.net 	 < X-XSS-Protection: 1;mode=block
+ancestry.com 	 
+intoday.in 	 
+fidelity.com 	 
+searchalgo.com 	 
+costco.com 	 
+disq.us 	 
+americanas.com.br 	 
+optmz.online 	 
+google.com.ec 	 < X-XSS-Protection: 1; mode=block
+gamespot.com 	 
+custhelp.com 	 
+inven.co.kr 	 
+chouftv.ma 	 
+familydoctor.com.cn 	 
+xl415.com 	 
+pixiv.net 	 
+java.com 	 
+mundo.com 	 
+latimes.com 	 
+xtube.com 	 
+gutefrage.net 	 
+04dn8g4f.space 	 < X-XSS-Protection: 1; mode=block
+udn.com 	 
+dream.co.id 	 
+fbsbx.com 	 
+idnes.cz 	 
+google.iq 	 < X-XSS-Protection: 1; mode=block
+cnbc.com 	 
+sunfrog.com 	 
+javedch.com 	 
+blogspot.com.eg 	 < X-XSS-Protection: 1; mode=block
+andhrajyothy.com 	 
+realtor.com 	 
+tvbs.com.tw 	 
+tmz.com 	 
+yalla-shoot.com 	 
+nyaa.se 	 
+fishki.net 	 
+windows.com 	 
+quizlet.com 	 < X-XSS-Protection: 1; mode=block
+internetdownloadmanager.com 	 
+ted.com 	 < X-XSS-Protection: 1; mode=block
+oschina.net 	 
+biblegateway.com 	 
+gigazine.net 	 
+patreon.com 	   0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0< X-XSS-Protection: 1; mode=block
+filmfanatic.com 	 
+freelotto.com 	 
+mysearch.com 	 
+qoolquiz.com 	 
+sarkariresult.com 	 
+merriam-webster.com 	 
+tomshardware.com 	 
+southwest.com 	 < X-XSS-Protection: 1
+unity3d.com 	 
+advertiserurl.com 	 
+boredpanda.com 	 
+makemytrip.com 	 
+brazzers.com 	 
+binaryoptionscops.info 	 
+europa.eu 	 
+investopedia.com 	 
+lowes.com 	 
+we-are-gamers.com 	 
+google.com.mm 	 < X-XSS-Protection: 1; mode=block
+nbcnews.com 	 
+trulia.com 	 
+rednet.cn 	 
+digitaltrends.com 	 
+lazada.com.ph 	 
+altervista.org 	 
+t411.li 	 
+gazeta.pl 	 
+torrent9.biz 	 
+pcmag.com 	 
+jb51.net 	 
+iwank.tv 	 
+bankmellat.ir 	 
+internethaber.com 	 
+zedo.com 	 
+vip.wordpress.com 	 
+kayak.com 	 < x-xss-protection: 1; mode=block
+3sk.tv 	 
+wowmovix.com 	 
+brightside.me 	 
+cisco.com 	 
+donga.com 	 
+issuu.com 	 
+imagebam.com 	 
+mobile01.com 	 
+voyeurhit.com 	 
+kp.ru 	 
+mmmoffice.com 	 
+google.lt 	 < X-XSS-Protection: 1; mode=block
+paytm.in 	 
+chron.com 	 
+agoda.com 	 
+ruliweb.com 	 
+hepsiburada.com 	 
+codecanyon.net 	 < X-XSS-Protection: 1; mode=block
+ebay.es 	 < X-XSS-Protection: 1; mode=block
+inquirer.net 	 
+welt.de 	 
+freecharge.in 	 < X-XSS-Protection: 1; mode=block
+piriform.com 	 
+google.com.bd 	 < X-XSS-Protection: 1; mode=block
+focus.de 	 
+sporx.com 	 
+labanquepostale.fr 	 
+fandango.com 	 
+zhanqi.tv 	 
+fanpage.gr 	 
+wonderlandads.com 	 < X-XSS-Protection: 1; mode=block
+google.com.my 	 < X-XSS-Protection: 1; mode=block
+xywy.com 	 
+kinozal.tv 	 
+blogspot.de 	 < X-XSS-Protection: 1; mode=block
+ampxchange.com 	 
+curapelanatureza.com.br 	 
+123rf.com 	 
+bigcinema.to 	 
+abcnews.go.com 	 
+poste.it 	 < X-XSS-Protection: 1
+trafficserving.com 	 
+lazada.co.th 	 
+himado.in 	 
+fatosdesconhecidos.com.br 	 
+elmogaz.com 	 
+so-net.ne.jp 	 
+nexusmods.com 	 
+suara.com 	 
+kizi.com 	 
+onwatchseries.to 	 

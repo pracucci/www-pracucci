@@ -2,7 +2,7 @@ title:          Marco Pracucci
 baseurl:        ""
 url:            https://pracucci.com
 permalink:      none
-paginate:       25
+paginate:       100
 paginate_path:  "page/:num"
 highlighter:    pygments
 
