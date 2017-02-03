@@ -438,27 +438,6 @@ article {
 }
 
 
-// Talks
-section.talks {
-    overflow: hidden;
-}
-
-section.talk {
-    float: left;
-    width: ($page_width/2) - 50;
-    margin-bottom: $baseline*2;
-    padding: 0 25px;
-    text-align: center;
-
-    h2 {
-        margin-bottom: $baseline/2;
-        height: $baseline*1.5;
-        line-height: $baseline*0.75;
-        font-size: $font_size_large;
-    }
-}
-
-
 // Layout
 .layout_two_columns {
     overflow: hidden;
