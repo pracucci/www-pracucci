@@ -4,10 +4,11 @@
 ##### Dependencies
 
 ```
-gem install jekyll-compass
-gem install jekyll-sitemap
-gem install jekyll-assets
-gem install uglifier
+gem install jekyll -v '3.4.0'
+gem install jekyll-assets -v '2.2.8'
+gem install jekyll-sitemap -v '1.0.0'
+gem install uglifier -v '3.0.4'
+
 npm install
 ```
 

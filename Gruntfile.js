@@ -37,7 +37,8 @@ module.exports = function(grunt) {
                     mode: 'gzip'
                 },
                 files: [
-                    { expand: true, src: "_site/**/*.html", dest: "", ext: ".html.gz" }
+                    { expand: true, src: "_site/**/*.html", dest: "", ext: ".html.gz" },
+                    { expand: true, src: "_site/**/*.css",  dest: "", ext: ".css.gz" }
                 ]
             }
         },

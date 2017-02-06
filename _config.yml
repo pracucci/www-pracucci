@@ -2,8 +2,6 @@ title:          Marco Pracucci
 baseurl:        ""
 url:            https://pracucci.com
 permalink:      none
-paginate:       100
-paginate_path:  "page/:num"
 highlighter:    pygments
 
 exclude:
@@ -14,13 +12,11 @@ exclude:
     - package.json
 
 gems:
-    - jekyll-compass
     - jekyll-sitemap
 
 assets:
     # Destination of generated assets
-    dirname: assets
-    baseurl: /assets/
+    prefix: "/assets"
 
     # Sources of assets
     sources:
@@ -28,12 +24,10 @@ assets:
         - _assets/images
 
     # Compressors
-    # js_compressor:  uglifier
-    css_compressor: sass
+    compress:
+        css: true
+
     cache: false
 
     # Versioning
-    cachebust: hard
-
-    # Gzip compression
-    gzip: [ text/css, application/javascript ]
+    digest: true

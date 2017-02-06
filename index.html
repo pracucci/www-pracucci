@@ -25,7 +25,7 @@ layout: basic
     <!-- Latest articles -->
     <h1 id="articles">Latest Articles <a href="{{ site.baseurl }}/feed.xml" class="home_articles_rss">RSS Feed</a></h1>
     <ul class="home_articles">
-        {% for post in paginator.posts %}
+        {% for post in site.posts %}
             {% unless post.title contains 'Bookmarks -' and forloop.index != 1 %}
                 {% unless post.hidden %}
                     <li class="home_article">
