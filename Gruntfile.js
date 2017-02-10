@@ -1,3 +1,5 @@
+var zlib = require("zlib");
+
 
 module.exports = function(grunt) {
     var config = {
@@ -34,7 +36,8 @@ module.exports = function(grunt) {
         "compress": {
             "compress_site_files": {
                 options: {
-                    mode: 'gzip'
+                    mode: 'gzip',
+                    level: zlib.Z_BEST_COMPRESSION
                 },
                 files: [
                     { expand: true, src: "_site/**/*.html", dest: "", ext: ".html.gz" },
