@@ -22,6 +22,7 @@ assets:
     sources:
         - _assets/css
         - _assets/images
+        - _assets/audio
 
     # Compressors
     compress:

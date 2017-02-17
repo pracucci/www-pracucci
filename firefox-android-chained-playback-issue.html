@@ -1,0 +1,42 @@
+---
+sitemap: false
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- No favicon -->
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+</head>
+<body>
+    <script>
+    function play() {
+        var drumUrl   = "{% asset_path drum.mp3 %}";
+        var cymbalUrl = "{% asset_path cymbal.mp3 %}";
+
+        var sound        = new Audio(drumUrl);
+        var cymbalPlayed = false;
+
+        sound.onended = function() {
+            if (cymbalPlayed) {
+                return;
+            }
+
+            sound.src = cymbalUrl;
+            sound.play();
+
+            cymbalPlayed = true;
+        };
+
+        sound.play();
+    }
+
+    </script>
+
+    <p>If chained playback works fine, you should listen to a drum and cymbal.</p>
+    <button onclick="play()">Play</button>
+
+</body>
+</html>
