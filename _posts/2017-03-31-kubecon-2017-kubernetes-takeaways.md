@@ -1,12 +1,12 @@
 ---
 layout:         post
 title:          "KubeCon 2017 - Kubernetes Takeaways"
-tags:
+tags:           CNCF, Kubernetes
 date:           2017-03-31 08:00:00 GMT
 keywords:       kubecon, kubernetes, k8s, docker, containers
 ---
 
-This is the first of two posts I will publish with some notes and takeaways from two amazing days at the KubeCon Europe 2017 (the next post will be focused on Prometheus).
+This is the first of two posts I've published with some notes and takeaways from two amazing days at the KubeCon Europe 2017 (the [second post]({{ site.base_url }}/kubecon-2017-prometheus-takeaways.html) is focused on Prometheus).
 
 These notes have been primarely taken for myself, thus they could be incomplete, inexact, or no more true at the time you will read it, so don't give anything written here as the absolute source of truth. That said, enjoy reading!
 
