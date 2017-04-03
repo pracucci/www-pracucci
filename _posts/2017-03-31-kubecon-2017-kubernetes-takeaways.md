@@ -47,7 +47,7 @@ Kubernetes 1.6 has been announced few hours before the begin of the conference, 
 
 Roadmap:
 
-- RBAD will be moved to be default
+- RBAC will be moved to be default
 
 
 ## Kubernetes Scheduler
@@ -353,7 +353,7 @@ Buffer:
 
 ## Kubernetes Roadmap
 
-- RBAD will be moved to be default
+- RBAC will be moved to be default
 - Stateful upgrades
 - Multi-workload scheduling
 - More cloud providers support
