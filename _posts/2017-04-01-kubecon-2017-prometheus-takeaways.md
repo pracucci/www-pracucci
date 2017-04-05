@@ -62,7 +62,7 @@ To keep it simple, we've a specific custom exporter that - for performance reaso
 
 This is a very bad practice for at least a couple of good reasons:
 
-1. If a scraped metric is not successfully stored on Prometheus (ie. networking issue during the request) it will be lost forever, while it doesn't if you use monotic counters since it will be included in the next scraping
+1. If a scraped metric is not successfully stored on Prometheus (ie. networking issue during the request) it will be lost forever, while it doesn't if you use monotonic counters since it will be included in the next scraping
 2. In HA setup you will have two distinct Prometheus servers fetching the same metric, and it will definitely not work
 
 _Thanks to the KubeCon talks for making me realizing it. I will fix it as soon as I come back to office!_
