@@ -1,7 +1,7 @@
 ---
 layout:         post
 title:          "Stepping back from CTO and jumping into operations"
-tags:           CNCF
+tags:           Kubernetes
 date:           2017-10-05 05:00:00 GMT
 keywords:
 ---
