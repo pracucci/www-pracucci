@@ -1,7 +1,7 @@
 ---
 layout:         post
 title:          "Prometheus: understanding the delays on alerting"
-tags:           Prometheus, Kubernetes
+tags:           prometheus kubernetes
 date:           2016-11-16 22:00:00 GMT
 keywords:       prometheus, alerting, rules
 ---

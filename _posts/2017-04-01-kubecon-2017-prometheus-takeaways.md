@@ -1,7 +1,7 @@
 ---
 layout:         post
 title:          "KubeCon 2017 - Prometheus Takeaways"
-tags:           CNCF, Prometheus
+tags:           CNCF prometheus
 date:           2017-04-01 05:00:00 GMT
 keywords:       kubecon, kubernetes, k8s, docker, containers
 ---

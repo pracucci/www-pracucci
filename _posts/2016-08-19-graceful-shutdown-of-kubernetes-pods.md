@@ -2,7 +2,7 @@
 layout:         post
 title:          "Graceful shutdown of pods with Kubernetes"
 description:    "How to get a graceful shutdow of pods orchestrated with Kubernetes."
-tags:           Kubernetes
+tags:           kubernetes
 date:           2016-08-19 12:00:00 GMT
 ---
 

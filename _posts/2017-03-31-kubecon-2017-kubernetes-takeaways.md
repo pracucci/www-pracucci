@@ -1,7 +1,7 @@
 ---
 layout:         post
 title:          "KubeCon 2017 - Kubernetes Takeaways"
-tags:           CNCF, Kubernetes
+tags:           CNCF kubernetes
 date:           2017-03-31 08:00:00 GMT
 keywords:       kubecon, kubernetes, k8s, docker, containers
 ---

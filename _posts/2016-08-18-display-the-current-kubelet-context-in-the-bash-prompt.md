@@ -2,7 +2,7 @@
 layout:         post
 title:          "Display the current kubectl context in the Bash prompt"
 description:    "A simple yet effective way to display the current Kubernetes context in the Bash shell prompt."
-tags:           Kubernetes
+tags:           kubernetes
 date:           2016-08-18 12:00:00 GMT
 ---
 
