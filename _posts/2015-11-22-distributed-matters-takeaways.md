@@ -2,6 +2,7 @@
 layout:         post
 title:          "Distributed Matters Conf: Takeaways"
 keywords:       scalability, distributed matters, docker, containers, microservices
+tags:           kubernetes postgresql
 date:           2015-11-22 14:00:00 GMT
 ---
 
