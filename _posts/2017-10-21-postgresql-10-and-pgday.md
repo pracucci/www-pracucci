@@ -1,14 +1,82 @@
 ---
 layout:         post
-title:          "PostgreSQL 10 and PGDay.it wrap up"
+title:          "PostgreSQL 10 and PGDay.IT"
 tags:           postgresql
 date:           2017-10-21 03:00:00 GMT
 keywords:
 ---
 
-Last week I attended [PGDay.it](http://2017.pgday.it/it/), the italian PostgreSQL conference organized by ITPUG and [2ndQuadrant](https://www.2ndquadrant.com/it/). It was a great opportunity to learn more about PostgreSQL in general, PostgreSQL 10 and to meet some people I just knew virtually.
+Last week I attended [PGDay.IT](http://2017.pgday.it/it/), the italian PostgreSQL conference organized by ITPUG and [2ndQuadrant](https://www.2ndquadrant.com/it/). It was a great opportunity to learn more about PostgreSQL in general, PostgreSQL 10 and to meet some people I just knew virtually.
 
-As already done in the past for other conferences, in this post I would like to sum up what I've learned and my thoughts about the conference. Feel free to leave any feedback at the bottom of the page. Enjoy reading!
+As already done in the past for other conferences, this is **the first out of two posts** to sum up what I've learned and my thoughts about the conference (the second one still be written).
+
+Feel free to leave any feedback at the bottom of the page. Enjoy reading!
+
+
+## PostgreSQL 10
+
+PostgreSQL 10 is probably one of the most exciting major releases since years. The main new feature is the blazoned **[logical replication](#logical-replication)**, in addition to a long list of optimizations like the **[parallelization in index scans](#parallelization-in-index-scans)** and improvements like **[hash indexes logged on WAL](#hash-indexes-logged-on-wal)**.
+
+
+### Logical Replication
+
+Logical replication is the second and new form of replication introduced to PostgreSQL. It's **not intended to replace streaming replication**, but to augment the scenarios in which you can replicate data using a natively supported solution.
+
+To understand the differences between the two types of replication and when you should use what, we need to do a quick recap of streaming replication first. **Streaming replication** is based on a continuous stream of bytes added to the WAL of the master to the connected replicas. It both support asynchronous and synchronous replication (quorum based), and cascading replicas where a slave gets the stream from another slave instead of the master.
+
+Since streaming replication is WAL based, any data is replicated: tables data, schema changes, indexes, sequences and so on. For this reason, **streaming replication is mainly used for high-availability** with hot standby replicas and for read replicas.
+
+The downside of streaming replication is that any data is replicated. You can't partially replicate your database, like a single schema or a group of tables. Moreover, since it's WAL based, the replicas must run the same exact major version of Postgres (data format changes every major version).
+
+PostgreSQL 10 - after a very long and hard work started in version 9.3 - introduces **logical replication**. As the name suggests, logical replication continuously streams a logical representation of the changes instead of the bytes changed in the WAL. Under the hood, logical replication is still based on the WAL, but it "decodes" the bytes changed in the WAL back into the logical change before streaming it to other nodes. It's the inception of replication.
+
+Logical replication is based on a **publish/subscribe model**. You create one or more publications on the master, and subscriptions on other nodes. I'm not talking specifically about slaves, because logical replication allows to replicate data to other masters as well.
+
+Each publication is related to a set of tables, making possible to **replicate just a subset of your database**. You can also `CREATE PUBLICATION name FOR ALL TABLES` and the whole database - not cluster - will be replicated.
+
+Logical replication has been designed to satify the need of data integration and opens to a new wide range of usages. Since logical replication is not binded to the WAL format, you can replicate data between different versions of PostgreSQL. As you already guessed, you can use logical replication to migrate data to a new major version, making possible the impossible: **major version upgrades with nearly zero downtime**.
+
+Logical replication has **limitations** as well. The biggest limitation is that it's able to **replicate table data only**. This means that schema changes, indexes or sequences are not replicated (not yet). It's likely to happen in the future, but it's apparently more complex than it may sound.
+
+A part from this, logical replication looks a great step forward in the PostgreSQL ecosystem and having the ability to do major version upgrades while keeping your system up reliefs a real and big pain suffered by many people for many years. Honestly, I'm really excited about it!
+
+So, should you use **streaming or logical replication?** It depends!
+
+- **Streaming replication**: high-availability and read replicas
+- **Logical replication**: partial replication, online upgrades, multi-master (it's not [bi-directional](https://www.2ndquadrant.com/en/resources/bdr/) replication)
+
+
+### Parallelization in index scans
+
+Query execution parallelization is not brand new. PostgreSQL 9.6 introduced parallel queries, while index scans parallelization has been added in version 10. At the current stage, not every index scan is parallelizable: it just supports **B-tree scans** and **bitmap heap scans**. Getting the basics is important to understand when parallelization gets into the game and improves performances.
+
+Parallelization is basically a **map reduce**. During the execution of a query that - according to the query planner - can benefit parallelization, the main process spawns a set of workers each of which will inspect a portion of the index and report the result back to the main process that will merge results. The job done by workers is limited in scope:
+
+- **B-tree**: workers inspect left pages in parallel
+- **Bitmap heap scan**: workers inspect heap chunks in parallel
+
+Parallelism has a cost, that's spawing workers and moving data back and forth. For this reason, the query planner will choose to use or not parallelization based upon an **heuristic** that takes in account the **index size** and a set of customizable parameters specifying the **setup and tuple data transfer cost**. Be also aware that each worker is a backend using 1 connection slot: if you configure Postgres to aggressively use parallelization you could quickly saturate connection slots.
+
+Parallelism is therefore efficient when there's an huge amount of data and its overhead is way lower than the performance benefit you get.
+
+
+### Hash indexes logged on WAL
+
+Before PostgreSQL 10 hash indexes were not logged on WAL, so they were not crash safe and were not replicated to read replicas. They were basically just living in shared buffers. These limitations reduced a lot the usage of such indexes in many cases. PostgreSQL 10 solves such limitations, making them **crash safe** and **replicated**. Yup!
+
+
+### SP-GiST support for inet data
+
+PostgreSQL 10 extends SP-GiST adding support for inet data (IPv4 and IPv6 addresses), defining an operator class to run **range queries on indexed IP addresses**. It's likely not an feature you will use everyday, but in my experience it's quite useful for IP-based geo-location databases or to trace events generated by clients in specific CIDRs.
+
+
+### BRIN summarization for new INSERTs
+
+Before PostgreSQL 10 new `INSERT` tuples were summarized on `VACUMM` or calling `brin_summarize_new_value()`. PostgreSQL introduces autosummarization: when enabled at index creation `WITH (autosummarize=on)`, autovacuum will summarize new data.
+
+It's still possible to manually summarize / desummarize single blocks, but unfortunately BRINs are not able to shrink summarized data on `UPDATE` or `DELETE`. The only workaround is to rebuild the index with `REINDEX`. For this reason BRINs are practicle only in cases when your data is not frequently updated or deleted.
+
+
 
 
 ## Life beyond B-Trees
@@ -77,70 +145,6 @@ In order to be efficient, indexes should fit in shared buffers. The topic is mor
 CREATE INDEX xxx USING method ON table (column opclass_name) WITH (opt=value)
 
 
-
-
-## PostgreSQL 10
-
-PostgreSQL 10 is probably one of the most exciting major releases since years. The main new feature is the blazoned **[logical replication](#logical-replication)**, in addition to a long list of optimizations like the **[parallelization in index scans](#parallelization-in-index-scans)** and improvements like **[hash indexes logged on WAL](#hash-indexes-logged-on-wal)**.
-
-
-### Logical Replication
-
-Logical replication is the second and new form of replication introduced to PostgreSQL. It's **not intended to replace streaming replication**, but to augment the scenarios in which you can replicate data using a natively supported solution.
-
-To understand the differences between the two types of replication and when you should use what, we need to do a quick recap of streaming replication first. **Streaming replication** is based on a continuous stream of bytes added to the WAL of the master to the connected replicas. It both support asynchronous and synchronous replication (quorum based), and cascading replicas where a slave gets the stream from another slave instead of the master.
-
-Since streaming replication is WAL based, any data is replicated: tables data, schema changes, indexes, sequences and so on. For this reason, **streaming replication is mainly used for high-availability** with hot standby replicas and for read replicas.
-
-The downside of streaming replication is that any data is replicated. You can't partially replicate your database, like a single schema or a group of tables. Moreover, since it's WAL based, the replicas must run the same exact major version of Postgres (data format changes every major version).
-
-PostgreSQL 10 - after a very long and hard work started in version 9.3 - introduces **logical replication**. As the same suggests, logical replication continuously streams a logical representation of the changes instead of the bytes changed in the WAL. Under the hood, logical replication is still based on the WAL, but it "decodes" the bytes changed in the WAL back into the logical change before streaming it to the slaves. It's the inception of replication.
-
-Logical replication is based on a **publish/subscribe model**. You create one or more publications on the master, and subscriptions on other nodes. I'm not talking specifically about slaves, because logical replication allows to replicate data to other masters as well.
-
-Each publication is related to a set of tables, making possible to **replicate just a subset of your database**. You can also `CREATE PUBLICATION name FOR ALL TABLES` and the whole database - not cluster - will be replicated.
-
-Logical replication has been designed to satify the need of data integration and opens to a new wide range of possible usages. Since logical replication is not binded to the WAL format, you can replicate data between different versions of PostgreSQL. As you already guessed, you can use logical replication to migrate data to a new major version of PostgreSQL, making possible the impossible: **major version upgrades with nearly zero downtime**.
-
-Logical replication has **limitations** as well. The biggest limitation is that it's able to **replicate table data only**. This means that schema changes, indexes or sequences are not replicated (not yet). It's likely to happen in the future, but it's apparently more complex than it may sound.
-
-A part from this, logical replication looks a great step forward in the PostgreSQL ecosystem and having the ability to do major version upgrades while keeping your system up reliefs a real and big pain suffered by many people for many years. Honestly, I'm really excited about it!
-
-So, should you use **streaming or logical replication?** It depends!
-
-- **Streaming replication**: high-availability and read replicas
-- **Logical replication**: partial replication, online upgrades, multi-master (it's not [bi-directional](https://www.2ndquadrant.com/en/resources/bdr/) replication)
-
-
-### Parallelization in index scans
-
-Query execution parallelization is not brand new. PostgreSQL 9.6 introduced parallel queries, while index scans parallelization has been added in version 10. At the current stage, not every index scan is parallelizable: it just supports **B-tree scans** and **bitmap heap scans**. Getting the basics is important to understand when parallelization gets into the game and improves performances.
-
-Parallelization is basically a **map reduce**. During the execution of a query that - according to the query planner - can benefit parallelization, the main process spawns a set of workers each of which will inspect a portion of the index and report the result back to the main process that will merge results. The job done by workers is limited in scope:
-
-- **B-tree**: workers inspect left pages in parallel
-- **Bitmap heap scan**: workers inspect heap chunks in parallel
-
-Parallelism has a cost, that's spawing workers and moving data back and forth. For this reason, the query planner will choose to use or not parallelization based upon an **heuristic** that takes in account the **index size** and a set of customizable parameters specifying the **setup and tuple data transfer cost**. Be also aware that each worker is a backend using 1 connection slot: if you configure Postgres to aggressively use parallelization you could quickly saturate connection slots.
-
-Parallelism is therefore efficient when there's an huge amount of data and its overhead is way lower than the performance benefit you get.
-
-
-### Hash indexes logged on WAL
-
-Before PostgreSQL 10 hash indexes were not logged on WAL, so they were not crash safe and were not replicated to read replicas. They were basically just living in shared buffers. These limitations reduced a lot the usage of such indexes in many cases. PostgreSQL 10 solves such limitations, making them **crash safe** and **replicated**. Yup!
-
-
-### SP-GiST support for inet data
-
-PostgreSQL 10 extends SP-GiST adding support for inet data (IPv4 and IPv6 addresses), defining an operator class to run **range queries on indexed IP addresses**. It's likely not an feature you will use everyday, but in my experience it's quite useful for IP-based geo-location databases or to trace events generated by clients in specific CIDRs.
-
-
-### BRIN summarization for new INSERTs
-
-Before PostgreSQL 10 new `INSERT` tuples were summarized on `VACUMM` or calling `brin_summarize_new_value()`. PostgreSQL introduces autosummarization: when enabled at index creation `WITH (autosummarize=on)`, autovacuum will summarize new data.
-
-It's still possible to manually summarize / desummarize single blocks, but unfortunately BRINs are not able to shrink summarized data on `UPDATE` or `DELETE`. The only workaround is to rebuild the index with `REINDEX`. For this reason BRINs are practicle only in cases when your data is not frequently updated or deleted.
 
 
 
