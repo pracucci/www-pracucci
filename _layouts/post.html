@@ -6,9 +6,11 @@ layout: page
         {% for post in site.posts %}
             {% for post_tag in post.tags %}
                 {% if post_tag == page_tag and post.title != page.title %}
-                    <li>
-                        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                    </li>
+                    {% unless post.hidden %}
+                        <li>
+                            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                        </li>
+                    {% endunless %}
                 {% endif %}
             {% endfor %}
         {% endfor %}
