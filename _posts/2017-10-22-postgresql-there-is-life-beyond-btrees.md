@@ -61,7 +61,7 @@ TODO:
 - opclass
 - index options
 - https://devcenter.heroku.com/articles/postgresql-indexes
-
+- https://www.citusdata.com/blog/2017/10/17/tour-of-postgres-index-types/
 
 In order to be efficient, indexes should fit in shared buffers. The topic is more complex. The portion of index you need should be stored in RAM and - possibly - in shared buffers. But it's mainly important to have it in RAM. To monitor and investigate it, you checkout two PG extensions: pg_pageinspect and pg_buffercache.
 
