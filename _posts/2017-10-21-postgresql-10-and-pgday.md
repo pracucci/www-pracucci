@@ -8,7 +8,7 @@ keywords:
 
 Last week I attended [PGDay.IT](http://2017.pgday.it/it/), the italian PostgreSQL conference organized by ITPUG. It was a great opportunity to learn more about PostgreSQL in general, PostgreSQL 10 and to meet some people I just knew virtually.
 
-As already done in the past for other conferences, this is **the first of a series of posts** to sum up what I've learned and my thoughts about the conference. The following posts will be published in the next few days.
+As already done in the past for other conferences, this is **a quick recap** to sum up what I've learned and my thoughts about the conference.
 
 Feel free to leave **any** feedback at the bottom of the page. Enjoy reading!
 
