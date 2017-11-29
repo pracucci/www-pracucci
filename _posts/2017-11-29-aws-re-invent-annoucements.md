@@ -95,4 +95,6 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 ### Amazon SageMaker
 
 - Easily build, train and deploy machine learning models
+- Multi AZs
+- Supports A/B testing to test new algorithms before deploying to production
 - Generally available
