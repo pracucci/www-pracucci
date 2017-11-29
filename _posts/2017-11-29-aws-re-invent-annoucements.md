@@ -160,7 +160,7 @@ Resources:
 - Recognize source language (not available yet)
 - Now in [preview](https://pages.awscloud.com/amazon-translate-preview.html)
 
-### [Amazon Comprehend](https://aws.amazon.com/comprehend/)
+### [Amazon Comprehend](https://aws.amazon.com/comprehend/) ([announcement](https://aws.amazon.com/blogs/aws/amazon-comprehend-continuously-trained-natural-language-processing/))
 
 - Natural language processing service
 - Generally available
