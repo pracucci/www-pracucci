@@ -1,10 +1,13 @@
 ---
 layout:         post
-title:          "AWS re:invent annoucements"
+title:          "AWS re:invent 2017 annoucements"
 tags:           aws kubernetes
 date:           2017-11-29 17:00:00 GMT
 keywords:
 ---
+
+A straight-to-the-point recap of all the new services and improvements announced during the AWS re:invent 2017.
+
 
 ## EC2 Instances
 
