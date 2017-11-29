@@ -150,3 +150,10 @@ Resources:
 - Timestamp generation
 - Support for telephony audio
 - Recognize multiple speaker (not available yet)
+
+### Amazon Translate
+
+- Translate text between languages
+- Supports real-time translation
+- Supports batch operations / analysis
+- Recognize source language (not available yet)
