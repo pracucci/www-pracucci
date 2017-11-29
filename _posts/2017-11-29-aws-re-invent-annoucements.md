@@ -152,12 +152,13 @@ Resources:
 - Recognize multiple speaker (not available yet)
 - Now in [preview](https://pages.awscloud.com/amazon-transcribe-preview.html)
 
-### Amazon Translate
+### [Amazon Translate](https://aws.amazon.com/translate/)
 
 - Translate text between languages
 - Supports real-time translation
 - Supports batch operations / analysis
 - Recognize source language (not available yet)
+- Now in [preview](https://pages.awscloud.com/amazon-translate-preview.html)
 
 ### [Amazon Comprehend](https://aws.amazon.com/comprehend/)
 
