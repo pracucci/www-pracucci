@@ -19,7 +19,8 @@ New family of instances launched:
 
 Spot instances:
 
-- https://www.awsgeek.com/posts/amazon-ec2-spot-instances/
+![](https://www.awsgeek.com/images/amazon-ec2-spot-instances.jpg)
+_Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instances/)._
 
 
 ## Kubernetes (EKS)
