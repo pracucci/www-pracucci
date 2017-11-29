@@ -126,7 +126,7 @@ Resources:
 - Integrates with SageMaker and Lambda
 - Pre-orders available on amazon.com at 249$
 
-### Amazon Rekognition Video
+### Amazon Rekognition Video ([announcement](https://aws.amazon.com/blogs/aws/launch-welcoming-amazon-rekognition-video-service/))
 
 - Get video in input
 - Detects people, activities, details out of the input video
