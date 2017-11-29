@@ -164,3 +164,5 @@ Resources:
 
 - Natural language processing service
 - Generally available
+
+![](https://media.amazonwebservices.com/blog/2017/di_con_main_2.png)
