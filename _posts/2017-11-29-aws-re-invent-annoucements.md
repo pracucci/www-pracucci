@@ -181,4 +181,9 @@ Resources:
 
 ### AWS IoT Device Management
 
+- Fleet management for connected devices
+- Automate provisione of fleet of devices
+- Organize device inventory
+- Monitor and query the fleet
+- Remotely manage devices
 - Generally available
