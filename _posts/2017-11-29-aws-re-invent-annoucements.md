@@ -46,6 +46,7 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 - Uses Calico to manage networking
 - Supports Kubernetes add-ons (K8S dashboard, KubeDNS, ...)
 - **Native VPC networking for pods** (see: [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s/))
+- Shouldn't be a K8S fork
 - Now in preview
 
 ### [AWS Fargate](https://aws.amazon.com/fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
