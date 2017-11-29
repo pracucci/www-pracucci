@@ -170,3 +170,15 @@ Resources:
 - Generally available
 
 ![](https://media.amazonwebservices.com/blog/2017/di_con_main_2.png)
+
+
+## IoT
+
+### AWS IoT 1-Click
+
+- Register a device, get a list of lambdas, click a butto to trigger a lambda
+- Now in preview
+
+### AWS IoT Device Management
+
+- Generally available
