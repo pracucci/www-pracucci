@@ -45,7 +45,7 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 - Integrated with CloudTrail, CloudWatch Logs, VPC, IAM, PrivateLink
 - Uses Calico to manage networking
 - Supports Kubernetes add-ons (K8S dashboard, KubeDNS, ...)
-- Native VPC networking for pods (see: [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s/))
+- **Native VPC networking for pods** (see: [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s/))
 - Now in preview
 
 ### [AWS Fargate](https://aws.amazon.com/fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
