@@ -17,6 +17,16 @@ A straight-to-the-point recap of all the new services and improvements announced
 - `H1` - big data optimized instances
 - `I3m` - bare metal high I/O
 
+
+`M5` instances
+- EBS only
+- All sizes with **high** networking performances
+- Phisical processor based on Intel Xeon Platinum 2.5Ghz (`M4` family is based on Zeon 2.4Ghz)
+
+`H1` instances
+- Features from 1 up to 8 x 2TB HDD
+
+
 ### Spot instances
 
 [![](https://www.awsgeek.com/images/amazon-ec2-spot-instances.jpg)](https://www.awsgeek.com/images/amazon-ec2-spot-instances.jpg)
@@ -115,3 +125,8 @@ Resources:
 - Features on-board compute optimized for deep learning
 - Integrates with SageMaker and Lambda
 - Pre-orders available on amazon.com at 249$
+
+### Amazon Rekognition Video
+
+- Get video in input
+- Detects people, activities, details out of the input video
