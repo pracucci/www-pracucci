@@ -35,11 +35,13 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 - Native VPC networking for pods (see: [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s/))
 - Now in preview
 
-### [AWS Fargate](https://aws.amazon.com/blogs/aws/aws-fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
+### [AWS Fargate](https://aws.amazon.com/fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
 
 - Run containers without managing servers or clusters
 - No clusters to manage
 - Manages underlying infrastructure
+- AWS Fargate support for Amazon EKS will be available in 2018.
+- Generally available
 
 Resources:
 
