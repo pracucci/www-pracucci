@@ -187,3 +187,12 @@ Resources:
 - Monitor and query the fleet
 - Remotely manage devices
 - Generally available
+
+### AWS IoT Device Defender
+
+- Security management for IoT devices
+- Audit device policies
+- Monitor device behaviour
+- Identity anomalies and out of compliance behaviours
+- Generate alerts
+- Coming in 2018
