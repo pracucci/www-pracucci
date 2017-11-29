@@ -91,3 +91,7 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 
 
 ## Machine learning
+
+### Amazon SageMaker
+
+- Easily build and deploy ML training models
