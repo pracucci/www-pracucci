@@ -130,3 +130,11 @@ Resources:
 
 - Get video in input
 - Detects people, activities, details out of the input video
+
+
+## Media
+
+### Amazon Kinesis Video Streams
+
+- Ingest and store video, audio and other time-encoded data
+- Generally available
