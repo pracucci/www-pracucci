@@ -197,3 +197,9 @@ Resources:
 - Identity anomalies and out of compliance behaviours
 - Generate alerts
 - Coming in 2018
+
+### AWS IoT Analytics
+
+- Cleans, processes, stores and queries analytics
+- Now in preview
+
