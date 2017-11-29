@@ -72,3 +72,13 @@ Amazon Neptune ([announcement](https://aws.amazon.com/blogs/aws/amazon-neptune-a
 ## Networking
 
 PrivateLink
+
+
+## Analytics
+
+S3 Select
+
+- Pull out only the data you need from S3 objects
+- New API to select and retrieve data within objects
+- Based on SQL-like syntax
+
