@@ -103,7 +103,7 @@ Resources:
 - Supports A/B testing to test new algorithms before deploying to production
 - Generally available
 
-### AWS DeepLens ([announcement](https://aws.amazon.com/blogs/aws/deeplens/))
+### [AWS DeepLens](https://aws.amazon.com/deeplens/) ([announcement](https://aws.amazon.com/blogs/aws/deeplens/))
 
 - Wireless HD **video camera** for developers
 - Features on-board compute optimized for deep learning
