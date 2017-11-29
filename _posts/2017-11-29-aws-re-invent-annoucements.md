@@ -48,32 +48,36 @@ Resources:
 
 ## Database
 
-### Aurora Multi-Master (single-region)
+### [Aurora Multi-Master](https://aws.amazon.com/rds/aurora/) (single-region)
 
 - Scale out read and writes
 - Multi-region coming in 2018
+- Now in [preview](https://pages.awscloud.com/amazon-aurora-multimaster-preview.html)
 
-### Aurora Serverless
+### [Aurora Serverless](https://aws.amazon.com/rds/aurora/)
 
 - On-demand, auto-scaling database for applications with unpredictable or cyclical workloads
 - Pay per second
+- Now in [preview](https://pages.awscloud.com/amazon-aurora-serverless-preview.html)
 
-### DynamoDB Global Tables
+### [DynamoDB Global Tables](https://aws.amazon.com/dynamodb/global-tables/)
 
 - Fully managed, multi-master, multi-region
+- Generally available
 
-### DynamoDB Backup and Restore
+### [DynamoDB Backup and Restore](https://aws.amazon.com/dynamodb/backup-restore/)
 
 - On-deman and continuous backups
 - Point In Time Restore (up to the second) for the last 45 days
+- Generally available
 
-### Amazon Neptune ([announcement](https://aws.amazon.com/blogs/aws/amazon-neptune-a-fully-managed-graph-database-service/))
+### [Amazon Neptune](https://aws.amazon.com/neptune/) ([announcement](https://aws.amazon.com/blogs/aws/amazon-neptune-a-fully-managed-graph-database-service/))
 
 - Fully-managed graph database
 - Supports Apache TinkerPop and SPARQL
 - 6 replicas of data, across 3 AZs
 - Backup and restore
-- Now in preview
+- Now in [preview](https://pages.awscloud.com/NeptunePreview.html)
 
 
 ## Networking
@@ -96,7 +100,7 @@ Resources:
 
 ## Machine learning
 
-### Amazon SageMaker ([announcement](https://aws.amazon.com/blogs/aws/sagemaker/))
+### [Amazon SageMaker](https://aws.amazon.com/sagemaker/) ([announcement](https://aws.amazon.com/blogs/aws/sagemaker/))
 
 - Easily build, train and deploy machine learning models
 - Multi AZs
@@ -108,3 +112,4 @@ Resources:
 - Wireless HD **video camera** for developers
 - Features on-board compute optimized for deep learning
 - Integrates with SageMaker and Lambda
+- Pre-orders available
