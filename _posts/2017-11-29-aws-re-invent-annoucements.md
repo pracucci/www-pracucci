@@ -142,9 +142,10 @@ Resources:
 - Ingest and store video, audio and other time-encoded data
 - Generally available
 
-### [Amazon Transcribe](https://aws.amazon.com/transcribe/)
+### [Amazon Transcribe](https://aws.amazon.com/transcribe/) ([announcement](https://aws.amazon.com/blogs/aws/amazon-transcribe-scalable-and-accurate-automatic-speech-recognition/))
 
 - Automated speech recognition, to transcribe audio into text
+- Can analyze audio files stored on S3 in many formats (WAV, MP3, Flac, ...)
 - Multiple languages (**english** and **spanish** right now, more languages will be added in the next future)
 - Intelligent punctuation and formatting
 - Timestamp generation
