@@ -99,7 +99,7 @@ Resources:
 
 ## Storage / Analytics
 
-### S3 Select
+### S3 Select ([announcement](https://aws.amazon.com/blogs/aws/s3-glacier-select/))
 
 - Pull out only the data you need from S3 objects
 - New API to select and retrieve data within objects
