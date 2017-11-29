@@ -11,13 +11,13 @@ A straight-to-the-point recap of all the new services and improvements announced
 
 ## EC2 Instances
 
-New family of instances launched:
+### New family of instances launched
 
 - `M5` - new generation of general purpose instances
 - `H1` - big data optimized instances
 - `I3m` - bare metal high I/O
 
-Spot instances:
+### Spot instances
 
 ![](https://www.awsgeek.com/images/amazon-ec2-spot-instances.jpg)
 _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instances/)._
