@@ -137,12 +137,12 @@ Resources:
 
 ## Media
 
-### Amazon Kinesis Video Streams
+### [Amazon Kinesis Video Streams](https://aws.amazon.com/kinesis/video-streams/)
 
 - Ingest and store video, audio and other time-encoded data
 - Generally available
 
-### Amazon Transcribe
+### [Amazon Transcribe](https://aws.amazon.com/transcribe/)
 
 - Automated speech recognition, to transcribe audio into text
 - Multiple languages (**english** and **spanish** right now, more languages will be added in the next future)
@@ -150,6 +150,7 @@ Resources:
 - Timestamp generation
 - Support for telephony audio
 - Recognize multiple speaker (not available yet)
+- Now in [preview](https://pages.awscloud.com/amazon-transcribe-preview.html)
 
 ### Amazon Translate
 
@@ -157,3 +158,8 @@ Resources:
 - Supports real-time translation
 - Supports batch operations / analysis
 - Recognize source language (not available yet)
+
+### [Amazon Comprehend](https://aws.amazon.com/comprehend/)
+
+- Natural language processing service
+- Generally available
