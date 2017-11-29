@@ -41,6 +41,10 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 - No clusters to manage
 - Manages underlying infrastructure
 
+Resources:
+
+- [Securing Struts in AWS Fargate](https://blog.aquasec.com/securing-struts-in-aws-fargate)
+
 
 ## Database
 
