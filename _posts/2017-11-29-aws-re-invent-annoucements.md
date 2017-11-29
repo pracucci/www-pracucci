@@ -75,7 +75,7 @@ Amazon Neptune ([announcement](https://aws.amazon.com/blogs/aws/amazon-neptune-a
 PrivateLink
 
 
-## Analytics
+## Storage / Analytics
 
 S3 Select
 
@@ -83,3 +83,6 @@ S3 Select
 - New API to select and retrieve data within objects
 - Based on SQL-like syntax
 
+Glacier Select
+
+- Run queries directly on data stored on Glacier
