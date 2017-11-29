@@ -15,7 +15,7 @@ A straight-to-the-point recap of all the new services and improvements announced
 
 - `M5` - new generation of general purpose instances
 - `H1` - big data optimized instances
-- `I3m` - bare metal high I/O
+- `I3.metal` - bare metal high I/O
 
 
 `M5` instances
@@ -25,6 +25,9 @@ A straight-to-the-point recap of all the new services and improvements announced
 
 `H1` instances
 - Features from 1 up to 8 x 2TB HDD
+
+`I3.metal`
+- Now in preview
 
 
 ### Spot instances
@@ -138,3 +141,12 @@ Resources:
 
 - Ingest and store video, audio and other time-encoded data
 - Generally available
+
+### Amazon Transcribe
+
+- Automated speech recognition, to transcribe audio into text
+- Multiple languages (english and spanish right now)
+- Intelligent punctuation and formatting
+- Timestamp generation
+- Support for telephony audio
+- Recognize multiple speaker (not available yet)
