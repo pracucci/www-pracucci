@@ -145,7 +145,7 @@ Resources:
 ### Amazon Transcribe
 
 - Automated speech recognition, to transcribe audio into text
-- Multiple languages (english and spanish right now)
+- Multiple languages (**english** and **spanish** right now, more languages will be added in the next future)
 - Intelligent punctuation and formatting
 - Timestamp generation
 - Support for telephony audio
