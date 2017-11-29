@@ -53,7 +53,8 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 - Run containers without managing servers or clusters
 - No clusters to manage
 - Manages underlying infrastructure
-- AWS Fargate support for Amazon EKS will be available in 2018.
+- AWS Fargate support for Amazon EKS will be available in 2018
+- Apparently similar to [Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/)
 - Generally available
 
 Resources:
