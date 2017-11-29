@@ -83,6 +83,9 @@ S3 Select
 - New API to select and retrieve data within objects
 - Based on SQL-like syntax
 
-Glacier Select
+Glacier Select ([announcement](https://aws.amazon.com/blogs/aws/s3-glacier-select/))
 
 - Run queries directly on data stored on Glacier
+
+
+## Machine learning
