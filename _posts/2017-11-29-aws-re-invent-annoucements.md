@@ -23,9 +23,9 @@ A straight-to-the-point recap of all the new services and improvements announced
 _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instances/)._
 
 
-## Kubernetes (EKS)
+## Containers and Kubernetes
 
-[Amazon Elastic Container Service for Kubernetes](https://aws.amazon.com/eks/) (EKS)
+### [Amazon Elastic Container Service for Kubernetes](https://aws.amazon.com/eks/) (EKS)
 
 - Latest version of K8S
 - Automated version upgrades and patches
@@ -35,34 +35,35 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 - Native VPC networking for pods (see: [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s/))
 - Now in preview
 
-[AWS Fargate](https://aws.amazon.com/blogs/aws/aws-fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
+### [AWS Fargate](https://aws.amazon.com/blogs/aws/aws-fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
 
 - Run containers without managing servers or clusters
 - No clusters to manage
 - Manages underlying infrastructure
 
+
 ## Database
 
-Aurora Multi-Master (single-region)
+### Aurora Multi-Master (single-region)
 
 - Scale out read and writes
 - Multi-region coming in 2018
 
-Aurora Serverless
+### Aurora Serverless
 
 - On-demand, auto-scaling database for applications with unpredictable or cyclical workloads
 - Pay per second
 
-DynamoDB Global Tables
+### DynamoDB Global Tables
 
 - Fully managed, multi-master, multi-region
 
-DynamoDB Backup and Restore
+### DynamoDB Backup and Restore
 
 - On-deman and continuous backups
 - Point In Time Restore (up to the second) for the last 45 days
 
-Amazon Neptune ([announcement](https://aws.amazon.com/blogs/aws/amazon-neptune-a-fully-managed-graph-database-service/))
+### Amazon Neptune ([announcement](https://aws.amazon.com/blogs/aws/amazon-neptune-a-fully-managed-graph-database-service/))
 
 - Fully-managed graph database
 - Supports Apache TinkerPop and SPARQL
@@ -73,18 +74,18 @@ Amazon Neptune ([announcement](https://aws.amazon.com/blogs/aws/amazon-neptune-a
 
 ## Networking
 
-PrivateLink
+### PrivateLink
 
 
 ## Storage / Analytics
 
-S3 Select
+### S3 Select
 
 - Pull out only the data you need from S3 objects
 - New API to select and retrieve data within objects
 - Based on SQL-like syntax
 
-Glacier Select ([announcement](https://aws.amazon.com/blogs/aws/s3-glacier-select/))
+### Glacier Select ([announcement](https://aws.amazon.com/blogs/aws/s3-glacier-select/))
 
 - Run queries directly on data stored on Glacier
 
