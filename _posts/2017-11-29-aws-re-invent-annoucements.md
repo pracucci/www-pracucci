@@ -114,4 +114,4 @@ Resources:
 - Wireless HD **video camera** for developers
 - Features on-board compute optimized for deep learning
 - Integrates with SageMaker and Lambda
-- Pre-orders available
+- Pre-orders available on amazon.com at 249$
