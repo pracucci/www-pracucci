@@ -99,11 +99,8 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 - Supports A/B testing to test new algorithms before deploying to production
 - Generally available
 
-
-## IoT
-
 ### AWS DeepLens
 
-- Wireless HD video camera for developers
+- Wireless HD **video camera** for developers
 - Features on-board compute optimized for deep learning
 - Integrates with SageMaker and Lambda
