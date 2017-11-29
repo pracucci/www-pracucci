@@ -33,12 +33,11 @@ Spot instances:
 - Supports Kubernetes add-ons (K8S dashboard, KubeDNS, ...)
 - Now in preview
 
-[AWS Fargate](https://aws.amazon.com/blogs/aws/aws-fargate/)
+[AWS Fargate](https://aws.amazon.com/blogs/aws/aws-fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
 
 - Run containers without managing servers or clusters
 - No clusters to manage
 - Manages underlying infrastructure
-
 
 ## Database
 
@@ -69,3 +68,7 @@ Amazon Neptune ([announcement](https://aws.amazon.com/blogs/aws/amazon-neptune-a
 - Backup and restore
 - Now in preview
 
+
+## Networking
+
+PrivateLink
