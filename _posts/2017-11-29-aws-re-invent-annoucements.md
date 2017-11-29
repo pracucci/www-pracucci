@@ -31,6 +31,7 @@ Spot instances:
 - Integrated with CloudTrail, CloudWatch Logs, VPC, IAM, PrivateLink
 - Uses Calico to manage networking
 - Supports Kubernetes add-ons (K8S dashboard, KubeDNS, ...)
+- Native VPC networking for pods (see: [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s/))
 - Now in preview
 
 [AWS Fargate](https://aws.amazon.com/blogs/aws/aws-fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
