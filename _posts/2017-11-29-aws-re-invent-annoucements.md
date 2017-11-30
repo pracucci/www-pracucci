@@ -103,6 +103,16 @@ Resources:
 
 ## Networking
 
+### Inter-Region VPC peering
+
+- Connect two or more VPCs in different AWS regions, solving the problem to have private connectivity between VPCs located in two different AWS regions
+- Highly available, no single point of failure
+- All traffic is routed via the AWS backbone (Amazon Global Network) and encrypted
+- Currently available in `us-east-1`, `us-east-2`, `us-west-2` and `eu-west-1`
+
+![](https://pbs.twimg.com/media/DP1uEIPUQAAGFNb.jpg:large)
+
+
 ### PrivateLink
 
 
