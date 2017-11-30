@@ -43,7 +43,20 @@ A straight-to-the-point recap of all the new services and improvements announced
 - Now in preview
 
 
-### Spot instances
+### Spot instances ([announcement](https://aws.amazon.com/blogs/aws/amazon-ec2-update-streamlined-access-to-spot-capacity-smooth-price-changes-instance-hibernation/))
+
+**Smoother Price Changes**
+
+Spot prices change are moving to a model where prices adjust more gradually, based on longer-term trends in supply and demand.
+
+**New Streamlined Access**
+
+It's not possible run turn on spot instances via `RunInstances` API, immediately getting an instance ID, with no more need to poll an API to check if the spot request has been processed and accepted.
+
+**Instance Hibernation**
+
+Spot instances now support instance hibernation, where the in-memory state is written to the root EBS volume of the instance. The private IP address is also preserved across stop/start cycles.
+
 
 [![](https://www.awsgeek.com/images/amazon-ec2-spot-instances.jpg)](https://www.awsgeek.com/images/amazon-ec2-spot-instances.jpg)
 _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instances/)._
@@ -271,3 +284,9 @@ Amazon GuardDuty is a service that inspect networking attivity via VPC Flow Logs
 
 Generally available.
 
+
+## IDE
+
+### AWS Cloud9
+
+- Generally available.
