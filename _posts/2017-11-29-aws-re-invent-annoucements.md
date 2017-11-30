@@ -172,6 +172,9 @@ Currently the new `C5` and `M5` instances don't support it, but support will be 
 - Ingest and store video, audio and other time-encoded data
 - Generally available
 
+![](https://pbs.twimg.com/media/DP0uboCUEAAz-00.jpg)
+
+
 ### [Amazon Transcribe](https://aws.amazon.com/transcribe/) ([announcement](https://aws.amazon.com/blogs/aws/amazon-transcribe-scalable-and-accurate-automatic-speech-recognition/))
 
 - Automated speech recognition, to transcribe audio into text
