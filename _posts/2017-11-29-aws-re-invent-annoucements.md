@@ -40,22 +40,26 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 
 ### [Amazon Elastic Container Service for Kubernetes](https://aws.amazon.com/eks/) (EKS)
 
-- Latest version of K8S
-- Automated version upgrades and patches
-- Integrated with CloudTrail, CloudWatch Logs, VPC, IAM, PrivateLink
-- Uses Calico to manage networking
-- Supports Kubernetes add-ons (K8S dashboard, KubeDNS, ...)
-- **Native VPC networking for pods** (see: [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s/))
-- Shouldn't be a K8S fork
+- EKS manages only masters for you - you've manage nodes by yourself and have them join the cluster. This is different than GKE and AKS. More flexible but more moving parts.
+- EKS will vertically scale masters - in a rolling update to honor HA - based on load and number of nodes
+- EKS is not a K8S fork and supports the latest version. The user specifies the minor version (ie. 1.x) and EKS manages upgrades to patch level. Automatic upgrades across minor versions (ie. 1.7 to 1.8) is also possibile. EKS will support the latest 3 minor versions and notify when a version is deprecated.
+- EKS supports bith Horizontal Pod Autoscaler (HPA) and nodes autoscaler out of the box
+- Integrated with CloudTrail, CloudWatch Logs, VPC, IAM (partnered with Heptio), PrivateLink
+- Uses Project Calico from Tigera to manage network policies
+- Supports Kubernetes add-ons, running on master. Currently K8S dashboard and KubeDNS, but will support more add-ons in future
+- AWS built a CNI plugin to add **native VPC networking for pods** and open sourced it at [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s/)
+- Coming: AWS will release EKS optimized AMI based on Amazon Linux and built with packer
+- Coming: EKS will manage nodes too in the future, but they focus on master right now
 - Now in preview
+
 
 ### [AWS Fargate](https://aws.amazon.com/fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
 
 - Run containers without managing servers or clusters
 - No clusters to manage
 - Manages underlying infrastructure
-- AWS Fargate support for Amazon EKS will be available in 2018
 - Apparently similar to [Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/)
+- Coming: AWS Fargate support for Amazon EKS will be available in 2018
 - Generally available
 
 Resources:
