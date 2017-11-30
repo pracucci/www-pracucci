@@ -168,6 +168,7 @@ Currently the new `C5` and `M5` instances don't support it, but support will be 
 
 ### API Gateway with VPC integration
 
+_No reference yet._
 
 
 ## Storage / Analytics
