@@ -40,7 +40,7 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 
 ### [Amazon Elastic Container Service for Kubernetes](https://aws.amazon.com/eks/) (EKS)
 
-- EKS manages only masters for you - you've manage nodes by yourself and have them join the cluster. This is different than GKE and AKS. More flexible but more moving parts.
+- EKS manages only masters for you - you've manage nodes by yourself and have them join the cluster.
 - EKS will vertically scale masters - in a rolling update to honor HA - based on load and number of nodes
 - EKS is not a K8S fork and supports the latest version. The user specifies the minor version (ie. 1.x) and EKS manages upgrades to patch level. Automatic upgrades across minor versions (ie. 1.7 to 1.8) is also possibile. EKS will support the latest 3 minor versions and notify when a version is deprecated.
 - EKS supports bith Horizontal Pod Autoscaler (HPA) and nodes autoscaler out of the box
