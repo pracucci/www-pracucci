@@ -134,6 +134,13 @@ Resources:
 - Now in [preview](https://pages.awscloud.com/NeptunePreview.html)
 
 
+## Message broker
+
+### [Amazon MQ](https://aws.amazon.com/amazon-mq/)
+
+Managed message broker service for [Apache ActiveMQ](http://activemq.apache.org/).
+
+
 ## Networking
 
 ### Inter-Region VPC peering
