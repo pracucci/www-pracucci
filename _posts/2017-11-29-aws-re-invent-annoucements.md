@@ -236,6 +236,14 @@ Currently the new `C5` and `M5` instances don't support it, but support will be 
 - Now in preview
 
 
+### Alexa for Business
+
+- Integrated to work well with conference systems and just say "Hey Alexa, start a meeting"
+- Having multiple Alexa devices at work
+
+Generally available.
+
+
 ### Amazon FreeRTOS ([announcement](https://aws.amazon.com/blogs/aws/announcing-amazon-freertos/))
 
 Amazon FreeRTOS is an **IoT microcontroller operating system** that simplifies development, security, deployment, and maintenance of microcontroller-based edge devices. Amazon FreeRTOS extends the FreeRTOS kernel, a popular real-time operating system, with libraries that enable local and cloud connectivity, security, and (coming soon) over-the-air updates.
@@ -248,3 +256,4 @@ Amazon FreeRTOS is an **IoT microcontroller operating system** that simplifies d
 Amazon GuardDuty is a service that inspect networking attivity via VPC Flow Logs, CloudTrail and DNS logs to detect suspected behaviour. Findings are provided in the AWS console and as CloudWwatch Events to alert on. You can also setup Lambda functions to automatically remediate specific types of issues or fire the alert via an external system (ie. Slack).
 
 Generally available.
+
