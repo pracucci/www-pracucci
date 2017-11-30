@@ -59,12 +59,16 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 - No clusters to manage
 - Manages underlying infrastructure
 - Apparently similar to [Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/)
+- Each task running with Fargate can get its own ENI
 - Coming: AWS Fargate support for Amazon EKS will be available in 2018
 - Generally available
 
 Resources:
 
 - [Securing Struts in AWS Fargate](https://blog.aquasec.com/securing-struts-in-aws-fargate)
+
+![](https://pbs.twimg.com/media/DP1xgrmUQAAL_Og.jpg)
+
 
 
 ## Database
