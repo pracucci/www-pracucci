@@ -18,15 +18,15 @@ A straight-to-the-point recap of all the new services and improvements announced
 - `I3.metal` - bare metal high I/O
 
 
-`M5` instances
+**`M5` instances**
 - EBS only
 - All sizes with **high** networking performances
 - Phisical processor based on Intel Xeon Platinum 2.5Ghz (`M4` family is based on Zeon 2.4Ghz)
 
-`H1` instances
+**`H1` instances**
 - Features from 1 up to 8 x 2TB HDD
 
-`I3.metal`
+**`I3.metal`**
 - Now in preview
 
 
@@ -109,10 +109,11 @@ Resources:
 
 ### Inter-Region VPC peering
 
-- Connect two or more VPCs in different AWS regions, solving the problem to have private connectivity between VPCs located in two different AWS regions
-- Highly available, no single point of failure
-- All traffic is routed via the AWS backbone (Amazon Global Network) and encrypted
-- Currently available in `us-east-1`, `us-east-2`, `us-west-2` and `eu-west-1`
+You can now connect two or more VPCs in different AWS regions, solving the problem to have private connectivity between VPCs located in two different AWS regions. Highly available, no single point of failure. All traffic is routed via the AWS backbone (Amazon Global Network) and encrypted.
+
+Data transferred across Inter-Region VPC Peering connections is charged at the **standard inter-region data transfer rates** (~ $0.02 / GB in [most of the regions](https://aws.amazon.com/ec2/pricing/on-demand/)).
+
+Currently available in `us-east-1`, `us-east-2`, `us-west-2` and `eu-west-1`
 
 ![](https://pbs.twimg.com/media/DP1uEIPUQAAGFNb.jpg:large)
 
