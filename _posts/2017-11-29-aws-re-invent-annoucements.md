@@ -166,6 +166,10 @@ Similar to the Google public one, AWS is now offering an internal NTP server not
 Currently the new `C5` and `M5` instances don't support it, but support will be introduced soon. Check out [this page](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html) for more information.
 
 
+### API Gateway with VPC integration
+
+
+
 ## Storage / Analytics
 
 ### S3 Select ([announcement](https://aws.amazon.com/blogs/aws/s3-glacier-select/))
