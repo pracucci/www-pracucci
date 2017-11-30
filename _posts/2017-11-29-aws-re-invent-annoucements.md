@@ -233,6 +233,11 @@ Currently the new `C5` and `M5` instances don't support it, but support will be 
 - Now in preview
 
 
+### Amazon FreeRTOS ([announcement](https://aws.amazon.com/blogs/aws/announcing-amazon-freertos/))
+
+Amazon FreeRTOS is an **IoT microcontroller operating system** that simplifies development, security, deployment, and maintenance of microcontroller-based edge devices. Amazon FreeRTOS extends the FreeRTOS kernel, a popular real-time operating system, with libraries that enable local and cloud connectivity, security, and (coming soon) over-the-air updates.
+
+
 ## Security
 
 ### [Amazon GuardDuty](https://aws.amazon.com/guardduty/) ([announcement](https://aws.amazon.com/blogs/aws/amazon-guardduty-continuous-security-monitoring-threat-detection/))
