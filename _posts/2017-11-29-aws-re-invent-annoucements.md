@@ -121,7 +121,9 @@ Currently available in `us-east-1`, `us-east-2`, `us-west-2` and `eu-west-1`
 ![](https://pbs.twimg.com/media/DP1uEIPUQAAGFNb.jpg:large)
 
 
-### PrivateLink
+### New PrivateLink endpoints ([announcement](https://aws.amazon.com/blogs/aws/new-aws-privatelink-endpoints-kinesis-ec2-systems-manager-and-elb-apis-in-your-vpc/))
+
+New AWS PrivateLink endpoints to connect via private VPC networking (IPs in the VPC CIDR block) to the AWS services: Kinesis, Service Catalog, EC2 Systems Manager, Amazon EC2 APIs, and ELB APIs.
 
 
 ### Amazon Time Sync Service ([announcement](https://aws.amazon.com/about-aws/whats-new/2017/11/introducing-the-amazon-time-sync-service/))
