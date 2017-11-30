@@ -292,3 +292,11 @@ Generally available.
 A browser-based IDE to write, run and debug your code.
 
 Generally available.
+
+
+## Pics from Werner's Keynote
+
+![](https://pbs.twimg.com/media/DP5eW9JW4AAGJfC.jpg)
+
+![](https://pbs.twimg.com/media/DP5gMZMWkAEMufu.jpg)
+
