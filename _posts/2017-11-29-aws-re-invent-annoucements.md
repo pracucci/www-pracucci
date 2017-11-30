@@ -239,7 +239,6 @@ Currently the new `C5` and `M5` instances don't support it, but support will be 
 ### Alexa for Business
 
 - Integrated to work well with conference systems and just say "Hey Alexa, start a meeting"
-- Having multiple Alexa devices at work
 
 Generally available.
 
