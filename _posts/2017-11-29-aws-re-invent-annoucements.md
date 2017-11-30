@@ -217,3 +217,13 @@ Resources:
 - Cleans, processes, stores and queries analytics
 - Now in preview
 
+
+## Security
+
+### [Amazon GuardDuty](https://aws.amazon.com/guardduty/) ([announcement](https://aws.amazon.com/blogs/aws/amazon-guardduty-continuous-security-monitoring-threat-detection/))
+
+- Ingest activity data from VPC Flow Logs, CloudTrail and DNS logs to detect suspect behaviours
+- Ingest thrad intelligence feeds to stay aware of malicious IP addresses
+- Look for compromised EC2 instances
+- Findings are provided in the AWS console and as CloudWwatch Events to alert on. You can also setup Lambda functions to automatically remediate specific types of issues or fire the alert via an external system (ie. Slack)
+- Generally available
