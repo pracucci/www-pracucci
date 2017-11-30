@@ -120,6 +120,13 @@ Resources:
 ### PrivateLink
 
 
+### Amazon Time Sync Service ([announcement](https://aws.amazon.com/about-aws/whats-new/2017/11/introducing-the-amazon-time-sync-service/))
+
+Similar to the Google public one, AWS is now offering an internal NTP server not susceptible to leap second (it gets automatically smoothed out over a larger time window). The Amazon Time Sync Server is available at the `169.254.169.123` IP address from any instance running on **VPC**.
+
+Currently the new `C5` and `M5` instances don't support it, but support will be introduced soon. Check out [this page](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html) for more information.
+
+
 ## Storage / Analytics
 
 ### S3 Select ([announcement](https://aws.amazon.com/blogs/aws/s3-glacier-select/))
