@@ -32,10 +32,14 @@ A straight-to-the-point recap of all the new services and improvements announced
 | m5.12xlarge   | 48    | 192G | 10 Gbps       | 5000 Mbps               | $2.304 / hour                 |
 | m5.24xlarge   | 96    | 384G | 25 Gbps       | 10000 Mbps              | $4.608 / hour                 |
 
-**`H1` instances**
-- Features from 1 up to 8 x 2TB HDD
+**`H1` instances** ([announcement](https://aws.amazon.com/blogs/aws/new-h1-instances-fast-dense-storage-for-big-data-applications/))
+- Features large amount of magnetic storage from 1 up to 8 x 2TB HDD
 
-**`I3.metal`**
+**`I3.metal`** ([announcement](https://aws.amazon.com/blogs/aws/new-amazon-ec2-bare-metal-instances-with-direct-access-to-hardware/))
+- 2x Intel Xeon E5-2686 v4 processors running at 2.3 GHz, with a total of 36 hyperthreaded cores (72 logical processors)
+- 512 GiB memory
+- 15.2 TB SSD-based storage
+- 25 Gbps networking
 - Now in preview
 
 
