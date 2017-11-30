@@ -287,6 +287,8 @@ Generally available.
 
 ## IDE
 
-### AWS Cloud9
+### AWS Cloud9 ([announcement](https://aws.amazon.com/blogs/aws/aws-cloud9-cloud-developer-environments/))
 
-- Generally available.
+A browser-based IDE to write, run and debug your code.
+
+Generally available.
