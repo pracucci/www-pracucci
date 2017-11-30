@@ -18,10 +18,18 @@ A straight-to-the-point recap of all the new services and improvements announced
 - `I3.metal` - bare metal high I/O
 
 
-**`M5` instances**
-- EBS only
-- All sizes with **high** networking performances
+**`M5` instances** ([announcement](https://aws.amazon.com/blogs/aws/m5-the-next-generation-of-general-purpose-ec2-instances/))
+- EBS only, VPC-only, HVM-only, and EBS-Optimized
 - Phisical processor based on Intel Xeon Platinum 2.5Ghz (`M4` family is based on Zeon 2.4Ghz)
+
+| Instance Name | vCPUs | RAM     | Network Bandwidth | EBS-Optimized Bandwidth | On-Demand pricing `us-east-1` |
+| ------------- | ----- | ------- | ----------------- | ----------------------- | ----------------------------- |
+| m5.large      | 2     | 8 GiB   | Up to 10 Gbps     | Up to 2120 Mbps         | $0.096 / hour                 |
+| m5.xlarge     | 4     | 16 GiB  | Up to 10 Gbps     | Up to 2120 Mbps         | $0.192 / hour                 |
+| m5.2xlarge    | 8     | 32 GiB  | Up to 10 Gbps     | Up to 2120 Mbps         | $0.384 / hour                 |
+| m5.4xlarge    | 16    | 64 GiB  | Up to 10 Gbps     | 2120 Mbps               | $0.768 / hour                 |
+| m5.12xlarge   | 48    | 192 GiB | 10 Gbps           | 5000 Mbps               | $2.304 / hour                 |
+| m5.24xlarge   | 96    | 384 GiB | 25 Gbps           | 10000 Mbps              | $4.608 / hour                 |
 
 **`H1` instances**
 - Features from 1 up to 8 x 2TB HDD
