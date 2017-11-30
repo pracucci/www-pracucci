@@ -38,19 +38,22 @@ _Courtesy of [awsgeek.com](https://www.awsgeek.com/posts/amazon-ec2-spot-instanc
 
 ## Containers and Kubernetes
 
-### [Amazon Elastic Container Service for Kubernetes](https://aws.amazon.com/eks/) (EKS)
+### [EKS: Elastic Container Service for Kubernetes](https://aws.amazon.com/eks/) ([announcement](https://aws.amazon.com/blogs/aws/amazon-elastic-container-service-for-kubernetes/))
 
 - EKS manages only masters for you - you've manage nodes by yourself and have them join the cluster.
 - EKS will vertically scale masters - in a rolling update to honor HA - based on load and number of nodes
 - EKS is not a K8S fork and supports the latest version. The user specifies the minor version (ie. 1.x) and EKS manages upgrades to patch level. Automatic upgrades across minor versions (ie. 1.7 to 1.8) is also possibile. EKS will support the latest 3 minor versions and notify when a version is deprecated.
 - EKS supports bith Horizontal Pod Autoscaler (HPA) and nodes autoscaler out of the box
-- Integrated with CloudTrail, CloudWatch Logs, VPC, IAM (partnered with Heptio), PrivateLink
+- Integrated with CloudTrail, CloudWatch Logs, VPC, IAM (partnered with Heptio), PrivateLink. You can assign **RBAC** roles directly to each **IAM** entity. You can also use PrivateLink if you want to access your Kubernetes masters directly from your own Amazon VPC. With PrivateLink, your Kubernetes masters and the Amazon EKS service endpoint appear as an elastic network interface with private IP addresses in your Amazon VPC.
 - Uses Project Calico from Tigera to manage network policies
 - Supports Kubernetes add-ons, running on master. Currently K8S dashboard and KubeDNS, but will support more add-ons in future
 - AWS built a CNI plugin to add **native VPC networking for pods** and open sourced it at [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s/)
 - Coming: AWS will release EKS optimized AMI based on Amazon Linux and built with packer
 - Coming: EKS will manage nodes too in the future, but they focus on master right now
 - Now in preview
+
+![](https://media.amazonwebservices.com/blog/2017/eks_s1_sushi_donut_1.png)
+
 
 
 ### [AWS Fargate](https://aws.amazon.com/fargate/) ([announcement](https://aws.amazon.com/blogs/compute/aws-fargate-a-product-overview/))
