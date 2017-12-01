@@ -184,6 +184,11 @@ _No reference yet._
 - Generally available
 
 
+### Go support
+
+- Added Go language support to Lambda
+
+
 ## Storage / Analytics
 
 ### S3 Select ([announcement](https://aws.amazon.com/blogs/aws/s3-glacier-select/))
