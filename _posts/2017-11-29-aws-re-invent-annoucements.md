@@ -166,6 +166,11 @@ Similar to the Google public one, AWS is now offering an internal NTP server not
 Currently the new `C5` and `M5` instances don't support it, but support will be introduced soon. Check out [this page](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html) for more information.
 
 
+### API Gateway with VPC integration
+
+_No reference yet._
+
+
 ## Lambda
 
 ### AWS Serverless Application Repository
@@ -173,9 +178,10 @@ Currently the new `C5` and `M5` instances don't support it, but support will be 
 - Now in preview
 
 
-### API Gateway with VPC integration
+### Double max memory for Lambda ([announcement](https://aws.amazon.com/about-aws/whats-new/2017/11/aws-lambda-doubles-maximum-memory-capacity-for-lambda-functions/))
 
-_No reference yet._
+- You can now allocate up to 3008MB of memory to your AWS Lambda functions
+- Generally available
 
 
 ## Storage / Analytics
