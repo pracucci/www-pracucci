@@ -51,7 +51,7 @@ Spot prices change are moving to a model where prices adjust more gradually, bas
 
 **New Streamlined Access**
 
-It's not possible run turn on spot instances via `RunInstances` API, immediately getting an instance ID, with no more need to poll an API to check if the spot request has been processed and accepted.
+It's now possible to turn on spot instances via `RunInstances` API, immediately getting an instance ID, with no more need to poll an API to check if the spot request has been processed and accepted.
 
 **Instance Hibernation**
 
