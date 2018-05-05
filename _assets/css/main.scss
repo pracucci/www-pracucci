@@ -24,6 +24,7 @@ $paragraph_font_family: "Calibre", "Helvetica Neue", Helvetica, Arial, "Lucida G
 $paragraph_line_height: 30px;
 $paragraph_text_color: #323232;
 $paragraph_text_light_color: #999999;
+$paragraph_hr_color: #eeeeee;
 $accent_color: #d90000;
 
 
@@ -434,6 +435,16 @@ article {
                 right: -40px;
             }
         }
+    }
+
+    twitterwidget {
+        margin: $baseline 0 !important;
+    }
+
+    hr {
+        border-style: dashed;
+        border-color: $paragraph_hr_color;
+        margin: $baseline 0 $baseline/2 0;
     }
 }
 
