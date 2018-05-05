@@ -1,8 +1,8 @@
 ---
 layout:         post
 title:          "KubeCon Europe 2018 - Memo and Takeaways"
-tags:           linux
-date:           2018-05-05 07:00:00 GMT
+tags:           kubecon prometheus linux
+date:           2018-05-05 17:00:00 GMT
 keywords:
 ---
 
@@ -133,7 +133,7 @@ The specification is very simple and currently support `ADD` and `REMOVE` operat
 
 ### Pods networking in Kubernetes using AWS Elastic Network Interfaces
 
-The [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s) plugin is very interesting because it allows to setup a Kubernetes cluster where pods networking is based on the VPC native networking using multiple ENIs attached to the EC2 instance. Using this plugin, all pods and all nodes will be addressable in the same VPC network space.
+The [amazon-vpc-cni-k8s](https://github.com/aws/amazon-vpc-cni-k8s) plugin allows to setup a Kubernetes cluster where pods networking is based on the VPC native networking using multiple ENIs attached to the EC2 instance. Using this plugin, all pods and all nodes will be addressable in the same VPC network space.
 
 Since the number of ENIs that can be attached to an EC2 instance is [limited](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html), the plugin leverage on the ability to add multiple secondary IPs to each ENI in order to increase the number of Pods addressable on each node (the number depends on the instance type).
 
@@ -151,10 +151,10 @@ Slides:
 
 ## Notes on AWS EKS
 
-I didn't met anyone having access to EKS (I wasn't much lucky on this), despite most of the people I've met run Kubernetes on AWS. People running multi cloud states GKE is a step above and works really well. There's consensus on this.
+I didn't met anyone having access to EKS (I haven't been much lucky), despite most of the people I've met run Kubernetes on AWS. People running multi cloud says GKE is a step above and works really well: there's consensus on this.
 
 **Key Points:**
-- EKS is a certified distribution of Kubernetes and will run Kubernetes upstream (no forked / reduced version).
+- EKS is a certified distribution of Kubernetes and will run Kubernetes upstream (no forked / limited version).
 - EKS manage Kubernetes masters (HA) and etcd (HA, 3 AZs, encrypted, does backups), while workers must be provisioned and managed by customers.
 - Allow to specify the major version (ie. `1.9`) while EKS will keep all masters automatically updated to the latest minor (ie. to patch security issues).
 - Allow to setup manual or automatic major version upgrades.
@@ -164,18 +164,18 @@ I didn't met anyone having access to EKS (I wasn't much lucky on this), despite 
 - EKS pods scheduling is aware of the maximum number of pods schedulable on each worker node (due to ENI limitation).
 
 **Networking:**
-- EKS setup a public load balancer in front of the API servers (ie. `mycluster.eks.amazonaws.com`). Support for internal load balancer is on the roadmap, but will be likely introduced after GA.
+- EKS setup a public load balancer in front of the API servers (ie. `mycluster.eks.amazonaws.com`). Support for internal load balancer is on the roadmap, but will likely be introduced after GA.
 - Pods networking uses the [VPC native networking](#pods-networking-in-kubernetes-using-aws-elastic-network-interfaces).
 
 **Authentication:**
-- Takes care of certificates management, supporting certificates rotation.
+- EKS takes care of certificates management, supporting certificates rotation.
 - There's no AWS-maintained plugin to assign IAM roles to pods. The community driven [`kube2iam`](https://github.com/jtblin/kube2iam) is the best option available so far, even if not much recommended by AWS (at some point they might work on a solution based on [spiffe](https://github.com/spiffe/spiffe)).
 - `kubectl` authentication is based on IAM, using [heptio-authenticator-aws](https://github.com/heptio/authenticator). The AWS Identity is only used for the `kubect` authentication and - once authenticated - Kubernetes native RBAC is used for the authorization. It requires `kubectl` 1.10+ since support for pluggable authentication providers has been added in this version.
 
 IAM authentication works like this:
   1. `kubectl` passes the AWS Identity to K8S API server
   2. The K8S API Server verifies the AWS Identity with the AWS Auth API
-  3. On success, it authorize the AWS Identity with RBAC
+  3. On success, it authorize the AWS Identity with RBAC - starting from this point, IAM not used anymore
 
 {% image 2018-05-05-eks-iam-auth.png %}
 
@@ -187,6 +187,7 @@ _Source_: [Introducing Amazon EKS](https://schd.ws/hosted_files/kccnceu18/d2/Int
 - EKS preview requires a pre-configured AMI provided by AWS and created with a Packer script. AWS will opensource the Packer script once EKS will reach GA, so that customers can build their own workers AMI based on the AWS Packer script.
 - EKS GA will "destroy" all clusters created in preview, so another good reason to not run production workload.
 - EKS GA will be ready by the end of the year (hopefully before).
+- Pricing will be announced once GA
 
 **What's about the future?**
 - Fargate for EKS might be introduced (similar to the currently available Fargate for ECS).
@@ -219,7 +220,7 @@ Allocatable:
  pods:    110
 ```
 
-When the scheduler algorithm places a pod an a node it doesn't allow for overcommit of requested resources, so the total sum of requested resources must be <= the allocatable resources. Resource limits are currently not taken into account by the scheduler, despite some [initial work](https://github.com/kubernetes/kubernetes/pull/55906) has been done to take resource limits in account as well (alpha and behind feature gate).
+When the scheduler algorithm places a pod an a node it doesn't allow for overcommit of requested resources, so the total sum of requested resources must be <= the allocatable resources. Resource limits are currently not taken into account by the scheduler, despite some [initial work](https://github.com/kubernetes/kubernetes/pull/55906) has been done (alpha and behind feature gate).
 
 Each pod has a QoS class implicitely assigned based upon its containers CPU and memory resources and limits:
 
@@ -239,10 +240,10 @@ Kubelet eviction policy allows to specify **hard** and **soft thresholds**: when
 
 ### Known issues
 
-- Some language runtimes (ie. Java, .NET, Go, ...) have no or limited cgroups awareness
-  - Java: heap size (a first attempt to solve it has been introduced with `-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap` at some point in Java 8, while Java 10 made big improvements)
-  - Go: thread pool size
-  - .NET: GC Tuning
+- Some language runtimes (ie. Java, .NET, Go, ...) have **no or limited cgroups awareness**
+  - `Java`: heap size (a first attempt to solve it has been introduced with `-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap` at some point in Java 8, while Java 10 made big improvements)
+  - `Go`: thread pool size
+  - `.NET`: GC Tuning
 
 
 ### Best practices on container resources
@@ -250,7 +251,7 @@ Kubelet eviction policy allows to specify **hard** and **soft thresholds**: when
 1. If in doubt, start with `Guaranteed` QoS class
 2. Protect critical Pods (ie. DaemonSets, controller, master components, monitoring)
   - Apply `Burstable`  or `Guaranteed` QoS class with sufficient memory requests
-  - Reserve node resources with labels / selectors, or apply `PriorityClasses` (still alpha - hopefully beta in 1.11) if scheduler priority is active
+  - Reserve node resources with labels / selectors, or apply `PriorityClasses` (still alpha - hopefully beta in 1.11) if scheduler priority is enabled
 3. Test and/or enforce resources in your CI/CD pipeline
 4. Monitor container resources usage
 5. Fine tune the `kubelet`
@@ -259,7 +260,7 @@ Kubelet eviction policy allows to specify **hard** and **soft thresholds**: when
   - `--kube-reserved` and `--system-reserved` for critical System and Kubernetes Services
 6. Use `Burstable` QoS class **without** CPU limits for performance-critical workloads
 7. Disable swap (required by `kubelet` for proper QoS calculation)
-8. Use the latest version of language runtimes (because of cgroups awareness support improvements) and/or align GC/Threads parameters based upon resource requests, using environment variables populated from resource fields, ie:
+8. Use the latest version of language runtimes (because of cgroups awareness support improvements) and/or align GC and threads parameters based upon resource requests, using environment variables populated from resource fields, ie:
 
 ```
 env:
@@ -284,9 +285,11 @@ Slides: [Inside Kubernetes Resource Management (QoS)](https://schd.ws/hosted_fil
 
 Have you ever picked a 3rd party Grafana dashboard, imported into your Grafana installation and all charts are broken due to different labels? Well, to me this happens frequently and I'm glad Tom Wilkie and other people are trying to solve this problem introducing **Prometheus mixins**.
 
-The core idea behind Prometheus mixins is to provide a way to package together templates for Grafana dashboards and Prometheus alerts related to a specific piece of software (ie. `etcd`), which get "compiled" into dashboard JSON and alerts YAML files once provided a required input configuration (ie. label names). These mixins will also allow to distribute dashboards and alerts along with the code, and not separated from it.
+The core idea behind Prometheus mixins is to provide a way to **package together templates for Grafana dashboards and Prometheus alerts** related to a specific piece of software (ie. `etcd`), which get "compiled" into dashboard (JSON) and alerts (YAML) files upon providing a required input configuration (ie. label names). These mixins will also allow to **distribute dashboards and alerts along with the code**, and not separated from it.
 
-[`jsonnet`](https://github.com/google/jsonnet) (a simple yet powerful extension of JSON) has been picked as the templating language for such mixins and a package manager for jsonnet - called [`jsonnet-bundler`](https://github.com/jsonnet-bundler/jsonnet-bundler) has been built. They also provide a [mixin for Kubernets monitoring](https://github.com/kubernetes-monitoring/kubernetes-mixin) based on [`ksonnet`](https://ksonnet.io), that's basically a tool to ease config deployment on Kubernetes based on jsonnet templates. Looks complicated, but once you connect all such pieces together it makes quite sense (if you don't have a trivial setup).
+[`jsonnet`](https://github.com/google/jsonnet) (a simple yet powerful extension of JSON) has been picked as the templating language for Prometheus mixins and a package manager for jsonnet - called [`jsonnet-bundler`](https://github.com/jsonnet-bundler/jsonnet-bundler) - built.
+
+They also provide a [mixin for Kubernets monitoring](https://github.com/kubernetes-monitoring/kubernetes-mixin) based on [`ksonnet`](https://ksonnet.io), that's basically a tool to ease config deployment on Kubernetes based on jsonnet templates. Looks complicated, but once you connect all such pieces together it makes quite sense (if you don't have a trivial setup).
 
 **What's about the future?**
 - cAdvisor will be soon deprecated and SIG-instrumentation is working on drafting a specification to replace it with something that is more pluggable
@@ -305,7 +308,7 @@ Kubernetes is a complex system with many layers of attack surfaces exposed to in
 **Internal threats attack surfaces:**
 - Kernel (attacks via syscalls)
 - Storage (ie. `CVE-2017-1002101` host-resolved symlinks)
-- Network (ie. `kubelet` API server or AWS metadata service at `169.254.169.254`)
+- Network (ie. `kubelet` API server and cloud providers' metadata service at `169.254.169.254`)
 - Daemons (ie. logging)
 - Hardware (ie. Spectre v2)
 
@@ -369,7 +372,7 @@ See: [AppArmor on Kubernetes doc](https://kubernetes.io/docs/tutorials/clusters/
 
 **Rootless containers**
 
-Even if we don't run containers as root, the system used to run containers (ie. the Docker daemon) still run as root. The talk "[The route to rootless containers](https://schd.ws/hosted_files/kccnceu18/08/route_to_rootless_slides.pdf)" illustrates issues found to run rootless containers and current solutions to circumvent it.
+Even if we don't run containers as root, the system used to run containers (ie. the Docker daemon) still run as root. The talk "[The route to rootless containers](https://schd.ws/hosted_files/kccnceu18/08/route_to_rootless_slides.pdf)" illustrates issues and workaround found while running rootless containers.
 
 
 **Sandboxed pods**
@@ -377,7 +380,7 @@ Even if we don't run containers as root, the system used to run containers (ie. 
 Google has a policy that there should be two distinct defence layers for pods running untrusted code. Given syscalls get directly executed on the host's kernel, adding a second layer of defence in front of syscalls means running each container on its own (lightweight) kernel, on top of the host's kernel.
 
 There are two main projects to run sandboxed pods:
-- [katacontainers](https://katacontainers.io/)
+- [katacontainers](https://katacontainers.io/) (lightweight virtual machines)
 - [gVisor](https://github.com/google/gvisor)
 
 [**gVisor**](https://github.com/google/gvisor) is a user-space kernel - recently opensourced by Google - that implements a substantial portion of the Linux system surface. It includes an OCI runtime called `runsc` that provides an isolation boundary between the application and the host kernel. The `runsc` runtime integrates with Docker and Kubernetes, making it simple to run sandboxed containers.
@@ -401,7 +404,7 @@ Slides: [Secure Pods](https://schd.ws/hosted_files/kccnceu18/96/Secure%20Pods%20
 
 ### Attacks via system logs
 
-Each container logs to `/dev/stdout` and `/dev/stderr`. Such logs are collected by the `kubelet` and usually processed / parsed by a logging agent (ie. fluentd or logstash) running on the host. Vulnerabilities in logging agents or their dependencies are not uncommon, and they should be protected as well.
+Each container logs to `/dev/stdout` and `/dev/stderr`. Such logs are collected by the `kubelet` and usually processed / parsed by a logging agent (ie. fluentd or logstash) running on the host. Vulnerabilities in logging agents or their dependencies (ie. JSON parser) are not uncommon, and they should be protected as well.
 
 Running the logging agent in a pod (instead of directly on the host), as well as keeping such software updated, and applying the other security best practices is a good starting point to protect from attacks via system logs.
 
