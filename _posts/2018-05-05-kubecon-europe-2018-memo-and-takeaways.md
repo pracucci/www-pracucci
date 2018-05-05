@@ -13,7 +13,9 @@ Despite the conference and the city are quite expensive for people - like me - c
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">A deep sense of sadness hit me tonight. I enjoyed this <a href="https://twitter.com/hashtag/KubeCon?src=hash&amp;ref_src=twsrc%5Etfw">#KubeCon</a> more than any other conf. Really, it was a blast! I will miss the amazing talented people I&#39;ve met. From the deep of my hearth, I would like to work with all of you. Kudos, great community.</p>&mdash; Marco 🇪🇺 (@pracucci) <a href="https://twitter.com/pracucci/status/992485766092787713?ref_src=twsrc%5Etfw">May 4, 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I'm used to take notes at each conference I attend and KubeCon was not an exception. In this post I will **share random notes and takeaways from the conf**, in the form of a **publicly-shared internal memo**. They're opinionated random notes about talks and people. It doesn't pretend to be neither discursive, complete or fully accurate. They're just my notes, as a starting point from which I will deep dive into the next weeks and months.
+I'm used to take notes at each conference I attend and KubeCon was not an exception. In this post I will **share random notes and takeaways from the conf**, in the form of a **publicly-shared personal memo**. It just covers talks I've attended, that means it just covers my personal interests within the wide [CNCF landscape](https://landscape.cncf.io).
+
+It's an opinionated list of notes with inputs from talks and people I've met. It doesn't pretend to be neither discursive, complete or fully accurate. They're just my notes, as a starting point from which I will deep dive into the next weeks and months.
 
 
 ---
@@ -21,11 +23,24 @@ I'm used to take notes at each conference I attend and KubeCon was not an except
 
 In this memo:
 
+- [Notes on the conference organization](#notes-on-the-conference-organization)
 - [Notes on autoscaling](#notes-on-autoscaling)
 - [Notes on networking](#notes-on-networking)
 - [Notes on AWS EKS](#Notes on-aws-eks)
+- [Notes on resource management](#notes-on-resource-management)
+- [Notes on monitoring](#notes-on-monitoring)
 - [Notes on security](#notes-on-security)
 - [Notes on tools](#notes-on-tools)
+- [Keynotes really worth to watch](#keynotes-really-worth-to-watch)
+
+---
+
+
+## Notes on the conference organization
+
+First of all, a bit shout out to CNCF and all people involved in running the conference. Everything was perfect, from the beautiful location to the food catering being able to feed 4300 people without queues, from the evening party at Tivoli Gardens to the high quality keynotes and talks.
+
+**Well done!**
 
 
 ---
@@ -177,6 +192,105 @@ _Source_: [Introducing Amazon EKS](https://schd.ws/hosted_files/kccnceu18/d2/Int
 - Fargate for EKS might be introduced (similar to the currently available Fargate for ECS).
 
 Slides: [Introducing Amazon EKS (`.pptx`)](https://schd.ws/hosted_files/kccnceu18/d2/Intro%20to%20EKS%20Kubecon%202018.pptx)
+
+
+---
+
+## Notes on resource management
+
+### A quick recap on container resources
+
+Each container in a pod _can_ specify resource requests and limits (ie. CPU and memory). When a pod has no resource requests / limits, it will run with the `Best Effort` QoS class which is the most likely to get throttled and evicted.
+
+The scheduler keeps track of "allocatable" resources on each node that are tipically lower than its capacity, since some resources are reserved for the system, the `kubelet` and a buffer for the hard eviction threshold.
+
+{% image 2018-05-05-node-allocatable-resources.png %}
+
+```
+You can get a summary of both "Node capacity" and "Node allocatable" resources via `kubectl describe node <name>`, ie.
+
+Capacity:
+ cpu:     2
+ memory:  15657244Ki
+ pods:    110
+Allocatable:
+ cpu:     2
+ memory:  15554844Ki
+ pods:    110
+```
+
+When the scheduler algorithm places a pod an a node it doesn't allow for overcommit of requested resources, so the total sum of requested resources must be <= the allocatable resources. Resource limits are currently not taken into account by the scheduler, despite some [initial work](https://github.com/kubernetes/kubernetes/pull/55906) has been done to take resource limits in account as well (alpha and behind feature gate).
+
+Each pod has a QoS class implicitely assigned based upon its containers CPU and memory resources and limits:
+
+- `Best Effort`: no CPU and memory requests / limits
+- `Burstable`: at least one container has CPU and memory requests / limits
+- `Guaranteed`: all containers have CPU and memory requests / limits
+
+{% image 2018-05-05-qos-classes.png %}
+
+Each container resource is either **compressable** (CPU) or **uncompressable** (memory and storage):
+
+- Compressable: subject to **throttling**
+- Uncompressable: subject to `kubelet` **eviction** or kernel's **`OOM_kill`**
+
+Kubelet eviction policy allows to specify **hard** and **soft thresholds**: when a soft threshold is reached a `SIGTERM` is sent to the container to allow a graceful termination, while in case of hard threshold the container is immediately killed. If the `kubelet` is not fast enough to react, the kernel's OOM killer will kill the container.
+
+
+### Known issues
+
+- Some language runtimes (ie. Java, .NET, Go, ...) have no or limited cgroups awareness
+  - Java: heap size (a first attempt to solve it has been introduced with `-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap` at some point in Java 8, while Java 10 made big improvements)
+  - Go: thread pool size
+  - .NET: GC Tuning
+
+
+### Best practices on container resources
+
+1. If in doubt, start with `Guaranteed` QoS class
+2. Protect critical Pods (ie. DaemonSets, controller, master components, monitoring)
+  - Apply `Burstable`  or `Guaranteed` QoS class with sufficient memory requests
+  - Reserve node resources with labels / selectors, or apply `PriorityClasses` (still alpha - hopefully beta in 1.11) if scheduler priority is active
+3. Test and/or enforce resources in your CI/CD pipeline
+4. Monitor container resources usage
+5. Fine tune the `kubelet`
+  - `--eviction-hard` and `--eviction-soft` (and related Values like Grace Periods)
+  - `--fail-swap-on` (default in recent Versions)
+  - `--kube-reserved` and `--system-reserved` for critical System and Kubernetes Services
+6. Use `Burstable` QoS class **without** CPU limits for performance-critical workloads
+7. Disable swap (required by `kubelet` for proper QoS calculation)
+8. Use the latest version of language runtimes (because of cgroups awareness support improvements) and/or align GC/Threads parameters based upon resource requests, using environment variables populated from resource fields, ie:
+
+```
+env:
+- name: CPU_REQUEST
+  valueFrom:
+    resourceFieldRef:
+      resource: requests.cpu
+- name: MEM_LIMIT
+  valueFrom:
+    resourceFieldRef:
+      resource: limits.memory
+```
+
+
+Slides: [Inside Kubernetes Resource Management (QoS)](https://schd.ws/hosted_files/kccnceu18/33/Inside%20Kubernetes%20QoS%20M.%20Gasch%20KubeCon%20EU%20FINAL.pdf)
+
+
+---
+
+
+## Notes on monitoring
+
+Have you ever picked a 3rd party Grafana dashboard, imported into your Grafana installation and all charts are broken due to different labels? Well, to me this happens frequently and I'm glad Tom Wilkie and other people are trying to solve this problem introducing **Prometheus mixins**.
+
+The core idea behind Prometheus mixins is to provide a way to package together templates for Grafana dashboards and Prometheus alerts related to a specific piece of software (ie. `etcd`), which get "compiled" into dashboard JSON and alerts YAML files once provided a required input configuration (ie. label names). These mixins will also allow to distribute dashboards and alerts along with the code, and not separated from it.
+
+[`jsonnet`](https://github.com/google/jsonnet) (a simple yet powerful extension of JSON) has been picked as the templating language for such mixins and a package manager for jsonnet - called [`jsonnet-bundler`](https://github.com/jsonnet-bundler/jsonnet-bundler) has been built. They also provide a [mixin for Kubernets monitoring](https://github.com/kubernetes-monitoring/kubernetes-mixin) based on [`ksonnet`](https://ksonnet.io), that's basically a tool to ease config deployment on Kubernetes based on jsonnet templates. Looks complicated, but once you connect all such pieces together it makes quite sense (if you don't have a trivial setup).
+
+**What's about the future?**
+- cAdvisor will be soon deprecated and SIG-instrumentation is working on drafting a specification to replace it with something that is more pluggable
+
 
 
 ---
@@ -397,7 +511,7 @@ Source:
 
 ### Operator Framework
 
-CoreOs (now RedHat) has [recently announced](https://coreos.com/blog/introducing-operator-framework) the [`operator-framework`](https://github.com/operator-framework), a Go lang framework to ease building operators (or controllers - they're the same thing, just a different naming).
+CoreOs (now Red Hat) has [recently announced](https://coreos.com/blog/introducing-operator-framework) the [`operator-framework`](https://github.com/operator-framework), a Go lang framework to ease building operators (or controllers - they're the same thing, just a different naming).
 
 
 ---
@@ -405,7 +519,7 @@ CoreOs (now RedHat) has [recently announced](https://coreos.com/blog/introducing
 
 ## Keynotes really worth to watch
 
-Most keynotes have been very interesting, but here I've shared my top three that - in some way - have inspired me. You can watch all KubeCon / CloudNativeCon videos (keynotes and talks) in this [YouTube playlist](https://www.youtube.com/playlist?list=PLj6h78yzYM2N8GdbjmhVU65KYm_68qBmo).
+Most keynotes have been very interesting, but here I've shared a couple that - in some way - have inspired me. You can watch all KubeCon / CloudNativeCon videos (keynotes and talks) in this [YouTube playlist](https://www.youtube.com/playlist?list=PLj6h78yzYM2N8GdbjmhVU65KYm_68qBmo).
 
 
 ### Switching Horses Midstream: The Challenges of Migrating 150+ Microservices to Kubernetes
@@ -415,158 +529,6 @@ Most keynotes have been very interesting, but here I've shared my top three that
 
 ### Anatomy of a Production Kubernetes Outage
 
+How an hour and a half outage root cause started two weeks before, and why having the Kubernetes cluster fully down for such a long period wasn't a catastrofic failure for a bank. Good lesson on distributed system complexity, post mortem analysis and design for failure.
+
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/OUYTNywPk-s?showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
-
-
----
-
-TODO review from here
-
----
-
-
-
-
-
-
-## TODO
-
-- notes about the organization
-- tweets shared on email
-- https://schd.ws/hosted_files/kccnceu18/b2/%E2%80%9CBreak%20and%20Recover%E2%80%9D%20Kubernetes%20Cluster%20and%20Application.pdf
-- watch keynote I missed: https://www.youtube.com/playlist?list=PLj6h78yzYM2N8GdbjmhVU65KYm_68qBmo
-- add another keynote to the top three
-- operator framework
-
-
-
-## Continuous delivery with your Kubernetes cluster
-
-Slides: https://schd.ws/hosted_files/kccnceu18/18/2018-05-02%20Continuously%20Deliver%20your%20Kubernetes%20Infrastructure%20-%20KubeCon%202018%20Copenhagen.pdf
-
-### Principles
-
-- Hands-off approach. Developers have only read-only privileges on Kubernetes cluster. Any update/write is managed via CI/CD solution.
-- Always provide the latest stable K8S version
-- Continuous and non-disruptive cluster updates (no maintenance windows)
-- Fully automated operations (opertors should only need to manually merge PRs)
-
-### Cluster Lifecycle Manager
-
-Cluster registry: a configuration file containing the list of clusters and some metadata about them (ie. API Server URL, environment, AWS region, ...)
-
-The CLM (Cluster Lifecycle Manager) has two sources of config: git repository and the cluster registry (stored on PostgreSQL).
-
-Upgrade workflow:
-
-1. Create a new feature branch and do the changes
-2. Submit a PR, add `ready-to-test` label, CI/CD runs E2E tests, if they pass apply `ready-to-deploy` label
-3. Merge to `dev` branch
-4. Merge to `alpha` branch
-5. Merge to `beta` branch
-6. Merge to `stable` branch
-
-
-E2E tests are:
-
-- Conformance tests: run via Upstream Kubernetes e2e conformance tests
-- StatefulSet tests: Rolling update of stateful sets including volume mounting (pick up 2 randomly)
-- Custom tests: custom tests for ingress, external-dns, ...
-- See: https://github.com/mikkeloscar/kubernetes-e2e
-
-Tests workflow (~40 minutes):
-
-- Create a cluster from the `alpha` (~20 minutes)
-- Update a cluster from `dev` with the code in the PR
-- Run E2E tests on both clusters
-- If everything works, delete cluster, otherwise keep it running for a while to manually inspect it
-
-Hints:
-
-- Run with `-flakeAttempts=2`
-- Update e2e image for every **major** release of Kubernetes
-- Disable broken e2e tests in the Kubernetes release with `-skip`
-- Remove **Completed** pods from `kube-system`
-
-Upgrade workflow is interesting:
-- Add 1 node each AZ given a specific node pool and then set `PreferNoSchedule` on the nodes to drain
-
-
-
-
-
-
-
-## Following the data from the darkest corners of K8S
-
-- cAdvisor will be soon deprecated and sig-instrumentation is working on drafting a speficiation to replace it with something that is more pluggable
-
-
-## Prometheus mixins
-
-- Dashboards and alerts should not be opinionated about labels - this should be configuration.
-- People should distribute dashboards and alerts along with code
-
-jsonnet
-- Data templating language based on JSON (simple extension of JSON)
-- Use can use the merge operator `{} + {}` to build composition
-
-jsonnet-bundler
-- A package manager for jsonnet
-
-ksonnet
-- https://github.com/kausalco/public/tree/master/prometheus-ksonnet
-
-https://github.com/kubernetes-monitoring/kubernetes-mixin
-- A set of Grafana dashboards and Prometheus alerts for Kubernetes
-
-
-
-
-
-
-## Kubernetes Resource Management (QoS)
-
-A pod can be:
-- Rejected (ResourceQuota)
-  - Set per-namespace limits
-- Modified (LimitRanger)
-
-After creation, the pod mught:
-- Not get enough resources (starvation)
-- Can be negatively affected by neightboors
-
-Sheduling:
-- TODO: see slide 29
-
-- Memory request map to OOM Score Adj
-
-- CPU: compressable resource
-- Memory and storage: uncompressable resoures
- - Evict (kuelet) or OOM_kill (Kernel)
- - Kubelet eviction threshold can be specified
-
- Before 1.9: largest consumer relative to request starting from Qos best effort -> burstable -> Guaranteed
- In 1.9: usage > requests ? .> Pod priority -> Usage - Requests
- Even guaranteed pods can be evicted
- Make sure for DaemonSets you apply guaranteed resources
-
-TODD: see slide 36 as a reference guide
-
-
-QoS Tips:
-- If in doubt, start with guaranteed
-- Enable quotas and enforce sane defaults (ReousrceQuota, LimitRanger)
-- Protect critical (System) pods: apply QoS burstable or guaranteed with sufficient memory requests, reserve node resources with labels/selectors, prorityclassses will significantly help
-- Embed QoS in your CI/CD process
-- TODO complete with content of slide 39
-- Go and .NET have no or limited cgroup awareness (slide 41)
-- Java 10 made big improvements for container support
-- Tune kubelet
-- Tune --eviction-hard/soft in the kubelet (and related values, like grace periods)
- - Enable --fail-swap-on (default in recent versions)
- - --kube-reserved (TODO slide 44)
-
-Slides: [](https://schd.ws/hosted_files/kccnceu18/33/Inside%20Kubernetes%20QoS%20M.%20Gasch%20KubeCon%20EU%20FINAL.pdf)
