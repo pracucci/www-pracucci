@@ -38,7 +38,7 @@ In this memo:
 
 ## Notes on the conference organization
 
-First of all, a bit shout out to CNCF and all people involved in running the conference. Everything was perfect, from the beautiful location to the food catering being able to feed 4300 people without queues, from the evening party at Tivoli Gardens to the high quality keynotes and talks.
+First of all, a big shout out to CNCF and all people involved in running the conference. Everything was perfect, from the beautiful location to the food catering being able to feed 4300 people without queues, from the evening party at Tivoli Gardens to the high quality keynotes and talks.
 
 **Well done!**
 
@@ -75,7 +75,7 @@ Kubernetes support three types of autoscaling:
 - An alternative (simpler) cluster autoscaler for AWS ([kube-aws-autoscaler](https://github.com/hjacobs/kube-aws-autoscaler)) has been built at Zalando and run it in production for quite a long time, while they now moved to the Kubernetes CA.
 
 **What's about the future?**
-- In Kubernetes 1.1 the HPA autoscaler will be able to autoscale based on CRDs, so that it can be used to scale not just pods but custom resources too
+- In Kubernetes 1.11 the HPA will be able to autoscale based on CRDs, so that it can be used to scale not just pods but custom resources too
 - Prediction by [Frederic Branczyk](https://twitter.com/fredbrancz): cluster autoscaler will not to be a special case at some point in the future
 
 
