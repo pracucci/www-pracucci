@@ -41,9 +41,7 @@ exports.test = function(event, context, callback) {
 ```
 
 
-_I don't know if `/tmp` is mounted as tmpfs (or similar) or if it's really mapped to a physical block storage and its size is summed up to the memory usage by design. I would personally bet it's mounted as tmpfs, but no AWS Lambda implementation details are publicly available._
-
-To sum it up, as of 20th Nov 2018:
+To sum it up, as of 20th Nov 2018, according to my experiments:
 - `/tmp` max storage size is 512 MB
 - `/tmp` is persisted across different lambda executions in the same context until the context itself will be recycled
 - Whatever you write to `/tmp` will be summed up to the "Max Memory Used" lambda report and will be subject to the Lambda memory limit
