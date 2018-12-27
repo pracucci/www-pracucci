@@ -7,9 +7,6 @@ keywords:
 hidden:         true
 ---
 
-_Whatever written here is based on my personal opinion, and not necessarily my employer's one._
-
-
 I work as infrastructure engineer at [Voxnest](https://www.voxnest.com). We offer services in the podcasting space, including [Spreaker](https://www.spreaker.com) and [Dynamo](https://www.voxnest.com/dynamo/). We don't write code for the sake of doing it. What we really care is building a great product that gives value to our customers, significantly improving their podcasting experience from newbies to professionals.
 
 Infrastructure is the underlying layer providing support to the wide range of applications and services we build and operate within our products. **We run Kubernetes in production since a couple of years**, we have multiple clusters running in multiple AWS regions as well as we also manage several services running outside Kubernetes, like PostgreSQL.
