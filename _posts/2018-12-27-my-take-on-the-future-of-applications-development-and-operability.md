@@ -4,7 +4,6 @@ title:          "My take on the future of applications development and operabili
 tags:           future kubernetes
 date:           2018-12-27 10:00:00 GMT
 keywords:
-hidden:         true
 ---
 
 I work as infrastructure engineer at [Voxnest](https://www.voxnest.com). We offer services in the podcasting space, including [Spreaker](https://www.spreaker.com) and [Dynamo](https://www.voxnest.com/dynamo/). We don't write code for the sake of doing it. What we really care is building a great product that gives value to our customers, significantly improving their podcasting experience from newbies to professionals.
