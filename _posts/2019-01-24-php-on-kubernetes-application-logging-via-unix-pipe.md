@@ -1,7 +1,7 @@
 ---
 layout:         post
 title:          "PHP on Kubernetes: application logging via unix pipe"
-tags:           kubernetes php
+tags:           php
 date:           2019-01-24 08:00:00 GMT
 keywords:
 ---
