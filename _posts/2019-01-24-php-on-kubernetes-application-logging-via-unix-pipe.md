@@ -77,7 +77,7 @@ The `php-fpm` process is configured to `error_log = /proc/self/fd/2` and the boo
 
 The bootstrap script is something like this:
 
-<script src="http://gist-it.appspot.com/https://github.com/pracucci/php-on-kubernetes/blob/master/app-log-php-fpm-via-unix-pipe/bootstrap-php-fpm.sh"></script>
+<script src="https://gist-it.appspot.com/https://github.com/pracucci/php-on-kubernetes/blob/master/app-log-php-fpm-via-unix-pipe/bootstrap-php-fpm.sh"></script>
 
 This approach also presents pros and cons:
 
