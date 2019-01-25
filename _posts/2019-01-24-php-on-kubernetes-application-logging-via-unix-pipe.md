@@ -111,7 +111,7 @@ This approach has the following **benefits** over the previous solution:
 
 ### An unix pipe reader is required to avoid writes block indefinitely
 
-Writing to a unix pipe blocks indefinitely if there's no process that opened it for reading. This means that if - for any reason - `tail` is not running, writes from the PHP application will block until `tail` is running again.
+Writing to a unix pipe blocks indefinitely if there's no process that opened it for reading. This means that if - for any reason - `tail` is not running, writes from the PHP application will block until `tail` is running again (Kubernetes will restart the `tail` container in case it crashes or exits).
 
 The good news is that it's not required the reading process completes the read operation from the pipe to unblock the writer, so the writer performances (PHP) are not affected by the reader performances (`tail`).
 
