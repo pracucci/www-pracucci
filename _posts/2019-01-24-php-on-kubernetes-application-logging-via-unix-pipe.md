@@ -58,35 +58,62 @@ static void fpm_stdio_child_said(struct fpm_event_s *ev, short which, void *arg)
 
 ## An alternative approach: log via unix pipe
 
-An alternative approach we found out working well is logging from each worker to a shared unix pipe and tail from that pipe and forward it to stdout in the PID 1. This means that `php-fpm` master process will **not** run as PID 1, but a custom "supervisor" will run as PID 1.
+An alternative approach we found out working well is logging from each worker to a shared unix pipe and tail it from a sidecar container. In this scenario:
+
+- `php-fpm` runs as PID 1 in its container configured with:
+  - `error_log = /proc/self/fd/2`
+  - `catch_workers_output = no`
+- `tail` runs as PID 1 in a sidecar container, reading from the unix pipe shared between containers using an `emptyDir` volume
 
 {% image 2019-01-24-php-on-kubernetes-unix-pipe.png %}
 
 You can find a full working [example here](https://github.com/pracucci/php-on-kubernetes/tree/master/app-log-php-fpm-via-unix-pipe) but in a nutshell it works as follows. The PHP application **writes logs to a unix pipe**:
 
 ```php
-// In production you will surely do something more optimized and structured
-// (ie. fopen() just once and then re-use the handle on each fwrite())
-// but here it was simplified for clarity
-file_put_contents("/var/log/pipe-from-app-to-stdout", "Log message\n");
+// Log in a quick and dirty way (NOT production-grade)
+file_put_contents("/var/log/shared/pipe-from-app-to-stdout", "Log message\n");
 ```
 
-A boostrapt script runs as PID 1 in the container and it takes care of starting `php-fpm` (daemonized) and a `tail` on `/var/log/pipe-from-app-to-stdout`.
+A **bootstrap script in the `php-fpm` container** creates the pipe before running `php-fpm`:
 
-The `php-fpm` process is configured to `error_log = /proc/self/fd/2` and the bootstrap script will redirect php-fpm stderr to the PID 1's stderr. A similar approach is taken with `tail`, where its stdout will be redirected to the PID 1's stdout.
+```
+#!/bin/sh
 
-The bootstrap script is something like this:
+# Create a pipe used by the PHP app to write logs
+if [ ! -p /var/log/shared/pipe-from-app-to-stdout ]; then
+    mkfifo      /var/log/shared/pipe-from-app-to-stdout
+    chmod 777   /var/log/shared/pipe-from-app-to-stdout
+fi
 
-<script src="https://gist-it.appspot.com/https://github.com/pracucci/php-on-kubernetes/blob/master/app-log-php-fpm-via-unix-pipe/bootstrap-php-fpm.sh"></script>
+exec php-fpm7 --fpm-config /etc/php7/php-fpm.conf --php-ini /etc/php7/php.ini
+```
 
-This approach also presents pros and cons:
+Another **bootstrap script in the `tail` container** waits until the shared pipe exists before tailing it:
 
-- **Pro**: application logs are not wrapped by `php-fpm`
-- **Pro**: application logs are not limited by length (no splitting / truncating)
-- **Pro**: application logs are forwarded to PID 1 stdout, while `php-fpm` error logs are forwarded to PID 1 stderr
+```
+#!/bin/sh
 
-- **Con**: the setup is more complicated
-- **Con**: writing to a unix pipe blocks indefinitely if there's no process that opened it for reading (that's why we continuously check if `tail` is running). The **good news** is that it's not required the reading process is actively reading from the pipe to unblock the writer, so the writer performances (PHP) are not affected by the reader performances (`tail`)
+# Wait until the pipe - created by the PHP app container
+# and shared via a tmp volume - is created
+while [ ! -e /var/log/shared/pipe-from-app-to-stdout ]; do
+    sleep 0.2
+done
+
+exec tail -f /var/log/shared/pipe-from-app-to-stdout
+```
+
+This approach has the following **benefits** over the previous solution:
+
+- Application logs are not wrapped by `php-fpm`
+- Application logs are not limited by length (no splitting / truncating)
+- Application logs and `php-fpm` error logs are not mixed together in the same stream
+
+
+### An unix pipe reader is required to avoid writes block indefinitely
+
+Writing to a unix pipe blocks indefinitely if there's no process that opened it for reading. This means that if - for any reason - `tail` is not running, writes from the PHP application will block until `tail` is running again.
+
+The good news is that it's not required the reading process completes the read operation from the pipe to unblock the writer, so the writer performances (PHP) are not affected by the reader performances (`tail`).
 
 
 ### Atomic writes to a unix pipe
@@ -96,3 +123,8 @@ Last but not the least, since we have multiple processes concurrently writing th
 Writing to a unix pipe without locking is safe (atomic) as far as each write is smaller than 4KB (see [this discussion](http://pubs.opengroup.org/onlinepubs/9699919799/functions/write.html) for more details). In case you support larger log messages at application level, you should use `flock($fd, LOCK_EX)` and `flock($fd, LOCK_UN)` to respectively lock and unlock a file descriptor.
 
 Popular logging frameworks like Monolog already support locking (ie. see `useLocking` option of [`StreamHandler`](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Handler/StreamHandler.php)).
+
+
+### Credits
+
+The unix pipe strategy - with `tail` running in a sidecar container - has been improved thanks to the great feedback by [Michael Gasch](https://twitter.com/embano1).
