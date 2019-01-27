@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 
         "watch": {
             "build_site_for_dev": {
-                files: ["*.yml", "*.html", "_assets/**/*", "_data/**/*", "_layouts/**/*", "_posts/**/*", ],
+                files: ["*.yml", "*.html", "_assets/**/*", "_data/**/*", "_layouts/**/*", "_posts/**/*", "_includes/**/*", ],
                 tasks: ["shell:build_site_for_dev"],
                 options: {
                     interrupt: true,

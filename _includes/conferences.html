@@ -1,0 +1,26 @@
+<div class="conferences_intro">
+    I will join the following conferences. Reach me out on <a href="https://twitter.com/pracucci">Twitter</a> if you wanna meet:
+</div>
+
+<table class="conferences">
+    {% for conf in site.data.conferences %}
+        {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+        {% capture conftime %}{{conf.to | date: '%s'}}{% endcapture %}
+        {% if conftime > nowunix %}
+            <tr>
+                <th class="name"><a href="{{ conf.link }}">{{ conf.name }}</a></th>
+                <td class="location">
+                    <img src="https://www.countryflags.io/{{ conf.country }}/flat/16.png">
+                    {{ conf.location }}
+                </td>
+                <td class="dates">
+                    {% if conf.from != conf.to %}
+                        {{ conf.from | date_to_long_string }} until {{ conf.to | date_to_long_string }}
+                    {% else %}
+                        {{ conf.from | date_to_long_string }}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>

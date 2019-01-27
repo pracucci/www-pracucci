@@ -53,7 +53,7 @@ h1 {
     font-size: $font_size_xxlarge;
     font-weight: $font_weight_medium;
     color: $title_text_color;
-    margin-bottom: $baseline;
+    margin-bottom: $baseline*0.75;
 }
 
 em {
@@ -146,6 +146,7 @@ section.page {
 // Home
 section.home_intro {
     padding-top: $baseline;
+    margin-bottom: $baseline;
     overflow: hidden;
 
     img {
@@ -163,26 +164,6 @@ section.home_intro {
     }
 }
 
-section.home_socials {
-    background: #dddddd;
-    margin-bottom: $baseline;
-    text-align: center;
-    padding-top: $baseline/4;
-    border-radius: 4px;
-
-    a {
-        display: inline-block;
-        min-width: 150px;
-        margin: 0 $page_margin $baseline/4 $page_margin;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: $font_size_small;
-        font-weight: $font_weight_medium;
-        line-height: $baseline/2;
-        color: #565656;
-    }
-}
-
 ul.home_articles {
     overflow: hidden;
     margin-bottom: $baseline*3;
@@ -191,10 +172,10 @@ ul.home_articles {
 }
 
 li.home_article {
-    margin-bottom: $baseline/2;
+    margin-bottom: $baseline/3;
 
     h2 {
-        font-size: $font_size_medium;
+        font-size: $font_size_default;
         font-weight: $font_weight_medium;
     }
 
@@ -449,6 +430,52 @@ article {
 }
 
 
+// Conferences
+.conferences_intro {
+    margin-bottom: $baseline/2;
+}
+
+table.conferences {
+    width: 100%;
+    margin-bottom: $baseline;
+    text-align: left;
+
+    tr {
+        border-bottom: 1px solid #efefef;
+    }
+
+    th, td {
+        padding: ($baseline / 6) 0;
+    }
+
+    th {
+        font-weight: $font_weight_medium;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    td.location {
+        font-size: $font_size_small;
+
+        img {
+            vertical-align: middle;
+            margin: 0 4px 0 0;
+
+            // Resets when it's placed inside an article
+            display: inline;
+            max-width: auto;
+        }
+    }
+
+    td.dates {
+        text-align: right;
+        font-size: $font_size_small;
+    }
+}
+
+
 // Layout
 .layout_two_columns {
     overflow: hidden;
@@ -476,17 +503,6 @@ article {
             text-align: center;
         }
     }
-
-    // Talks
-    section.talk {
-        float: none;
-        width: auto;
-
-        h2 {
-            height: auto;
-        }
-    }
-
 }
 
 @media screen and (max-width: 600px) {
@@ -548,3 +564,4 @@ article {
     }
 
 }
+
