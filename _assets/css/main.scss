@@ -345,8 +345,8 @@ article {
 
     // Code inline
     code {
-        font-family: monospace;
-        font-size: 14px;
+        font-family: Monaco, monospace;
+        font-size: 13px;
         color: $accent_color;
         margin-bottom: $baseline/2;
     }
@@ -360,7 +360,7 @@ article {
 
     // Highlighted code block
     pre {
-        background: #eaeaea;
+        background: #eeeeee;
         padding: $baseline/6 $baseline/2;
         border-radius: 4px;
         margin: 0 0 ($baseline - $baseline/6) 0;
