@@ -1,13 +1,13 @@
-- name:     FOSDEM
-  link:     https://fosdem.org/2019/schedule/
-  location: Bruxelles
-  country:  be
-  from:     2019-02-02
-  to:       2019-02-03
-
 - name:     KubeCon Europe
   link:     https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/
   location: Barcelona
   country:  es
   from:     2019-05-20
   to:       2019-05-23
+
+- name:     ServerlessDays
+  link:     https://milan.serverlessdays.io/
+  location: Milan
+  country:  it
+  from:     2019-06-21
+  to:       2019-06-21
