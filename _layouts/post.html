@@ -30,6 +30,7 @@ layout: page
     {{ content }}
 
     {% if list_related_articles != "" %}
+        <hr />
         <h3>You may also be interested in ...</h3>
         <ul>
             {{ list_related_articles | strip }}
@@ -37,17 +38,12 @@ layout: page
     {% endif %}
 
     <!-- Conferences -->
+    <hr />
     <h3>Upcoming conferences</h3>
     {% include conferences.html %}
 
-    <!-- RSS -->
-    <h3>RSS Feed</h3>
-    <p>
-        To get a notification each time a new article gets published, type the following command on your <strong>Slack</strong>:
-        <code>/feed subscribe {{ site.url }}/feed.xml</code>
-    </p>
-
     <!-- Disqus -->
+    <hr />
     <h3>Comments</h3>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
