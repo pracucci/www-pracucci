@@ -3,17 +3,17 @@ layout: page
 ---
 
 {% capture list_related_articles %}{% for page_tag in page.tags %}
-        {% for post in site.posts %}
-            {% for post_tag in post.tags %}
-                {% if post_tag == page_tag and post.title != page.title %}
-                    {% unless post.hidden %}
-                        <li>
-                            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                        </li>
-                    {% endunless %}
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
+{% for post in site.posts %}
+{% for post_tag in post.tags %}
+{% if post_tag == page_tag and post.title != page.title %}
+{% unless post.hidden %}
+<li>
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+</li>
+{% endunless %}
+{% endif %}
+{% endfor %}
+{% endfor %}
 {% endfor %}{% endcapture %}
 
 
@@ -30,17 +30,19 @@ layout: page
     {{ content }}
 
     {% if list_related_articles != "" %}
-        <hr />
-        <h3>You may also be interested in ...</h3>
-        <ul>
-            {{ list_related_articles | strip }}
-        </ul>
+    <hr />
+    <h3>You may also be interested in ...</h3>
+    <ul>
+        {{ list_related_articles | strip }}
+    </ul>
     {% endif %}
 
     <!-- Conferences -->
+    {% if site.data.conferences.size > 0 %}
     <hr />
     <h3>Upcoming conferences</h3>
     {% include conferences.html %}
+    {% endif %}
 
     <!-- Disqus -->
     <hr />
@@ -49,7 +51,7 @@ layout: page
     <script type="text/javascript">
         var disqus_shortname = 'pracucci';
 
-        (function() {
+        (function () {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
