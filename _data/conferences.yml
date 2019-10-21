@@ -1,6 +1,6 @@
-# - name:     KubeCon Europe
-#   link:     https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/
-#   location: Barcelona
-#   country:  es
-#   from:     2019-05-20
-#   to:       2019-05-23
+- name:     PromCon EU 2019
+  link:     https://promcon.io/2019-munich/
+  location: Munich
+  country:  de
+  from:     2019-11-07
+  to:       2019-11-08
